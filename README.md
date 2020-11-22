@@ -181,3 +181,44 @@ C:\NXP\DK6ProductionFlashProgrammer>DK6Programmer.exe -s COM15 -V2 -w isp_level=
 
  COM15: Error: WRITE access not allowed on pFlash memory
                           
+C:\NXP\DK6ProductionFlashProgrammer>DK6Programmer.exe -s COM15 -V2 -w ble_fmac0=0x0000000000000000
+ COM15: Connected at 115200
+ COM15: Detected Unknown JN518x with MAC address 00:00:00:00:00:00:00:00
+ COM15: Chip ID: 0x1140C686
+ COM15: Bootloader Version: 0x00000000
+ COM15: WARNING: Bootloader in device is out of date. See application note JN-AN-1263 or contact support for update information
+ COM15: Selected memory: Config
+ COM15: Error: READ access not allowed on Config memory
+
+ COM15: Error: WRITE access not allowed on Config memory
+ 
+ C:\NXP\DK6ProductionFlashProgrammer>DK6Programmer.exe -s COM15 -V2 -e FLASH
+ COM15: Connected at 115200
+ COM15: Detected Unknown JN518x with MAC address 00:00:00:00:00:00:00:00
+ COM15: Chip ID: 0x1140C686
+ COM15: Bootloader Version: 0x00000000
+ COM15: WARNING: Bootloader in device is out of date. See application note JN-AN-1263 or contact support for update information
+ COM15: Selected memory: FLASH
+ COM15: Erasing FLASH
+ COM15: Full erase required on memory FLASH, addr=0x00000000, length=646656
+ COM15: Erasing FLASH
+ COM15: 0
+ COM15: Completed
+ 
+ C:\NXP\DK6ProductionFlashProgrammer>DK6Programmer.exe -s COM15 -V2 -p FLASH=DimmerSwitch_OM15082.bin
+ COM15: Connected at 115200
+ COM15: Detected Unknown JN518x with MAC address 00:00:00:00:00:00:00:00
+ COM15: Chip ID: 0x1140C686
+ COM15: Bootloader Version: 0x00000000
+ COM15: WARNING: Bootloader in device is out of date. See application note JN-AN-1263 or contact support for update information
+ COM15: Selected memory: FLASH
+ COM15: Programming FLASH at 0x0
+ COM15: Full erase required on memory FLASH, addr=0x00000000, length=646656
+ COM15: Erasing FLASH
+ COM15: 0
+ COM15: Completed
+ COM15: Programming FLASH
+ COM15: 0
+  COM15: Programming FLASH
+ COM15: 100
+ COM15: Memory programmed successfully

@@ -20,7 +20,7 @@ Thankfull Aqara decided to not lock the Aqara Opple NXP JN5189 Zigbee chip, and 
 ## Building
 
 ## Flashing
-
+![JTAG Pinout](Aqara_Opple_JTAG_Pinout.png?raw=true "JTAG Pinout")
 
 
 # OTA

@@ -21,4 +21,6 @@ Thankfull Aqara decided to not lock the Aqara Opple NXP JN5189 Zigbee chip, and 
 
 ## Flashing
 
+
+
 # OTA

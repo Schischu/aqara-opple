@@ -18,9 +18,16 @@ Per default only following functionality exsists:
 Thankfull Aqara decided to not lock the Aqara Opple NXP JN5189 Zigbee chip, and thereby allows the flashing of an alternative firmware.
 
 ## Building
+### Pinout
+![Pinout](Aqara_Opple_Pinout.png?raw=true "Pinout")
+
 
 ## Flashing
+### JTAG Connector Pinout
 ![JTAG Pinout](Aqara_Opple_JTAG_Pinout.png?raw=true "JTAG Pinout")
+
+
+
 
 
 # OTA

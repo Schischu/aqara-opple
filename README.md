@@ -26,8 +26,12 @@ Thankfull Aqara decided to not lock the Aqara Opple NXP JN5189 Zigbee chip, and 
 ### JTAG Connector Pinout
 ![JTAG Pinout](Aqara_Opple_JTAG_Pinout.png?raw=true "JTAG Pinout")
 
+Programming can be done with for example the UartSBee (https://wiki.seeedstudio.com/UartSBee_v5/), but should work with and FTDI FT232RL based adapter.
 
-
+```
+DK6Programmer.exe -s COM15 -V2 -e FLASH -p FLASH=C:\NXP\JN-AN-1245\Binaries\DimmerSwitch_AQARA_OPPLE\DimmerSwitch_AQARA_OPPLE.bin
+```
 
 
 # OTA
+TBD

@@ -17,10 +17,25 @@ Per default only following functionality exsists:
 
 Thankfull Aqara decided to not lock the Aqara Opple NXP JN5189 Zigbee chip, and thereby allows the flashing of an alternative firmware.
 
-## Building
+## Hardware
 ### Pinout
 ![Pinout](Aqara_Opple_Pinout.png?raw=true "Pinout")
 
+## Software
+### Base
+The SW is based on the JN-AN-1245 Zigbee 3.0 Controller and Switch example code by NXP
+
+### Mapping
+Due to the Hue bridge only supporting up to 4 keys, some limitations have ot be accepted
+- Key 0: Key On Short Press
+- Key 1: Key Off Short Press
+- Key 2: Key On Long Press
+- Key 3: Key Off Long Press
+- Key 4: Key Dimmer+ Short/Long Press
+- Key 5: Key Dimmer+ Short/Long Press
+
+As the Hue App does not support differenciation of Short/Long Press Key 1 and Key 2 will not have any special functionality.
+However by using an App like Hue Dynamics it is possible to give all 6 keys different actions. In total 8 actions can be assigned.
 
 ## Flashing
 ### JTAG Connector Pinout

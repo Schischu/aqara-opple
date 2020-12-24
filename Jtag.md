@@ -1,11 +1,6 @@
 JTAG
 
-1
-2
-3
-
-
-
+```
 C:\NXP\DK6ProductionFlashProgrammer>DK6Programmer.exe -s COM15 -V2 -m
  COM15: Connected at 115200
  COM15: Detected Unknown JN518x with MAC address 00:00:00:00:00:00:00:00
@@ -226,3 +221,4 @@ C:\NXP\DK6ProductionFlashProgrammer>DK6Programmer.exe -s COM15 -V2 -w ble_fmac0=
   COM15: Programming FLASH
  COM15: 100
  COM15: Memory programmed successfully
+```

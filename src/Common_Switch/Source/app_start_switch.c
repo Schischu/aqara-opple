@@ -174,21 +174,32 @@ PUBLIC void vAppMain(bool_t bColdStart)
         {
             volatile uint32 u32Delay;
 
+
+#if 0
+#if  (defined AQARA_OPPLE)
+            for (u32Delay = 0; u32Delay < 100000; u32Delay++);
+            GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, APP_BOARD_LED1_PIN, 0);
+            for (u32Delay = 0; u32Delay < 100000; u32Delay++);
+            GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, APP_BOARD_LED1_PIN, 1);
+
+#else
             for (u32Delay = 0; u32Delay < 100000; u32Delay++);
             GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, APP_BASE_BOARD_LED1_PIN, 0);
             GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, APP_BASE_BOARD_LED2_PIN, 0);
             for (u32Delay = 0; u32Delay < 100000; u32Delay++);
             GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, APP_BASE_BOARD_LED1_PIN, 1);
             GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, APP_BASE_BOARD_LED2_PIN, 1);
+#endif
+#endif
         }
     }
 
     if(bColdStart)
     {
         // TODO /* idle task commences here */
-        DBG_vPrintf(TRACE_APP_MAIN, "***********************************************\r\n");
-        DBG_vPrintf(TRACE_APP_MAIN, "SWITCH NODE RESET                              \r\n");
-        DBG_vPrintf(TRACE_APP_MAIN, "***********************************************\r\n");
+        DBG_vPrintf(TRACE_APP_MAIN, "\r***********************************************\r\n");
+        DBG_vPrintf(TRACE_APP_MAIN, "\rSWITCH NODE RESET                              \r\n");
+        DBG_vPrintf(TRACE_APP_MAIN, "\r***********************************************\r\n");
     }
 
 #ifdef APP_ANALYZE
@@ -379,27 +390,30 @@ PRIVATE void vSetUpWakeUpConditions(bool_t bDeepSleep)
     /*Set the LED to inputs to reduce power consumption */
     /*the following pins are connected to LEDs hence drive them low*/
     APP_vSetLED(LED1, 0);
+#if  (defined AQARA_OPPLE)
+#else
     APP_vSetLED(LED2, 0);
     APP_vSetLED(LED3, 0);
+#endif
 
-    DBG_vPrintf(TRACE_START, "Going to sleep: Buttons:%08x Mask:%08x\n", APP_BUTTONS_DIO_MASK & (~(1 << APP_BOARD_SW4_PIN)), APP_BUTTONS_DIO_MASK_FOR_DEEP_SLEEP & (~(1 << APP_BOARD_SW4_PIN)));
+    DBG_vPrintf(TRACE_START, "\rSet wake conditions: Buttons:%08x Mask:%08x\n", APP_BUTTONS_DIO_MASK, APP_BUTTONS_DIO_MASK_FOR_DEEP_SLEEP);
 
     #ifdef DEEP_SLEEP_ENABLE
     if(bDeepSleep)
     {
 #ifdef APP_LOW_POWER_API
-        PWR_vWakeUpConfig(APP_BUTTONS_DIO_MASK_FOR_DEEP_SLEEP & (~(1 << APP_BOARD_SW4_PIN)));
+        PWR_vWakeUpConfig(APP_BUTTONS_DIO_MASK_FOR_DEEP_SLEEP);
 #else
-        PWRM_vWakeUpConfig(APP_BUTTONS_DIO_MASK_FOR_DEEP_SLEEP & (~(1 << APP_BOARD_SW4_PIN)));
+        PWRM_vWakeUpConfig(APP_BUTTONS_DIO_MASK_FOR_DEEP_SLEEP);
 #endif
     }
     else
     #endif
     {
 #ifdef APP_LOW_POWER_API
-        PWR_vWakeUpConfig(APP_BUTTONS_DIO_MASK & (~(1 << APP_BOARD_SW4_PIN)));
+        PWR_vWakeUpConfig(APP_BUTTONS_DIO_MASK);
 #else
-        PWRM_vWakeUpConfig(APP_BUTTONS_DIO_MASK & (~(1 << APP_BOARD_SW4_PIN)));
+        PWRM_vWakeUpConfig(APP_BUTTONS_DIO_MASK);
 #endif
     }
 }
@@ -426,11 +440,12 @@ static void PreSleep(void)
 PWRM_CALLBACK(PreSleep)
 #endif
 {
-     DBG_vPrintf(TRACE_START,"Sleeping..\n");
+     DBG_vPrintf(TRUE,"\rGoing to sleep..\n");
      #ifdef DEEP_SLEEP_ENABLE
-         DBG_vPrintf(TRACE_START,"Sleeping...bGoingDeepSleep = %d\n",bGoingDeepSleep());
+         //DBG_vPrintf(TRACE_START,"Sleeping...bGoingDeepSleep = %d\n", bGoingDeepSleep());
          if(bGoingDeepSleep())
          {
+        	 DBG_vPrintf(TRUE,"\rGoing to DEEP sleep..\n");
              u8PowerMode = 0;
          }
          else
@@ -458,7 +473,8 @@ PWRM_CALLBACK(PreSleep)
         vSetUpWakeUpConditions(FALSE);
     #endif
 
-    DBG_vPrintf(TRUE,"\r\nSTART: PreSleep() EXIT, Deep = %d\r\n\r\n", bGoingDeepSleep());
+    //DBG_vPrintf(TRUE,"\r\nSTART: PreSleep() EXIT, Deep = %d\r\n\r\n", bGoingDeepSleep());
+   DBG_vPrintf(TRUE,"\rSTART: PreSleep() EXIT, Deep = %d\n");
 
     /* Disable debug */
     DbgConsole_Deinit();
@@ -526,8 +542,8 @@ PWRM_CALLBACK(Wakeup)
         GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, APP_ANALYZE_ORANGE, 0);
 #endif
     }
-//    DBG_vPrintf(TRACE_START, "\nAPP: Woken up (CB)");
-//    DBG_vPrintf(TRACE_START, "\nAPP: Warm Waking powerStatus = 0x%x", PMC->RESETCAUSE);
+    //DBG_vPrintf(TRUE, "APP: Woken up (CB)\n");
+    DBG_vPrintf(TRUE, "\rAPP: Warm Waking powerStatus = 0x%x", PMC->RESETCAUSE);
 }
 #endif
 

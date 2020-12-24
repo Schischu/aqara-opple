@@ -41,6 +41,7 @@
 /****************************************************************************/
 /* Number of real GPIO lines */
 #define APP_NUMBER_OF_GPIO 22
+
 /* Dummy GPIO bit to use for internal NTAG FD line */
 /* Use 22 as it has special purpose of waking from sleep when masks below are provided to PWRM */
 #define APP_INTERNAL_NTAG_FD_BIT (22)
@@ -52,6 +53,45 @@
 /***        Type Definitions                                              ***/
 /****************************************************************************/
 
+//#define APP_BOARD_SW0_PIN   (14)   /* Pairing PIO14_PIN17 */
+
+#if 0
+00210c09 //_1
+00214c09
+4000
+
+00204c09 //_SW1
+00214c09
+10000
+
+00214c01 //_SW2
+00214c09
+8
+#endif
+
+#if (defined BUTTON_MAP_AQARA_OPPLE)
+	typedef enum {
+		APP_E_BUTTONS_BUTTON_1 = 0,
+		APP_E_BUTTONS_BUTTON_SW1,
+		APP_E_BUTTONS_BUTTON_SW2,
+		APP_E_BUTTONS_BUTTON_SW3,
+		APP_E_BUTTONS_BUTTON_SW4,
+		APP_E_BUTTONS_BUTTON_SW5,
+		APP_E_BUTTONS_BUTTON_SW6
+	} APP_teButtons;
+
+	#define APP_BUTTONS_NUM                     (7UL)
+
+	#define APP_BUTTONS_DIO_MASK                ((1 << APP_BOARD_SW0_PIN)|(1 << APP_BOARD_SW1_PIN)|(1 << APP_BOARD_SW2_PIN) | (1 << APP_BOARD_SW3_PIN) | (1 << APP_BOARD_SW4_PIN) | (1 << APP_BOARD_SW5_PIN) | (1 << APP_BOARD_SW6_PIN))
+	#define APP_BUTTONS_DIO_MASK_FOR_DEEP_SLEEP (                         (1 << APP_BOARD_SW1_PIN)|(1 << APP_BOARD_SW2_PIN) | (1 << APP_BOARD_SW3_PIN) | (1 << APP_BOARD_SW4_PIN) | (1 << APP_BOARD_SW5_PIN) | (1 << APP_BOARD_SW6_PIN))
+	/* OM15076-3 Carrier Board */
+	#define APP_BUTTON_INVERT_MASK                0
+	//#define APP_BUTTON_INVERT_MASK             ((1 << APP_BOARD_SW0_PIN)|(1 << APP_BOARD_SW1_PIN)|(1 << APP_BOARD_SW2_PIN) | (1 << APP_BOARD_SW3_PIN) | (1 << APP_BOARD_SW4_PIN) | (1 << APP_BOARD_SW5_PIN) | (1 << APP_BOARD_SW6_PIN))
+	/* OM15076-1 Carrier Board */
+	//#define APP_BUTTON_INVERT_MASK              (1 << APP_BOARD_SW0_PIN)
+	#define DEMO_GINT0_POL_MASK         ((APP_BUTTON_INVERT_MASK) & 0x3FFFFF)
+	#define DEMO_GINT0_ENA_MASK         ((APP_BUTTONS_DIO_MASK)   & 0x3FFFFF)
+#else
 #if (defined BUTTON_MAP_OM15082)
     #if ((defined APP_NTAG_ICODE) && (APP_BUTTONS_NFC_FD != (0xff)))
         typedef enum {
@@ -102,6 +142,7 @@
     #define APP_BUTTONS_BUTTON_1            (4)
 
     #define APP_BUTTONS_DIO_MASK                (1 << APP_BUTTONS_BUTTON_1)
+#endif
 #endif
 
 typedef enum {

@@ -32,14 +32,16 @@
 # Build each target in turn
 all:
 	rm -f ../../Doc/size.txt
-	$(MAKE) -C ../../Common_Controller/Build/mcux REMOTE=ColorSceneController DR=OM15082 TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 clean -r
-	$(MAKE) -C ../../Common_Controller/Build/mcux REMOTE=ColorSceneController DR=OM15082 TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 all -r
-	$(MAKE) -C ../../Common_Controller/Build/mcux REMOTE=ColorSceneController DR=OM15082 TRACE=1 APP_NTAG_ICODE=1 OTA=1 RAMOPT=1 clean -r
-	$(MAKE) -C ../../Common_Controller/Build/mcux REMOTE=ColorSceneController DR=OM15082 TRACE=1 APP_NTAG_ICODE=1 OTA=1 RAMOPT=1 all -r
-	$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=OM15082 TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 clean -r
-	$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=OM15082 TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 all -r
-	$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=OM15082 TRACE=1 APP_NTAG_ICODE=1 OTA=1 RAMOPT=1 clean -r
-	$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=OM15082 TRACE=1 APP_NTAG_ICODE=1 OTA=1 RAMOPT=1 all -r
-	$(MAKE) -C ../../GpEhSwitch/Build/mcux clean -r
-	$(MAKE) -C ../../GpEhSwitch/Build/mcux all -r
+	#$(MAKE) -C ../../Common_Controller/Build/mcux REMOTE=ColorSceneController DR=OM15082 TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 clean -r
+	#$(MAKE) -C ../../Common_Controller/Build/mcux REMOTE=ColorSceneController DR=OM15082 TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 all -r
+	#$(MAKE) -C ../../Common_Controller/Build/mcux REMOTE=ColorSceneController DR=OM15082 TRACE=1 APP_NTAG_ICODE=1 OTA=1 RAMOPT=1 clean -r
+	#$(MAKE) -C ../../Common_Controller/Build/mcux REMOTE=ColorSceneController DR=OM15082 TRACE=1 APP_NTAG_ICODE=1 OTA=1 RAMOPT=1 all -r
+	#$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=OM15082 TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 clean -r
+	#$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=OM15082 TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 all -r
+	$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=AQARA_OPPLE TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 clean -r
+	$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=AQARA_OPPLE TRACE=1 APP_NTAG_ICODE=0 OTA=0 RAMOPT=0 all -r
+	#$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=OM15082 TRACE=1 APP_NTAG_ICODE=1 OTA=1 RAMOPT=1 clean -r
+	#$(MAKE) -C ../../Common_Switch/Build/mcux SWITCH=DimmerSwitch DR=OM15082 TRACE=1 APP_NTAG_ICODE=1 OTA=1 RAMOPT=1 all -r
+	#$(MAKE) -C ../../GpEhSwitch/Build/mcux clean -r
+	#$(MAKE) -C ../../GpEhSwitch/Build/mcux all -r
 	

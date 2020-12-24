@@ -73,6 +73,9 @@ typedef enum
 typedef struct
 {
     uint8 u8Button;
+#ifdef AQARA_OPPLE
+    uint32 u32DIOState;
+#endif
 #ifdef OM15082
     uint32 u32DIOState;
 #endif
@@ -175,6 +178,7 @@ typedef enum
 typedef struct
 {
     uint8 u8Button;
+    uint8 u8Hold;
     uint32 u32DIOState;
 } APP_tsEventButton;
 

@@ -81,10 +81,8 @@ PUBLIC void APP_taskSwitch(void);
 PUBLIC bool bLightsDiscovered(void);
 PUBLIC void vStartFastPolling(uint8 u8Seconds);
 
-PUBLIC void vAppOnOff(teCLD_OnOff_Command eCmd);
-
-PUBLIC void vAppLevelMove(teCLD_LevelControl_MoveMode eMode, uint8 u8Rate, bool_t bWithOnOff);
-PUBLIC void vAppLevelStop(void);
+PUBLIC void vAppKeyPress(uint8 u8Keycode, uint16_t u16Keyhold);
+PUBLIC void vAppKeyRelease(uint8 u8Keycode, uint16_t u16Keyhold);
 
 PUBLIC void vAppIdentify(uint16 u16Time);
 

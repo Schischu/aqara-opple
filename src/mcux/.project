@@ -31,11 +31,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/CoinCellSwitch</locationURI>
 		</link>
 		<link>
-			<name>ColorSceneController</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/ColorSceneController</locationURI>
-		</link>
-		<link>
 			<name>Common</name>
 			<type>2</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Common</locationURI>
@@ -44,11 +39,6 @@
 			<name>Common_CoinCellSwitch</name>
 			<type>2</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Common_CoinCellSwitch</locationURI>
-		</link>
-		<link>
-			<name>Common_Controller</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Common_Controller</locationURI>
 		</link>
 		<link>
 			<name>Common_Switch</name>
@@ -64,11 +54,6 @@
 			<name>Doc</name>
 			<type>2</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Doc</locationURI>
-		</link>
-		<link>
-			<name>GpEhSwitch</name>
-			<type>2</type>
-			<locationURI>PARENT-1-PROJECT_LOC/GpEhSwitch</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

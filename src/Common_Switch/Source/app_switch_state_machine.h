@@ -47,12 +47,25 @@
 /****************************************************************************/
 #define BUTTON_DELAY_TIME_IN_MS 250
 
+#if 0
 #define SW_ON   (1 << APP_BOARD_SW1_PIN)
 #define SW_OFF  (1 << APP_BOARD_SW2_PIN )
 #define SW_UP   (1 << APP_BOARD_SW3_PIN )
 #define SW_DOWN (1 << APP_BOARD_SW4_PIN )
 //#define NTAG_FD (1 << APP_BUTTONS_NFC_FD)
 #define SW_COMM (1 << APP_BOARD_SW0_PIN)
+#endif
+
+#define SW_COMM (1 << APP_BOARD_SW0_PIN)
+
+#define SW_TL   (1 << APP_BOARD_SW1_PIN)
+#define SW_TR   (1 << APP_BOARD_SW2_PIN)
+
+#define SW_ML   (1 << APP_BOARD_SW3_PIN)
+#define SW_MR   (1 << APP_BOARD_SW4_PIN)
+
+#define SW_BL   (1 << APP_BOARD_SW5_PIN)
+#define SW_BR   (1 << APP_BOARD_SW6_PIN)
 
 /****************************************************************************/
 /***        Type Definitions                                              ***/
@@ -63,43 +76,11 @@ typedef enum{
     SCENE_2
 }te_ScenesId;
 
-typedef enum{
-    LIGHT_CONTROL_MODE,
-    INDIVIDUAL_CONTROL_MODE,
-    COMMISSIONING_MODE,
-    NUMBER_OF_MODES
-}te_SwitchState;
-
-/* Kindly Maintain the order as the button numbers are assigned directly */
-
-typedef enum{
-    COMM_BUTTON_PRESSED,                // 0
-    ON_PRESSED,                         // 1
-    OFF_PRESSED,                        // 2
-    UP_PRESSED,                         // 3
-    DOWN_PRESSED,                       // 4
-    NTAG_FD_PRESSED,                    // 5
-    UP_AND_ON_TOGETHER_PRESSED,         // 6
-    UP_AND_OFF_TOGETHER_PRESSED,        // 7
-    DOWN_AND_OFF_TOGETHER_PRESSED,      // 8
-    DOWN_AND_ON_TOGETHER_PRESSED,       // 9
-    COMM_AND_ON_TOGETHER_PRESSED,       // 10
-    COMM_AND_OFF_TOGETHER_PRESSED,      // 11
-    COMM_AND_UP_TOGETHER_PRESSED,       // 12
-    COMM_AND_DOWN_TOGETHER_PRESSED,     // 13
-    COMM_BUTTON_RELEASED,               // 14
-    UP_RELEASED,                        // 15
-    DOWN_RELEASED,                      // 16
-    NTAG_FD_RELEASED,                   // 17
-    NUMBER_OF_TRANSITION_CODE           // 18
-}te_TransitionCode;
-
 /****************************************************************************/
 /***        Exported Functions                                            ***/
 /****************************************************************************/
 
 PUBLIC void vApp_ProcessKeyCombination(APP_tsEvent sButton);
-PUBLIC te_SwitchState eGetSwitchState(void);
 PUBLIC void APP_cbTimerButtonDelay(void *pvParam);
 PUBLIC void vStopStartModeChangeTimer( uint32 u32Ticks );
 PUBLIC void APP_cbTimerChangeMode(void *pvParam);

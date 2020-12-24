@@ -47,7 +47,7 @@
 /* This is the NXP manufacturer code.If creating new a manufacturer         */
 /* specific command apply to the Zigbee alliance for an Id for your company */
 /* Also update the manufacturer code in .zpscfg: Node Descriptor->misc      */
-#define ZCL_MANUFACTURER_CODE                                0x1037
+#define ZCL_MANUFACTURER_CODE                                0x100b
 
 /* Sets the number of endpoints that will be created by the ZCL library */
 #define ZCL_NUMBER_OF_ENDPOINTS                             1
@@ -55,6 +55,13 @@
 #define ZCL_ATTRIBUTE_READ_SERVER_SUPPORTED
 #define ZCL_ATTRIBUTE_READ_CLIENT_SUPPORTED
 #define ZCL_ATTRIBUTE_WRITE_SERVER_SUPPORTED
+
+#define ZCL_ATTRIBUTE_REPORTING_SERVER_SUPPORTED
+#define ZCL_ATTRIBUTE_REPORTING_CLIENT_SUPPORTED
+#define ZCL_CONFIGURE_ATTRIBUTE_REPORTING_SERVER_SUPPORTED
+//#define ZCL_CONFIGURE_ATTRIBUTE_REPORTING_CLIENT_SUPPORTED
+#define ZCL_READ_ATTRIBUTE_REPORTING_CONFIGURATION_SERVER_SUPPORTED
+//#define ZCL_READ_ATTRIBUTE_REPORTING_CONFIGURATION_CLIENT_SUPPORTED
 
 /* Enable wild card profile */
 #define ZCL_ALLOW_WILD_CARD_PROFILE
@@ -75,6 +82,9 @@
 #define IDENTIFY_CLIENT
 #define IDENTIFY_SERVER
 
+#define CLD_POWER_CONFIGURATION
+#define POWER_CONFIGURATION_SERVER
+
 #define CLD_GROUPS
 #define GROUPS_CLIENT
 
@@ -88,6 +98,10 @@
     #define CLD_OTA
     #define OTA_CLIENT
 #endif
+
+#define CLD_PHILIPS
+#define PHILIPS_CLIENT
+#define PHILIPS_SERVER
 
 /****************************************************************************/
 /*             Basic Cluster - Optional Attributes                          */
@@ -110,11 +124,11 @@
 #define CLD_BAS_APP_VERSION         (1)
 #define CLD_BAS_STACK_VERSION       (2)
 #define CLD_BAS_HARDWARE_VERSION    (1)
-#define CLD_BAS_MANUF_NAME_SIZE     (3)
-#define CLD_BAS_MODEL_ID_SIZE       (16)
+#define CLD_BAS_MANUF_NAME_SIZE     (7)
+#define CLD_BAS_MODEL_ID_SIZE       (6)
 #define CLD_BAS_DATE_SIZE           (8)
 #define CLD_BAS_POWER_SOURCE        E_CLD_BAS_PS_BATTERY
-#define CLD_BAS_SW_BUILD_SIZE       (9)
+#define CLD_BAS_SW_BUILD_SIZE       (11)
 #define CLD_BAS_URL_SIZE            (12)
 #define CLD_BAS_PCODE_SIZE          (4)
 #define CLD_BAS_DEVICE_CLASS        (0)
@@ -160,6 +174,15 @@
 /* commands to the identify cluster.                                        */
 /****************************************************************************/
 #define   CLD_IDENTIFY_CMD_TRIGGER_EFFECT
+
+/****************************************************************************/
+/*             Identify Cluster - Optional Commands                         */
+/*                                                                          */
+/* Add the following #define's to your zcl_options.h file to add optional   */
+/* commands to the identify cluster.                                        */
+/****************************************************************************/
+#define CLD_PWRCFG_ATTR_BATTERY_PERCENTAGE_REMAINING
+#define CLD_PWRCFG_ATTR_ID_ATTRIBUTE_REPORTING_STATUS
 /****************************************************************************/
 /***        Type Definitions                                              ***/
 /****************************************************************************/

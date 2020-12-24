@@ -32,7 +32,8 @@
 ############################################################################
 
 SWITCH ?= DimmerSwitch
-DR    ?= OM15082
+#DR    ?= OM15082
+DR    ?= AQARA_OPPLE
 TYPE  ?= EXP_BOARD
 REV   ?= r1v2
 
@@ -55,9 +56,9 @@ DEBUG                  ?= NONE
 HEAP_SIZE              ?= 0x2F4
 
 # Set specific chip	(choose one)
-JENNIC_CHIP           ?= K32W061
+#JENNIC_CHIP           ?= K32W061
 #JENNIC_CHIP           ?= K32W041
-#JENNIC_CHIP           ?= JN5189
+JENNIC_CHIP           ?= JN5189
 #JENNIC_CHIP           ?= JN5188
 
 # Legacy chip family (always JN518x)
@@ -82,7 +83,8 @@ SDK_DEVICE_FAMILY      ?= JN5189
 # Board
 SDK_BOARD              ?= jn5189dk6
 # SDK folder
-SDK_FOLDER             ?= JN5189DK6
+#SDK_FOLDER             ?= JN5189DK6
+SDK_FOLDER             ?= SDK_2.6.1_JN5189DK6
 # OTA Chip string
 OTA_CHIP_STRING         = $(JENNIC_CHIP)-
 endif
@@ -235,8 +237,8 @@ CFLAGS  += -DPRINTF_ADVANCED_ENABLE
 #CFLAGS += -DDEBUG_APP_BUTTON
 #CFLAGS += -DDEBUG_APP
 CFLAGS += -DDEBUG_START_UP
-#CFLAGS += -DDEBUG_SWITCH_STATE
-#CFLAGS += -DDEBUG_ZCL
+CFLAGS += -DDEBUG_SWITCH_STATE
+CFLAGS += -DDEBUG_ZCL
 CFLAGS += -DDEBUG_SWITCH_TASK
 CFLAGS += -DDEBUG_SWITCH_NODE
 #CFLAGS += -DDEBUG_APP_OTA
@@ -266,11 +268,11 @@ endif
 # Use if application directory contains multiple targets
 
 # Toolchain paths
-TOOLCHAIN_DIR_PATH  = ../../../../../MCUXpressoIDE_11.2.0_4120/ide/tools
+TOOLCHAIN_DIR_PATH  = C:/NXP/MCUXpressoIDE_11.2.1_4149/ide/tools
 TOOLCHAIN_PATH      = $(TOOLCHAIN_DIR_PATH)/bin
 
 # SDK paths
-SDK2_BASE_DIR       =  ../../../../../SDKPackages/$(SDK_FOLDER)
+SDK2_BASE_DIR       =  C:/NXP/SDKPackages/$(SDK_FOLDER)
 
 # Application paths
 APP_BASE            =  ../../..
@@ -284,7 +286,7 @@ MEMSIZE2_EXISTS     = $(wildcard $(MEMSIZE2))
 AWK_SRC             = $(APP_BASE)/Common/Awk
 
 # Tool paths
-AWK_EXE             = $(APP_BASE)/../../gawk-3.1.6-1-bin/bin/gawk.exe
+AWK_EXE             = C:\NXP/gawk-3.1.6-1-bin/bin/gawk.exe
 
 ###############################################################################
 # Application Source files

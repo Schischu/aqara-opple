@@ -483,8 +483,11 @@ PRIVATE void APP_ZCL_cbEndpointCallback(tsZCL_CallBackEvent *psEvent)
 PRIVATE void vSetThreeLeds( bool led1, bool led2, bool led3 )
 {
     APP_vSetLED(LED1, led1);
+#if  (defined AQARA_OPPLE)
+#else
     APP_vSetLED(LED2, led2);
     APP_vSetLED(LED3, led3);
+#endif
 }
 
 /****************************************************************************/

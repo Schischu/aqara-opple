@@ -125,7 +125,7 @@
 #define RADIO_TEMP_UPDATE                  TRUE
 
 #ifndef PDM_ID_BASE_RADIO /* Eventually these will be defined in PDM.h */
-#define PDM_ID_BASE_RADIO  (0xff00) /* 0xff00–0xffff: Radio driver */
+#define PDM_ID_BASE_RADIO  (0xff00) /* 0xff00ï¿½0xffff: Radio driver */
 #define PDM_ID_RADIO_SETTINGS (PDM_ID_BASE_RADIO + 0x0000) /* Holds radio KMOD calibration data */
 #endif
 
@@ -346,9 +346,13 @@ PUBLIC void APP_vSetUpHardware(void)
     GPIO_PinInit(GPIO, APP_BOARD_GPIO_PORT, APP_ANALYZE_GRAY  , &analyze_config);
 #endif
 
+#if defined(AQARA_OPPLE)
+    GPIO_PinInit(GPIO, APP_BOARD_GPIO_PORT, APP_BOARD_LED1_PIN, &led_config);
+#else
     /* Initialise output LED GPIOs */
     GPIO_PinInit(GPIO, APP_BOARD_GPIO_PORT, APP_BASE_BOARD_LED1_PIN, &led_config);
     GPIO_PinInit(GPIO, APP_BOARD_GPIO_PORT, APP_BASE_BOARD_LED2_PIN, &led_config);
+#endif
 
 #ifdef WATCHDOG_ALLOWED
     /* The WDT divides the input frequency into it by 4 */
@@ -409,7 +413,8 @@ PUBLIC void APP_vInitResources(void)
     ZTIMER_eOpen(&u8TimerPoll,          APP_cbTimerPoll,        NULL, ZTIMER_FLAG_PREVENT_SLEEP);
     ZTIMER_eOpen(&u8TimerButtonScan,    APP_cbTimerButtonScan,  NULL, ZTIMER_FLAG_PREVENT_SLEEP);
     ZTIMER_eOpen(&u8TimerTick,          APP_cbTimerZclTick,     NULL, ZTIMER_FLAG_PREVENT_SLEEP);
-#if (defined APP_NTAG_ICODE)
+
+    #if (defined APP_NTAG_ICODE)
     ZTIMER_eOpen(&u8TimerNtag,          APP_cbNtagTimer,        NULL, ZTIMER_FLAG_PREVENT_SLEEP);
 #endif
     /* Create all the queues */
@@ -443,6 +448,15 @@ PUBLIC void APP_vInitResources(void)
  ****************************************************************************/
 PUBLIC void APP_vInitLeds(void)
 {
+#if  (defined AQARA_OPPLE)
+    /* Define the init structure for the output LED pin*/
+    gpio_pin_config_t led_config = {
+        kGPIO_DigitalOutput, OFF,
+    };
+
+    GPIO_PinInit(GPIO, APP_BOARD_GPIO_PORT, APP_BOARD_LED1_PIN, &led_config);
+#endif
+
 #if  (defined OM15082)
     /* Define the init structure for the output LED pin*/
     gpio_pin_config_t led_config = {
@@ -472,6 +486,26 @@ PUBLIC void APP_vInitLeds(void)
  ****************************************************************************/
 PUBLIC void APP_vSetLED(uint8 u8Led, bool_t bOn)
 {
+#ifdef AQARA_OPPLE
+    uint32 u32LedPin = 0;
+
+
+    switch (u8Led)
+    {
+    case LED1:
+        u32LedPin = APP_BOARD_LED1_PIN;
+        break;
+    default:
+        u32LedPin -= 1;
+        break;
+    }
+
+    if (u32LedPin != 0xffffffff)
+    {
+        GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, u32LedPin, bOn);
+    }
+#endif
+
 #ifdef OM15082
     uint32 u32LedPin = 0;
 

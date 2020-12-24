@@ -55,7 +55,7 @@ tsZLO_DimmerSwitchDevice sSwitch;
 /****************************************************************************/
 /***        Exported Functions                                            ***/
 /****************************************************************************/
-const uint8 u8MyEndpoint = DIMMERSWITCH_SWITCH_ENDPOINT;
+const uint8 u8MyEndpoint = DIMMERSWITCH_HA_ENDPOINT;
 
 /****************************************************************************
  **
@@ -77,7 +77,7 @@ const uint8 u8MyEndpoint = DIMMERSWITCH_SWITCH_ENDPOINT;
 teZCL_Status eApp_ZCL_RegisterEndpoint(tfpZCL_ZCLCallBackFunction fptr)
 
 {
-    return eZLO_RegisterDimmerSwitchEndPoint(DIMMERSWITCH_SWITCH_ENDPOINT,
+    return eZLO_RegisterDimmerSwitchEndPoint(DIMMERSWITCH_HA_ENDPOINT,
                                                 fptr,
                                                 &sSwitch);
 }
@@ -98,6 +98,7 @@ void vAPP_ZCL_DeviceSpecific_Init()
 {
     /* Initialise the strings in Basic */
     uint8   au8PCode[CLD_BAS_PCODE_SIZE] = { 1, 2, 3, 4};
+#if 0
     memcpy(sSwitch.sBasicServerCluster.au8ManufacturerName, "NXP", CLD_BAS_MANUF_NAME_SIZE);
     memcpy(sSwitch.sBasicServerCluster.au8ModelIdentifier, "ZLO-DimmerSwitch", CLD_BAS_MODEL_ID_SIZE);
     memcpy(sSwitch.sBasicServerCluster.au8DateCode, "20160301", CLD_BAS_DATE_SIZE);
@@ -105,6 +106,16 @@ void vAPP_ZCL_DeviceSpecific_Init()
     sSwitch.sBasicServerCluster.eGenericDeviceType = E_CLD_BAS_GENERIC_DEVICE_TYPE_WALL_SWITCH;
     memcpy(sSwitch.sBasicServerCluster.au8ProductURL, "www.nxp.com", CLD_BAS_URL_SIZE);
     memcpy(sSwitch.sBasicServerCluster.au8ProductCode, au8PCode, CLD_BAS_PCODE_SIZE);
+#else
+    sSwitch.sBasicServerCluster.u8ApplicationVersion = 0x0002;
+    memcpy(sSwitch.sBasicServerCluster.au8ManufacturerName, "Philips", CLD_BAS_MANUF_NAME_SIZE);
+    memcpy(sSwitch.sBasicServerCluster.au8ModelIdentifier, "RWL021", CLD_BAS_MODEL_ID_SIZE);
+    //memcpy(sSwitch.sBasicServerCluster.au8DateCode, "20160301", CLD_BAS_DATE_SIZE);
+    memcpy(sSwitch.sBasicServerCluster.au8SWBuildID, "6.1.1.28573", CLD_BAS_SW_BUILD_SIZE);
+    sSwitch.sBasicServerCluster.eGenericDeviceType = E_CLD_BAS_GENERIC_DEVICE_TYPE_WALL_SWITCH;
+    //memcpy(sSwitch.sBasicServerCluster.au8ProductURL, "www.nxp.com", CLD_BAS_URL_SIZE);
+    //memcpy(sSwitch.sBasicServerCluster.au8ProductCode, au8PCode, CLD_BAS_PCODE_SIZE);
+#endif
 
 }
 /****************************************************************************
@@ -171,7 +182,7 @@ PUBLIC void vAPP_ZCL_DeviceSpecific_IdentifyOff(void)
  ****************************************************************************/
 PUBLIC uint8 app_u8GetDeviceEndpoint( void)
 {
-    return DIMMERSWITCH_SWITCH_ENDPOINT;
+    return DIMMERSWITCH_HA_ENDPOINT;
 }
 /****************************************************************************/
 /***        END OF FILE                                                   ***/

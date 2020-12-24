@@ -156,6 +156,8 @@ PRIVATE uint8 u8NumOfPollFailure = 0;
 extern void BDB_vRejoinCycle(bool_t bSkipDirectJoin);
 #endif
 
+uint16 u16TargetAddress = 0x0000;
+
 /****************************************************************************/
 /***        Exported Functions                                            ***/
 /****************************************************************************/
@@ -271,6 +273,7 @@ PUBLIC void APP_vInitialiseNode(bool_t bColdStart)
     APP_vInitLeds();
     APP_bButtonInitialise();
 
+#if 0
     if(bColdStart)
     {
         /*In case of a deep sleep device any button wake up would cause a PDM delete , only check for User Interface
@@ -281,6 +284,7 @@ PUBLIC void APP_vInitialiseNode(bool_t bColdStart)
             vDisplayPDMUsage();
         #endif
     }
+#endif
 
 #ifdef APP_ANALYZE
     GPIO_PinWrite(GPIO, APP_BOARD_GPIO_PORT, APP_ANALYZE_PURPLE, 1);
@@ -333,6 +337,17 @@ PUBLIC void APP_vBdbCallback(BDB_tsBdbEvent *psBdbEvent)
 
         case BDB_EVENT_INIT_SUCCESS:
             DBG_vPrintf(TRACE_SWITCH_NODE,"APP: BdbInitSuccessful\r\n");
+#if 0
+            // Go to deep sleep
+            #ifdef SLEEP_ENABLE
+                vLoadKeepAliveTime(0);
+                #ifdef DEEP_SLEEP_ENABLE
+                    vLoadDeepSleepTimer(0);
+                    vUpdateKeepAliveTimer();
+			sDeviceDesc.eNodeState = E_GOING_DEEP;
+                #endif
+            #endif
+#endif
             break;
 
         case BDB_EVENT_REJOIN_FAILURE: // only for ZED
@@ -704,7 +719,22 @@ PUBLIC void APP_taskSwitch(void)
         else
 #endif
         {
-            if (sDeviceDesc.eNodeState == E_RUNNING)
+        	if (sDeviceDesc.eNodeState == 4)
+        	{
+                switch(sAppEvent.eType)
+                {
+                    case APP_E_EVENT_BUTTON_DOWN:
+                    case APP_E_EVENT_BUTTON_UP:
+						DBG_vPrintf(TRUE, "\rButton Event = %d - ",sAppEvent.eType);
+						DBG_vPrintf(TRUE, "Button Number = %d - ",sAppEvent.uEvent.sButton.u8Button);
+						DBG_vPrintf(TRUE, "DIO State    = %08x\n",sAppEvent.uEvent.sButton.u32DIOState);
+						break;
+
+                    default:
+                    break;
+                }
+        	}
+        	else if (sDeviceDesc.eNodeState == E_RUNNING)
             {
                 switch(sAppEvent.eType)
                 {
@@ -726,10 +756,23 @@ PUBLIC void APP_taskSwitch(void)
             }
             else if(sDeviceDesc.eNodeState == E_STARTUP)
             {
-                DBG_vPrintf(TRACE_SWITCH_NODE," Start Steering \r\n");
-                sBDB.sAttrib.u32bdbPrimaryChannelSet = BDB_PRIMARY_CHANNEL_SET;
-                sBDB.sAttrib.u32bdbSecondaryChannelSet = BDB_SECONDARY_CHANNEL_SET;
-                BDB_eNsStartNwkSteering();
+                switch(sAppEvent.eType)
+                {
+                    case APP_E_EVENT_BUTTON_DOWN:
+                    case APP_E_EVENT_BUTTON_UP:
+						DBG_vPrintf(TRUE, "\rButton Event = %d - ",sAppEvent.eType);
+						DBG_vPrintf(TRUE, "Button Number = %d - ",sAppEvent.uEvent.sButton.u8Button);
+						DBG_vPrintf(TRUE, "Hold = %d - ",sAppEvent.uEvent.sButton.u8Hold);
+						DBG_vPrintf(TRUE, "DIO State    = %08x\n",sAppEvent.uEvent.sButton.u32DIOState);
+						//break;
+
+                    default:
+                        DBG_vPrintf(TRACE_SWITCH_NODE,"Startup: Start Network Steering\r\n");
+                        sBDB.sAttrib.u32bdbPrimaryChannelSet = BDB_PRIMARY_CHANNEL_SET;
+                        sBDB.sAttrib.u32bdbSecondaryChannelSet = BDB_SECONDARY_CHANNEL_SET;
+                        BDB_eNsStartNwkSteering();
+                    break;
+                }
             }
         }
     }
@@ -881,9 +924,6 @@ PUBLIC void vStopAllTimers(void)
  ****************************************************************************/
 PUBLIC void vUpdateKeepAliveTimer(void)
 {
-    te_SwitchState eSwitchState = eGetSwitchState();
-
-    if( (eSwitchState == LIGHT_CONTROL_MODE ) || (eSwitchState == INDIVIDUAL_CONTROL_MODE ) )
     {
         /* OTA enabled ? */
         #ifdef CLD_OTA
@@ -998,11 +1038,6 @@ PUBLIC void vUpdateKeepAliveTimer(void)
             {
             }
         }
-    }
-    else
-    {
-        vReloadSleepTimers();
-
     }
 }
 #endif
@@ -1131,74 +1166,75 @@ PUBLIC void vAppIdentify( uint16 u16Time) {
     }
 }
 
-/****************************************************************************
- *
- * NAME: vAppLevelMove
- *
- * DESCRIPTION:
- *    Send out Level Up or Down command, the address mode(group/unicast/bound etc)
- *    is taken from the selected light index set by the caller
- * RETURNS:
- * void
- *
- ****************************************************************************/
-PUBLIC void vAppLevelMove(teCLD_LevelControl_MoveMode eMode, uint8 u8Rate, bool_t bWithOnOff)
+PUBLIC void vAppKeyPress(uint8 u8Keycode, uint16_t u16Keyhold)
 {
-    tsCLD_LevelControl_MoveCommandPayload sPayload = {0};
+	tsCLD_Philips_KeypressRequestPayload sPayload = {0};
     uint8 u8Seq;
-    tsZCL_Address sDestinationAddress;
     teZCL_Status eStatus;
+    tsZCL_Address sAddress;
 
-    sDestinationAddress.eAddressMode = E_ZCL_AM_BOUND_NON_BLOCKING;
+    sAddress.eAddressMode = E_ZCL_AM_SHORT_NO_ACK;
+    //sDestinationAddress.eAddressMode = E_ZCL_AM_BOUND_NON_BLOCKING;
+    sAddress.uAddress.u16DestinationAddress = 0xf376;
 
-    sPayload.u8Rate = u8Rate;
-    sPayload.u8MoveMode = eMode;
+    sPayload.u8Keycode  = u8Keycode;
 
-    eStatus = eCLD_LevelControlCommandMoveCommandSend(
-                                    u8MyEndpoint,
-                                    0,
-                                    &sDestinationAddress,
+    if (u16Keyhold == 0)
+    {
+    	sPayload.u8Keystate = E_CLD_PHILIPS_KEYPRESS_STATE_PRESSED;
+    	sPayload.u16Keyhold = 0x0000;
+    }
+    else
+    {
+    	sPayload.u8Keystate = E_CLD_PHILIPS_KEYPRESS_STATE_HOLD;
+    	sPayload.u16Keyhold = u16Keyhold;
+    }
+
+    eStatus = eCLD_PhilipsCommandKeypressCommandSend(
+    								u8MyEndpoint,
+    		                        65,
+                                    &sAddress,
                                     &u8Seq,
-                                    bWithOnOff, /* with on off */
                                     &sPayload);
     if (eStatus != E_ZCL_SUCCESS)
     {
-        DBG_vPrintf(TRACE_SWITCH_NODE, "Send Level Move Failed x%02x Last error %02x\r\n",
+        DBG_vPrintf(TRACE_SWITCH_NODE, "Send KeyPress Failed x%02x Last error %02x\r\n",
                         eStatus, eZCL_GetLastZpsError());
     }
 }
 
-
-/****************************************************************************
- *
- * NAME: vAppLevelStop
- *
- * DESCRIPTION:
- *    Send out Level Stop command, the address mode(group/unicast/bound etc)
- *    is taken from the selected light index set by the caller
- * RETURNS:
- * void
- *
- ****************************************************************************/
-PUBLIC void vAppLevelStop(void)
+PUBLIC void vAppKeyRelease(uint8 u8Keycode, uint16_t u16Keyhold)
 {
-    tsCLD_LevelControl_StopCommandPayload sPayload = {0};
+	tsCLD_Philips_KeypressRequestPayload sPayload = {0};
     uint8 u8Seq;
-    tsZCL_Address sDestinationAddress;
     teZCL_Status eStatus;
+    tsZCL_Address sAddress;
 
-    sDestinationAddress.eAddressMode = E_ZCL_AM_BOUND_NON_BLOCKING;
-    eStatus = eCLD_LevelControlCommandStopCommandSend(
-                        u8MyEndpoint,
-                        0,
-                        &sDestinationAddress,
+    sAddress.eAddressMode = E_ZCL_AM_SHORT_NO_ACK;
+    sAddress.uAddress.u16DestinationAddress = 0xf376;
+
+    sPayload.u8Keycode  = u8Keycode;
+    if (u16Keyhold == 0)
+    {
+		sPayload.u8Keystate = E_CLD_PHILIPS_KEYPRESS_STATE_RELEASED;
+		sPayload.u16Keyhold = 0x0001;
+    }
+    else
+    {
+		sPayload.u8Keystate = E_CLD_PHILIPS_KEYPRESS_STATE_RELEASED_LONG;
+    	sPayload.u16Keyhold = u16Keyhold;
+    }
+
+    eStatus = eCLD_PhilipsCommandKeypressCommandSend(
+    					u8MyEndpoint,
+    		            65,
+                        &sAddress,
                         &u8Seq,
-                        FALSE, /* without on off */
                         &sPayload);
 
     if (eStatus != E_ZCL_SUCCESS)
     {
-        DBG_vPrintf(TRACE_SWITCH_NODE, "Send Level Stop Failed x%02x Last error %02x\r\n",
+        DBG_vPrintf(TRACE_SWITCH_NODE, "Send KeyRelease Failed x%02x Last error %02x\r\n",
                         eStatus, eZCL_GetLastZpsError());
     }
 }

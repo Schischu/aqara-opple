@@ -63,6 +63,37 @@
 //#define GINT0 GINT
 #define DEMO_GINT0_PORT kGINT_Port0
 
+#if (defined AQARA_OPPLE)
+#if 1
+#define APP_BOARD_SW0_PIN   (14)   /* Pairing PIO14_PIN17 */
+
+#define APP_BOARD_SW1_PIN   (16)   /* TL PIO15_PIN18 */
+#define APP_BOARD_SW2_PIN   (3)   /* TR PIO3_PIN6*/
+#define APP_BOARD_SW3_PIN   (21)   /* ML PIO21_PIN25 */
+#define APP_BOARD_SW4_PIN   (0)   /* MR PIO0_PIN3 */
+#define APP_BOARD_SW5_PIN   (11)   /* BL PIO11_PIN14 */
+#define APP_BOARD_SW6_PIN   (10)   /* BR PIO10_PIN13 */
+
+#define APP_BOARD_LED1_PIN  (15)  /* TL PIO15_PIN18*/
+#else
+#define APP_BOARD_SW0_PIN   (17)   /* Pairing PIO14_PIN17 */
+
+#define APP_BOARD_SW1_PIN   (18)   /* TL PIO15_PIN18 */
+#define APP_BOARD_SW2_PIN   (6)   /* TR PIO3_PIN6*/
+#define APP_BOARD_SW3_PIN   (25)   /* ML PIO21_PIN25 */
+#define APP_BOARD_SW4_PIN   (3)   /* MR PIO0_PIN3 */
+#define APP_BOARD_SW5_PIN   (14)   /* BL PIO11_PIN14 */
+#define APP_BOARD_SW6_PIN   (13)   /* BR PIO10_PIN13 */
+
+#define APP_BOARD_LED1_PIN  (18)  /* TL PIO15_PIN18*/
+#endif
+
+#define ON (1)
+#define OFF (0)
+#define LED1  0
+
+#endif
+
 #if (defined OM15082)
 
 #define APP_BOARD_SW0_PIN   (1)   /* base board switch */

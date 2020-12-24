@@ -1,0 +1,1729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ksdk:manifest xmlns:ksdk="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SDK_2.x_JN5189DK6" name="JN5189DK6" brief="This is SDK version 2.6.1 manifest file. It describes the content of the JN5189DK6 and additional settings for tools that support SDK version 2.6.1" format_version="3.4" api_version="2.0.0" configuration="f5183d29adda98dc67ad3876d7b57ed3" xsi:schemaLocation="http://nxp.com/ksdk/2.0/ksdk_manifest_v3.0.xsd http://nxp.com/mcuxpresso/sdk/sdk_manifest_v3.4.xsd">
+  <!--Timestamp (UTC): 2020-11-12 22:57:46.918987-->
+  <!--This manifest is generated based on sdk repo commit: 287c8ef690711625277dfe80bc1b7ad504fbeff7-->
+  <defines>
+    <define name="CPU_$|package|" value=""/>
+    <define name="CPU_$|package|_$|core|" value=""/>
+  </defines>
+  <ksdk id="MCUXpresso261" name="MCUXpresso261" version="2.6.1" revision="374 2020-08-14"/>
+  <compilers>
+    <compiler id="compiler_gcc" name="gcc" type="gcc"/>
+  </compilers>
+  <toolchainSettings>
+    <toolchainSetting id="com.nxp.mcuxpresso" name="mcuxpresso" version="11.2.0" full_name="MCUXpresso IDE" compiler="compiler_gcc" toolchain="mcuxpresso">
+      <option id="gnu.cpp.compiler.option.optimization.flags" type="string" user_name="">
+        <value>-fno-common</value>
+      </option>
+      <option id="gnu.c.compiler.option.optimization.flags" type="string" user_name="">
+        <value>-fno-common</value>
+      </option>
+      <option id="gnu.cpp.link.option.nostdlibs" type="boolean" user_name="">
+        <value>true</value>
+      </option>
+      <option id="com.crt.advproject.link.cpp.flashconfigenable" type="boolean" user_name="">
+        <value>true</value>
+      </option>
+      <option id="com.crt.advproject.link.flashconfigenable" type="boolean" user_name="">
+        <value>true</value>
+      </option>
+      <option id="gnu.c.link.option.nostdlibs" type="boolean" user_name="">
+        <value>true</value>
+      </option>
+    </toolchainSetting>
+  </toolchainSettings>
+  <toolchains>
+    <toolchain id="mcuxpresso" name="MCUXpresso_IDE" version="11.2.0" full_name="MCUXpresso IDE" compiler="compiler_gcc" type="mcuxpresso" vendor="NXP Semiconductors" vendor_url="http://www.nxp.com">
+      <debug>
+        <debug_configuration id="com.crt.advproject.config.exe.release" name="Release Configuration" probe="LinkServer">
+          <scripts>
+            <script type="init" silent="false" emulators="${gdb.stub} -mi -info-emu">
+              <script>
+set remotetimeout 60000
+##target_extended_remote##
+set mem inaccessible-by-default ${mem.access}
+mon ondisconnect ${ondisconnect}
+set arm force-mode thumb
+${load}</script>
+            </script>
+            <script type="run" silent="false" emulators="${gdb.stub} -mi -info-emu">
+              <script>${run}</script>
+            </script>
+          </scripts>
+          <params>
+            <params id="vector.catch.release.mcuxpresso" name="vector.catch" value="false"/>
+            <params id="internal.cache.release.mcuxpresso" name="internal.cache" value="Disable"/>
+          </params>
+        </debug_configuration>
+        <debug_configuration id="com.crt.advproject.config.exe.debug" name="Debug Configuration" probe="LinkServer">
+          <scripts>
+            <script type="init" silent="false" emulators="${gdb.stub} -mi -info-emu">
+              <script>
+set remotetimeout 60000
+##target_extended_remote##
+set mem inaccessible-by-default ${mem.access}
+mon ondisconnect ${ondisconnect}
+set arm force-mode thumb
+${load}</script>
+            </script>
+            <script type="run" silent="false" emulators="${gdb.stub} -mi -info-emu">
+              <script>${run}</script>
+            </script>
+          </scripts>
+          <params>
+            <params id="vector.catch.debug.mcuxpresso" name="vector.catch" value="false"/>
+            <params id="internal.cache.debug.mcuxpresso" name="internal.cache" value="Disable"/>
+          </params>
+        </debug_configuration>
+        <debug_configuration id="com.nxp.mcuxpresso.core.debug.support.segger.debug" name="Debug Configuration" probe="Segger"/>
+        <debug_configuration id="com.nxp.mcuxpresso.core.debug.support.segger.release" name="Release Configuration" probe="Segger"/>
+      </debug>
+    </toolchain>
+  </toolchains>
+  <boards>
+    <board id="jn5189dk6" name="JN5189DK6" href="http://www.nxp.com/products/" version="1.0.0" package="JN5189HN">
+      <description>The LPCXpresso family of boards provides a powerful and flexible development system for NXP®'s Cortex-M MCUs</description>
+      <image path="docs/images" type="image">
+        <files mask="JN5189DK6.gif"/>
+      </image>
+      <metadataSet>
+        <metadata key="html">
+          <specific>
+            <content>The LPCXpresso family of boards provides a powerful and flexible development system for NXP®'s Cortex-M MCUs. The LPCXpresso54114 board has been developed by NXP to enable evaluation of and prototyping with the LPC54110 family of MCUs and its low power features make it as easy as possible to get started with your project.&lt;br/&gt;LPCXpresso™ is a low-cost development platform available from NXP supporting NXP's ARM-based microcontrollers. The platform is comprised of a simplified Eclipse-based IDE and low-cost target boards which include an attached JTAG debugger. LPCXpresso is an end-to-end solution enabling embedded engineers to develop their applications from initial evaluation to final production.</content>
+          </specific>
+        </metadata>
+      </metadataSet>
+      <examples>
+        <example id="jn5189dk6_aes" name="aes" brief="The AES Example project is a demonstration program that uses the KSDK software to encrypt plain textand decrypt it back using AES algorithm. CBC and GCM modes are demonstrated." toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/aes">
+          <external path="boards/jn5189dk6/driver_examples/aes" type="xml">
+            <files mask="aes.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_cic_irb_example" name="cic_irb_example" brief="&#10;The IRB Example project is a demonstration program that uses the Infra-Red Blaster (IRB) peripheral software.&#10;It performs a sequence of sending packets.&#10;&#10;" toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/cic_irb">
+          <external path="boards/jn5189dk6/driver_examples/cic_irb" type="xml">
+            <files mask="cic_irb_example.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_cmp_input_external" name="cmp_input_external" brief="The cmp input external example demostrate the comparator's functionality with two external voltage source, the example detect high level interrupt and lower level interrupt.&#10;" toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/cmp/input_external">
+          <external path="boards/jn5189dk6/driver_examples/cmp/input_external" type="xml">
+            <files mask="cmp_input_external.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_cmp_input_internal" name="cmp_input_internal" brief="The cmp input internal example demostrate the comparator's functionality with one external voltage source and one internal voltage reference source, the example detect rasing edge interrupt and falling edge interrupt.&#10;" toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/cmp/input_internal">
+          <external path="boards/jn5189dk6/driver_examples/cmp/input_internal" type="xml">
+            <files mask="cmp_input_internal.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_ctimer_match_example" name="ctimer_match_example" brief="The CTimer Example project is to demonstrate usage of the KSDK ctimer driver.In this example, the match feature of the CTimer is used to toggle the output level." toolchain="mcuxpresso" category="driver_examples/ctimer" path="boards/jn5189dk6/driver_examples/ctimer/simple_match">
+          <external path="boards/jn5189dk6/driver_examples/ctimer/simple_match" type="xml">
+            <files mask="ctimer_match_example.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_ctimer_match_interrupt_example" name="ctimer_match_interrupt_example" brief="The Simple Match Interrupt project is to demonstrate usage of the SDK CTimer driver with interrupt callback functionsIn this example the upon match and IO pin connected to the LED is toggled and the timer is reset, so it would generate a square wave.With an interrupt callback the match value is changed frequently in such a way that the frequency of the output square wave is increased gradually." toolchain="mcuxpresso" category="driver_examples/ctimer" path="boards/jn5189dk6/driver_examples/ctimer/simple_match_interrupt">
+          <external path="boards/jn5189dk6/driver_examples/ctimer/simple_match_interrupt" type="xml">
+            <files mask="ctimer_match_interrupt_example.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_dma_m2m_polling" name="dma_m2m_polling" brief="The DMA memory to memory example is a simple demonstration program that uses the SDK software.It executes one shot polling transfer from source buffer to destination buffer using the SDK DMA drivers.The purpose of this example is to show how to use the DMA and to provide a simple example for debugging and further development." toolchain="mcuxpresso" category="driver_examples/dma" path="boards/jn5189dk6/driver_examples/dma/m2m_polling">
+          <external path="boards/jn5189dk6/driver_examples/dma/m2m_polling" type="xml">
+            <files mask="dma_m2m_polling.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_dma_memory_to_memory" name="dma_memory_to_memory" brief="The DMA memory to memory example is a simple demonstration program that uses the SDK software.It executes one shot transfer from source buffer to destination buffer using the SDK DMA drivers.The purpose of this example is to show how to use the DMA and to provide a simple example fordebugging and further development." toolchain="mcuxpresso" category="driver_examples/dma" path="boards/jn5189dk6/driver_examples/dma/memory_to_memory">
+          <external path="boards/jn5189dk6/driver_examples/dma/memory_to_memory" type="xml">
+            <files mask="dma_memory_to_memory.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_dmic_dma" name="dmic_dma" brief="This example shows how to use DMA to transfer data from DMIC to memory." toolchain="mcuxpresso" category="driver_examples/dmic" path="boards/jn5189dk6/driver_examples/dmic/dmic_dma">
+          <external path="boards/jn5189dk6/driver_examples/dmic/dmic_dma" type="xml">
+            <files mask="dmic_dma.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_dmic_hwvad" name="dmic_hwvad" brief="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~This demo explains how built in HWVAD( HW voice activity detector) in LPC5411x can be used towake up the device from sleep mode" toolchain="mcuxpresso" category="driver_examples/dmic" path="boards/jn5189dk6/driver_examples/dmic/dmic_hwvad">
+          <external path="boards/jn5189dk6/driver_examples/dmic/dmic_hwvad" type="xml">
+            <files mask="dmic_hwvad.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_flash_demo" name="flash_demo" brief="The Flash Example project is to demonstrate usage of the Flash driver.&#10;In this example, we test the flash features: Initialization, erase and programming" toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/flash">
+          <external path="boards/jn5189dk6/driver_examples/flash" type="xml">
+            <files mask="flash_demo.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_fmeas" name="fmeas" brief="This example shows how to use SDK drivers to use the Frequency Measure feature of SYSCON module on LPC devices.It shows how to measure a target frequency using a (faster) reference frequency. The example uses the internal main clock as the reference frequency to measure the frequencies of the RTC, watchdog oscillator, and internal RC oscillator." toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/fmeas">
+          <external path="boards/jn5189dk6/driver_examples/fmeas" type="xml">
+            <files mask="fmeas.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_event" name="freertos_event" brief="This document explains the freertos_event example. It shows how task waits for an event (defined setof bits in event group). This event can be set by any other process or interrupt in the system.The example application creates three tasks. Two write tasks write_task_1 and write_task_2continuously setting event bit 0 and bit 1.Read_task is waiting for any event bit and printing actual state on console. Event bits areautomatically cleared after read task is entered.Three possible states can occurre:Both bits are set.zBit B0 is set.Bit B1 is set." toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_event">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_event" type="xml">
+            <files mask="freertos_event.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_generic" name="freertos_generic" brief="This document explains the freertos_generic example. It is based on code FreeRTOS documentation fromhttp://www.freertos.org/Hardware-independent-RTOS-example.html. It shows combination of severaltasks with queue, software timer, tick hook and semaphore.The example application creates three tasks. The prvQueueSendTask periodically sending data toxQueue queue. The prvQueueReceiveTask is waiting for incoming message and counting number ofreceived messages. Task prvEventSemaphoreTask is waiting for xEventSemaphore semaphore given fromvApplicationTickHook. Tick hook give semaphore every 500 ms.Other hook types used for RTOS and resource statistics are also demonstrated in example:* vApplicationIdleHook* vApplicationStackOverflowHook* vApplicationMallocFailedHook" toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_generic">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_generic" type="xml">
+            <files mask="freertos_generic.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_hello" name="freertos_hello" brief="The Hello World project is a simple demonstration program that uses the SDK UART drivere incombination with FreeRTOS. The purpose of this demo is to show how to use the debug console and toprovide a simple project for debugging and further development.The example application creates one task called hello_task. This task print &quot;Hello world.&quot; messagevia debug console utility and suspend itself." toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_hello">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_hello" type="xml">
+            <files mask="freertos_hello.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_i2c" name="freertos_i2c" brief="The freertos_i2c example shows an application using RTOS tasks with I2C driver:The example supports 2 different connections:On board connection and board to board connection.With one board connection, 2 I2C instances of the same board are used. One i2c instance used as I2C master and another I2C instance used as I2C slave .    Default settings in freertos_i2c.c (in folder boards\&lt;board&gt;\rtos_examples\freertos_i2c) is applied.    Two tasks are created. One task is associated with an I2C master operation and another task deals with I2C slave operation.    1. I2C master task sends data to I2C slave task.    2. I2C master task reads data sent back from I2C slave task.    The transmit data and the receive data of both I2C master task and I2C slave task are printed out on terminal.With board to board connection, one I2C instance on one board is used as I2C master and the I2C instance on other board is used as I2C slave. Tasks are created to run on each board to handle I2C communication.    File freertos_i2c.c should have following definitions:    #define EXAMPLE_CONNECT_I2C BOARD_TO_BOARD    For board used as I2C master:        #define I2C_MASTER_SLAVE isMASTER    For board used as I2C slave:        #define I2C_MASTER_SLAVE isSLAVE" toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_i2c">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_i2c" type="xml">
+            <files mask="freertos_i2c.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_mutex" name="freertos_mutex" brief="This document explains the freertos_mutex example. It shows how mutex manage access to commonresource (terminal output).The example application creates two identical instances of write_task. Each task will lock the mutexbefore printing and unlock it after printing to ensure that the outputs from tasks are not mixedtogether.The test_task accept output message during creation as function parameter. Output message have twoparts. If xMutex is unlocked, the write_task_1 acquire xMutex and print first part of message. Thenrescheduling is performed. In this moment scheduler check if some other task could run, but secondtask write_task+_2 is blocked because xMutex is already locked by first write task. The firstwrite_task_1 continue from last point by printing of second message part. Finaly the xMutex isunlocked and second instance of write_task_2 is executed." toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_mutex">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_mutex" type="xml">
+            <files mask="freertos_mutex.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_queue" name="freertos_queue" brief="This document explains the freertos_queue example. This example introduce simple logging mechanismbased on message passing.Example could be devided in two parts. First part is logger. It contain three tasks:log_add().....Add new message into the log. Call xQueueSend function to pass new message into              message queue.log_init()....Initialize logger (create logging task and message queue log_queue).log_task()....Task responsible for printing of log output.Second part is application of this simple logging mechanism. Each of two tasks write_task_1 andwrite_task_2 print 5 messages into log." toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_queue">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_queue" type="xml">
+            <files mask="freertos_queue.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_sem" name="freertos_sem" brief="This document explains the freertos_sem example, what to expect when running it and a briefintroduction to the API. The freertos_sem example code shows how semaphores works. Two differenttasks are synchronized in bilateral rendezvous model.The example uses four tasks. One producer_task and three consumer_tasks. The producer_task starts bycreating of two semaphores (xSemaphore_producer and xSemaphore_consumer). These semaphores controlaccess to virtual item. The synchronization is based on bilateral rendezvous pattern. Both ofconsumer and producer must be prepared to enable transaction." toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_sem">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_sem" type="xml">
+            <files mask="freertos_sem.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_spi" name="freertos_spi" brief="The freertos_spi example shows how to use SPI driver in FreeRTOS:In this example , one spi instance is used as SPI master with blocking and another spi instance is used as SPI slave.1. SPI master sends/receives data using task blocking calls to/from SPI slave. (SPI Slave uses interrupt to receive/sendthe data)" toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_spi">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_spi" type="xml">
+            <files mask="freertos_spi.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_swtimer" name="freertos_swtimer" brief="This document explains the freertos_swtimer example. It shows usage of software timer and itscallback.The example application creates one software timer SwTimer. The timer’s callback SwTimerCallback isperiodically executed and text “Tick.” is printed to terminal." toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_swtimer">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_swtimer" type="xml">
+            <files mask="freertos_swtimer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_tickless" name="freertos_tickless" brief="This document explains the freertos_tickless example. It shows the CPU enter at sleep mode and then&#10;it is waked up by expired time delay that using RTC module or occur any a hardware interrupt.&#10;&#10;" toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_tickless">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_tickless" type="xml">
+            <files mask="freertos_tickless.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_freertos_usart" name="freertos_usart" brief="The USART example for FreeRTOS demonstrates the possibility to use the USART driver in the RTOS.The example uses single instance of USART IP and writes string into, then reads back chars.After every 4B received, these are sent back on USART." toolchain="mcuxpresso" category="rtos_examples" path="boards/jn5189dk6/rtos_examples/freertos_usart">
+          <external path="boards/jn5189dk6/rtos_examples/freertos_usart" type="xml">
+            <files mask="freertos_usart.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_gint" name="gint" brief="This example shows how to use SDK drivers to use the Group GPIO input interrupt peripheral." toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/gint">
+          <external path="boards/jn5189dk6/driver_examples/gint" type="xml">
+            <files mask="gint.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_gpio_led_output" name="gpio_led_output" brief="The GPIO Example project is a demonstration program that uses the KSDK software to manipulate the general-purposeoutputs. The example use LEDs and buttonsto demonstrates GPIO API for port and pin manipulation (init, set,clear, and toggle)." toolchain="mcuxpresso" category="driver_examples/gpio" path="boards/jn5189dk6/driver_examples/gpio/led_output">
+          <external path="boards/jn5189dk6/driver_examples/gpio/led_output" type="xml">
+            <files mask="gpio_led_output.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_hello_world" name="hello_world" brief="The Hello World demo application provides a sanity check for the new SDK build environments and board bring up. The HelloWorld demo prints the &quot;Hello World&quot; string to the terminal using the SDK UART drivers. The purpose of this demo is toshow how to use the UART, and to provide a simple project for debugging and further development." toolchain="mcuxpresso" category="demo_apps" path="boards/jn5189dk6/demo_apps/hello_world">
+          <external path="boards/jn5189dk6/demo_apps/hello_world" type="xml">
+            <files mask="hello_world.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_i2c_dma_transfer" name="i2c_dma_transfer" brief="The i2c_dma_transfer example shows how to use i2c driver ." toolchain="mcuxpresso" category="driver_examples/i2c" path="boards/jn5189dk6/driver_examples/i2c/dma_transfer">
+          <external path="boards/jn5189dk6/driver_examples/i2c/dma_transfer" type="xml">
+            <files mask="i2c_dma_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_i2c_interrupt_transfer" name="i2c_interrupt_transfer" brief="The i2c_interrupt_transfer example shows how to use i2c driver ." toolchain="mcuxpresso" category="driver_examples/i2c" path="boards/jn5189dk6/driver_examples/i2c/interrupt_transfer">
+          <external path="boards/jn5189dk6/driver_examples/i2c/interrupt_transfer" type="xml">
+            <files mask="i2c_interrupt_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_i2c_polling_transfer" name="i2c_polling_transfer" brief="The i2c_polling_transfer example shows how to use i2c driver ." toolchain="mcuxpresso" category="driver_examples/i2c" path="boards/jn5189dk6/driver_examples/i2c/polling_transfer">
+          <external path="boards/jn5189dk6/driver_examples/i2c/polling_transfer" type="xml">
+            <files mask="i2c_polling_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_led_blinky" name="led_blinky" brief="The LED Blinky demo application provides a sanity check for the new SDK build environments and board bring up. The LED Blinky demo uses the systick interrupt to realize the function of timing delay. The example takes turns to shine the LED. The purpose of this demo is to provide a simple project for debugging and further development." toolchain="mcuxpresso" category="demo_apps" path="boards/jn5189dk6/demo_apps/led_blinky">
+          <external path="boards/jn5189dk6/demo_apps/led_blinky" type="xml">
+            <files mask="led_blinky.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_led_blinky_for_usb_dongle" name="led_blinky_for_usb_dongle" brief="The LED Blinky demo application provides a sanity check for the new SDK build environments and board bring up. The LED Blinky demo uses the systick interrupt to realize the function of timing delay. The example takes turns to shine the LED. The purpose of this demo is to provide a simple project for debugging and further development." toolchain="mcuxpresso" category="usb_dongle_examples" path="boards/jn5189dk6/usb_dongle_examples/led_blinky">
+          <external path="boards/jn5189dk6/usb_dongle_examples/led_blinky" type="xml">
+            <files mask="led_blinky_for_usb_dongle.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_lpc_adc_basic" name="lpc_adc_basic" brief="The lpc_adc_basic example shows how to use LPC ADC driver in the simplest way.In this example, the internal temperature sensor is used to created the input analog signal. When user type in any key from the keyboard, the software trigger API is called to start the conversion. Then it polls the conversion sequence A's flag till the conversion is completed. When the conversion is completed, just print the conversion result to terminal.Project Information1.what are ADC conversion sequences?  A conversion sequence is a single pass through a series of A/D conversions performed on a selected set of  A/D channels. Software can set-up two independent conversion sequences, either of which can be triggered   by software or by a transition on one of the hardware triggers. Each sequence can be triggered by a different   hardware trigger. One of these conversion sequences is referred to as the A sequence and the other as the B  sequence. It is not necessary to employ both sequences. An optional single-step mode allows advancing through  the channels of a sequence one at a time on each successive occurrence of a trigger. The user can select whether  a trigger on the B sequence can interrupt an already-in-progress A sequence. The B sequence, however, can never be  interrupted by an A trigger.  2. How to use software-triggered conversion?   There are two ways that software can trigger a conversion sequence:      1. Start Bit: The first way to software-trigger an sequence is by setting the START bit in         the corresponding SEQn_CTRL register. The response to this is identical to         occurrence of a hardware trigger on that sequence. Specifically, one cycle of         conversions through that conversion sequence will be immediately triggered except         as indicated above. (In this example, we use this way.)      2. Burst Mode: The other way to initiate conversions is to set the BURST bit in the         SEQn_CTRL register. As long as this bit is 1 the designated conversion sequence will         be continuously and repetitively cycled through. Any new software or hardware trigger         on this sequence will be ignored.  Program Flow1.This example demonstrates how to configure the A sequences with polling, assigning one channel with software  trigger, you can configure channel via &quot;DEMO_ADC_SAMPLE_CHANNEL_NUMBER&quot;.  2.Before configuration of the ADC begins, the ADC is put through a self-calibration cycle.    3.After ADC channels are assigned to each of the sequences, the software trigger is chosen. Setting   SEQA_CTRL_START to '1' will trigger sequence A.  4.After ADC channels are assigned to each of the sequences, if the user enters any key via terminal, software trigger will start. 5.Read the corresponding DATAVALID field with polling to judge whether the conversion completes and the result is ready.  If the result is ready, the example will printf result information to terminal." toolchain="mcuxpresso" category="driver_examples/adc" path="boards/jn5189dk6/driver_examples/adc/lpc_adc_basic">
+          <external path="boards/jn5189dk6/driver_examples/adc/lpc_adc_basic" type="xml">
+            <files mask="lpc_adc_basic.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_lpc_adc_burst" name="lpc_adc_burst" brief="The lpc_adc_burst example shows how to use LPC ADC driver with the burst mode.In this example, the internal temperature sensor is used to created the input analog signal.When user type in any key from the keyboard, the burst mode is enabled. Then the conversion sequence A would be started automatically, till the burst would be disabled in conversion completed ISR. Project Information1.what are ADC conversion sequences?  A conversion sequence is a single pass through a series of A/D conversions performed on a selected set of  A/D channels. Software can set-up two independent conversion sequences, either of which can be triggered   by software or by a transition on one of the hardware triggers. Each sequence can be triggered by a different   hardware trigger. One of these conversion sequences is referred to as the A sequence and the other as the B  sequence. It is not necessary to employ both sequences. An optional single-step mode allows advancing through  the channels of a sequence one at a time on each successive occurrence of a trigger. The user can select whether  a trigger on the B sequence can interrupt an already-in-progress A sequence. The B sequence, however, can never be  interrupted by an A trigger.  2. How to use software-triggered conversion?   There are two ways that software can trigger a conversion sequence:      1. Start Bit: The first way to software-trigger an sequence is by setting the START bit in         the corresponding SEQn_CTRL register. The response to this is identical to         occurrence of a hardware trigger on that sequence. Specifically, one cycle of         conversions through that conversion sequence will be immediately triggered except         as indicated above.       2. Burst Mode: The other way to initiate conversions is to set the BURST bit in the         SEQn_CTRL register. As long as this bit is 1 the designated conversion sequence will         be continuously and repetitively cycled through. Any new software or hardware trigger         on this sequence will be ignored. (In this example, we use this way.)         3. What kinds of interrupt do ADC have?   There are four interrupts that can be generated by the ADC:     • Conversion-Complete or Sequence-Complete interrupts for sequences A and B     • Threshold-Compare Out-of-Range Interrupt     • Data Overrun Interrupt   Any of these interrupt requests may be individually enabled or disabled in the INTEN register.  Program Flow1.This example demonstrates how to configure the A sequences with burst mode, you can configure channel via   &quot;DEMO_ADC_SAMPLE_CHANNEL_NUMBER&quot;.  2.Before configuration of the ADC begins, the ADC is put through a self-calibration cycle.  3.Enable the Conversion-Complete or Sequence-Complete interrupt for sequences A.  4.After ADC channels are assigned to each of the sequences, if the user enters any key via terminal, burst mode will start.    5.When the first conversion completes, the interrupt would be triggered. The ISR will stop the burst mode and print conversion result   to terminal." toolchain="mcuxpresso" category="driver_examples/adc" path="boards/jn5189dk6/driver_examples/adc/lpc_adc_burst">
+          <external path="boards/jn5189dk6/driver_examples/adc/lpc_adc_burst" type="xml">
+            <files mask="lpc_adc_burst.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_lpc_adc_dma" name="lpc_adc_dma" brief="The lpc_adc_dma example shows how to use LPC ADC driver with DMA.In this example, the internal temperature sensor is used to created the input analog signal. When user type in any key from the keyboard, the software trigger API is called to start the conversion. When the ADC conversion is completed, it would trigger the DMA to move the ADC conversion result from ADC conversion data register to user indicated memory. Then the main loop waits for the transfer to be done and print the result to terminal.Project Information1.what are ADC conversion sequences?  A conversion sequence is a single pass through a series of A/D conversions performed on a selected set of  A/D channels. Software can set-up two independent conversion sequences, either of which can be triggered   by software or by a transition on one of the hardware triggers. Each sequence can be triggered by a different   hardware trigger. One of these conversion sequences is referred to as the A sequence and the other as the B  sequence. It is not necessary to employ both sequences. An optional single-step mode allows advancing through  the channels of a sequence one at a time on each successive occurrence of a trigger. The user can select whether  a trigger on the B sequence can interrupt an already-in-progress A sequence. The B sequence, however, can never be  interrupted by an A trigger.  2. How to use software-triggered conversion?   There are two ways that software can trigger a conversion sequence:      1. Start Bit: The first way to software-trigger an sequence is by setting the START bit in         the corresponding SEQn_CTRL register. The response to this is identical to         occurrence of a hardware trigger on that sequence. Specifically, one cycle of         conversions through that conversion sequence will be immediately triggered except         as indicated above. (In this example, we use this way.)      2. Burst Mode: The other way to initiate conversions is to set the BURST bit in the         SEQn_CTRL register. As long as this bit is 1 the designated conversion sequence will         be continuously and repetitively cycled through. Any new software or hardware trigger         on this sequence will be ignored.          3. How to use DMA to work with ADC?   The sequence-A or sequence-B conversion/sequence-complete interrupts may also be   used to generate a DMA trigger. To trigger a DMA transfer, the same conditions must be   met as the conditions for generating an interrupt.   Remark: If the DMA is used, the ADC interrupt must be disabled in the NVIC.   Program Flow1.This example demonstrates how to configure the A sequences with interrupt, assigning one channel with software  trigger, you can configure channel via &quot;DEMO_ADC_SAMPLE_CHANNEL_NUMBER&quot;.  2.Before configuration of the ADC begins, the ADC is put through a self-calibration cycle.  3.Configure the DMA and DMAMUX to work with ADC sequences.4.Enable the Conversion-Complete or Sequence-Complete DMA for sequences A.  5.After ADC channels are assigned to each of the sequences, if the user enters any key via terminal, software trigger will start.    6.When the conversion completes, the DMA would be requested.7.When the DMA transfer completes, DMA will trigger a interrupt. ISR would set the &quot;bDmaTransferDone&quot; to 'true'. Then main function will   print conversion result to terminal." toolchain="mcuxpresso" category="driver_examples/adc" path="boards/jn5189dk6/driver_examples/adc/lpc_adc_dma">
+          <external path="boards/jn5189dk6/driver_examples/adc/lpc_adc_dma" type="xml">
+            <files mask="lpc_adc_dma.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_lpc_adc_interrupt" name="lpc_adc_interrupt" brief="The lpc_adc_interrupt example shows how to use interrupt with LPC ADC driver.In this example, the internal temperature sensor is used to created the input analog signal. When user type in any key from the keyboard, the software trigger API is called to start the conversion. Then it polls the flag variable which would be asserted when the conversion completed ISR is executed. Then just print the conversion result to terminal.Project Information1.what are ADC conversion sequences?  A conversion sequence is a single pass through a series of A/D conversions performed on a selected set of  A/D channels. Software can set-up two independent conversion sequences, either of which can be triggered   by software or by a transition on one of the hardware triggers. Each sequence can be triggered by a different   hardware trigger. One of these conversion sequences is referred to as the A sequence and the other as the B  sequence. It is not necessary to employ both sequences. An optional single-step mode allows advancing through  the channels of a sequence one at a time on each successive occurrence of a trigger. The user can select whether  a trigger on the B sequence can interrupt an already-in-progress A sequence. The B sequence, however, can never be  interrupted by an A trigger.  2. How to use software-triggered conversion?   There are two ways that software can trigger a conversion sequence:      1. Start Bit: The first way to software-trigger an sequence is by setting the START bit in         the corresponding SEQn_CTRL register. The response to this is identical to         occurrence of a hardware trigger on that sequence. Specifically, one cycle of         conversions through that conversion sequence will be immediately triggered except         as indicated above. (In this example, we use this way.)      2. Burst Mode: The other way to initiate conversions is to set the BURST bit in the         SEQn_CTRL register. As long as this bit is 1 the designated conversion sequence will         be continuously and repetitively cycled through. Any new software or hardware trigger         on this sequence will be ignored.          3. What kinds of interrupt do ADC have?   There are four interrupts that can be generated by the ADC:     • Conversion-Complete or Sequence-Complete interrupts for sequences A and B     • Threshold-Compare Out-of-Range Interrupt     • Data Overrun Interrupt   Any of these interrupt requests may be individually enabled or disabled in the INTEN register.  Program Flow1.This example demonstrates how to configure the A sequences with interrupt, assigning one channel with software  trigger, you can configure channel via &quot;DEMO_ADC_SAMPLE_CHANNEL_NUMBER&quot;.  2.Before configuration of the ADC begins, the ADC is put through a self-calibration cycle.  3.Enable the Conversion-Complete or Sequence-Complete interrupt for sequences A.  4.After ADC channels are assigned to each of the sequences, if the user enters any key via terminal, software trigger will start.    5.When the conversion completes, the interrupt would be triggered. The ISR will print conversion result to terminal." toolchain="mcuxpresso" category="driver_examples/adc" path="boards/jn5189dk6/driver_examples/adc/lpc_adc_interrupt">
+          <external path="boards/jn5189dk6/driver_examples/adc/lpc_adc_interrupt" type="xml">
+            <files mask="lpc_adc_interrupt.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_pint_pattern_match" name="pint_pattern_match" brief="This example shows how to use SDK drivers to use the Pin interrupt &amp; pattern match peripheral." toolchain="mcuxpresso" category="driver_examples/pint" path="boards/jn5189dk6/driver_examples/pint/pattern_match">
+          <external path="boards/jn5189dk6/driver_examples/pint/pattern_match" type="xml">
+            <files mask="pint_pattern_match.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_pint_pin_interrupt" name="pint_pin_interrupt" brief="This example shows how to use SDK drivers to use the Pin interrupt &amp; pattern match peripheral." toolchain="mcuxpresso" category="driver_examples/pint" path="boards/jn5189dk6/driver_examples/pint/pin_interrupt">
+          <external path="boards/jn5189dk6/driver_examples/pint/pin_interrupt" type="xml">
+            <files mask="pint_pin_interrupt.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_powerdown_demo" name="powerdown_demo" brief="This Power demo application allows each of the various low mode modes to be selected, using a simple user interface via the serial port.&#10;The example can test below sleep modes (Deep sleep is not implemented with new API):&#10;1 - PM_POWER_DOWN&#10;2 - PM_DEEP_DOWN" toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/power_api/simple_powerdown">
+          <external path="boards/jn5189dk6/driver_examples/power_api/simple_powerdown" type="xml">
+            <files mask="powerdown_demo.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_pwm_output" name="pwm_output" brief="The pwm_output project is a simple demonstration program of the SDK PWM driver.&#10;The pulse width modulator (PWM) module contains PWM channels, each of which is set up to output different signals.&#10;This PWM module can generate various switching patterns, including highly sophisticated waveforms.&#10;" toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/pwm/pwm_output">
+          <external path="boards/jn5189dk6/driver_examples/pwm/pwm_output" type="xml">
+            <files mask="pwm_output.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_rng_test" name="rng_test" brief="The RNG project is a simple demonstration program of the SDK RNG driver.&#10;This application is showing in the serial port random number generator examples. " toolchain="mcuxpresso" category="driver_examples/rng" path="boards/jn5189dk6/driver_examples/rng">
+          <external path="boards/jn5189dk6/driver_examples/rng" type="xml">
+            <files mask="rng_test.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_rtc_example" name="rtc_example" brief="The RTC project is a simple demonstration program of the SDK RTC driver. It sets up the RTChardware block to trigger an alarm after a user specified time period. The test will set the currentdate and time to a predefined value. The alarm will be set with reference to this predefined dateand time." toolchain="mcuxpresso" category="driver_examples/rtc" path="boards/jn5189dk6/driver_examples/rtc">
+          <external path="boards/jn5189dk6/driver_examples/rtc" type="xml">
+            <files mask="rtc_example.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_sha" name="sha" brief="The SHA Example project is a demonstration program that uses the KSDK software to generate SHA checksums." toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/sha">
+          <external path="boards/jn5189dk6/driver_examples/sha" type="xml">
+            <files mask="sha.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_dma_transfer" name="spi_dma_transfer" brief="The spi_dma_transfer example shows how to use driver API to transfer in DMA way.  " toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/dma_transfer">
+          <external path="boards/jn5189dk6/driver_examples/spi/dma_transfer" type="xml">
+            <files mask="spi_dma_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_interrupt" name="spi_interrupt" brief="The spi_interrupt example shows how to use spi functional API to do interrupt transfer.  " toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/interrupt">
+          <external path="boards/jn5189dk6/driver_examples/spi/interrupt" type="xml">
+            <files mask="spi_interrupt.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_interrupt_b2b_master" name="spi_interrupt_b2b_master" brief="The spi_interrupt_b2b_master example shows how to use spi functional API to do interrupt transfer as a master:In this example, the spi instance as master. Master sends a piece of data to slave, receive data from slave,and checkif the data master received is correct. This example needs to work with spi_interrupt_b2b_slave example." toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/interrupt_b2b/master">
+          <external path="boards/jn5189dk6/driver_examples/spi/interrupt_b2b/master" type="xml">
+            <files mask="spi_interrupt_b2b_master.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_interrupt_b2b_slave" name="spi_interrupt_b2b_slave" brief="The spi_interrupt_b2b_slave example shows how to use spi functional API to do interrupt transfer as a slave:In this example, the spi instance as slave. Slave receives data froma master and send a peiece of data to master,and check if the data slave received is correct. This example needs to work with spi_interrupt_b2b_master example." toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/interrupt_b2b/slave">
+          <external path="boards/jn5189dk6/driver_examples/spi/interrupt_b2b/slave" type="xml">
+            <files mask="spi_interrupt_b2b_slave.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_interrupt_b2b_transfer_master" name="spi_interrupt_b2b_transfer_master" brief="The spi_interrupt_board2board_master example shows how to use spi driver as master to do board to board transfer withinterrupt:In this example, one spi instance as master and another spi instance on othereboard as slave. Master sends a piece ofdata to slave, and receive a piece of data from slave. This example checks if the data received from slave is correct." toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/interrupt_b2b_transfer/master">
+          <external path="boards/jn5189dk6/driver_examples/spi/interrupt_b2b_transfer/master" type="xml">
+            <files mask="spi_interrupt_b2b_transfer_master.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_interrupt_b2b_transfer_slave" name="spi_interrupt_b2b_transfer_slave" brief="The spi_interrupt_board2board_slave example shows how to use spi driver as slave to do board to board transfer with interrupt:In this example, one spi instance as slave and another spi instance on other board as master. Master sends a piece ofdata to slave, and receive a piece of data from slave. This example checks if the data received from master is correct." toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/interrupt_b2b_transfer/slave">
+          <external path="boards/jn5189dk6/driver_examples/spi/interrupt_b2b_transfer/slave" type="xml">
+            <files mask="spi_interrupt_b2b_transfer_slave.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_interrupt_transfer" name="spi_interrupt_transfer" brief="The spi_interrupt_transfer example shows how to use spi functional API to do interrupt transfer.  " toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/interrupt_transfer">
+          <external path="boards/jn5189dk6/driver_examples/spi/interrupt_transfer" type="xml">
+            <files mask="spi_interrupt_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_polling_b2b_transfer_master" name="spi_polling_b2b_transfer_master" brief="The spi_polling_board2board_master example shows how to use spi driver as master to do board to board transfer with polling:In this example, one spi instance as master and another spi instance on othereboard as slave. Master sends a piece ofdata to slave, and receive a piece of data from slave. This example checks if the data received from slave is correct." toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/polling_b2b_transfer/master">
+          <external path="boards/jn5189dk6/driver_examples/spi/polling_b2b_transfer/master" type="xml">
+            <files mask="spi_polling_b2b_transfer_master.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_polling_b2b_transfer_slave" name="spi_polling_b2b_transfer_slave" brief="The spi_polling_board2board_slave example shows how to use spi driver as slave to do board to board transfer withpolling:Notice: The SPI slave of this example uses interrupt mode, as there is no polling mode for SPI slave.In this example, one spi instance as slave and another spi instance on other board as master. Master sends a piece ofdata to slave, and receive a piece of data from slave. This example checks if the data received from master is correct." toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/polling_b2b_transfer/slave">
+          <external path="boards/jn5189dk6/driver_examples/spi/polling_b2b_transfer/slave" type="xml">
+            <files mask="spi_polling_b2b_transfer_slave.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spi_polling_transfer" name="spi_polling_transfer" brief="The spi_polling_transfer example shows how to use spi functional API to do interrupt transfer.  " toolchain="mcuxpresso" category="driver_examples/spi" path="boards/jn5189dk6/driver_examples/spi/polling_transfer">
+          <external path="boards/jn5189dk6/driver_examples/spi/polling_transfer" type="xml">
+            <files mask="spi_polling_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spifi_dma_transfer" name="spifi_dma_transfer" brief="The SPIFI DMA Example project is a demonstration program that uses the KSDK software to program external serialflash using DMA and read through AHB bus." toolchain="mcuxpresso" category="driver_examples/spifi" path="boards/jn5189dk6/driver_examples/spifi/dma_transfer">
+          <external path="boards/jn5189dk6/driver_examples/spifi/dma_transfer" type="xml">
+            <files mask="spifi_dma_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_spifi_polling_transfer" name="spifi_polling_transfer" brief="The SPIFI Polling Example project is a demonstration program that uses the KSDK software to program external serialflash using polling and read through AHB bus." toolchain="mcuxpresso" category="driver_examples/spifi" path="boards/jn5189dk6/driver_examples/spifi/polling_transfer">
+          <external path="boards/jn5189dk6/driver_examples/spifi/polling_transfer" type="xml">
+            <files mask="spifi_polling_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_ssbl" name="ssbl" brief="The ssbl application" toolchain="mcuxpresso" category="wireless_examples/framework/ssbl/bm" path="boards/jn5189dk6/wireless_examples/framework/ssbl/bm">
+          <external path="boards/jn5189dk6/wireless_examples/framework/ssbl/bm" type="xml">
+            <files mask="ssbl.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_temp_sensor" name="temp_sensor" brief="&#10;The temp_sensor example shows how to use the temperature sensor.&#10;&#10;In this example, the calibration data (adc and temperature sensor) are first loaded from flash and then the temperature is computed.&#10;For reading the temperature, the software:&#10;a.&#9;Calls load_calibration_param_from_flash(). This step shall be done once prior doing any read of temperature.&#10;If calibration data of either ADC or temperature sensor is not present, the function returns false and measurement of temperature cannot be done.&#10;b.&#9;Calls get_temperature(8, &amp;temperature_in_128th_degree) to read the temperature. 8 is the number of sample to acquire.&#10;&#10;Note that reported temperature is only valid if function returns true menaning that calibration data for ADC and temperature sensor are present in flash.&#10;&#10;" toolchain="mcuxpresso" category="driver_examples" path="boards/jn5189dk6/driver_examples/temp_sensor">
+          <external path="boards/jn5189dk6/driver_examples/temp_sensor" type="xml">
+            <files mask="temp_sensor.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_usart_dma_double_buffer_transfer" name="usart_dma_double_buffer_transfer" brief="The usart_dma example shows how to use usart driver with DMA" toolchain="mcuxpresso" category="driver_examples/usart" path="boards/jn5189dk6/driver_examples/usart/dma_double_buffer_transfer">
+          <external path="boards/jn5189dk6/driver_examples/usart/dma_double_buffer_transfer" type="xml">
+            <files mask="usart_dma_double_buffer_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_usart_dma_transfer" name="usart_dma_transfer" brief="The usart_dma example shows how to use usart driver with DMA:In this example, one usart instance connect to PC through usart, the board willsend back all characters that PC send to the board.Note: The example echo every 8 characters, so input 8 characters every time." toolchain="mcuxpresso" category="driver_examples/usart" path="boards/jn5189dk6/driver_examples/usart/dma_transfer">
+          <external path="boards/jn5189dk6/driver_examples/usart/dma_transfer" type="xml">
+            <files mask="usart_dma_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_usart_interrupt" name="usart_interrupt" brief="The uart_functioncal_interrupt example shows how to use uart driver functionalAPI to receive data with interrupt method:In this example, one uart instance connect to PC through uart, the board willsend back all characters that PC send to the board." toolchain="mcuxpresso" category="driver_examples/usart" path="boards/jn5189dk6/driver_examples/usart/interrupt">
+          <external path="boards/jn5189dk6/driver_examples/usart/interrupt" type="xml">
+            <files mask="usart_interrupt.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_usart_interrupt_ring_buffer_transfer" name="usart_interrupt_ring_buffer_transfer" brief="The uart_interrupt_ring_buffer example shows how to use uart driver in interrupt way withRX ring buffer enabled:In this example, one uart instance connect to PC through uart, the board willsend back all characters that PC send to the board.Note: The example echo every 8 characters, so input 8 characters every time." toolchain="mcuxpresso" category="driver_examples/usart" path="boards/jn5189dk6/driver_examples/usart/interrupt_ring_buffer_transfer">
+          <external path="boards/jn5189dk6/driver_examples/usart/interrupt_ring_buffer_transfer" type="xml">
+            <files mask="usart_interrupt_ring_buffer_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_usart_interrupt_transfer" name="usart_interrupt_transfer" brief="The uart_interrupt example shows how to use uart driver in interrupt way:In this example, one uart instance connect to PC through uart, the board willsend back all characters that PC send to the board.Note: The example echo every 8 characters, so input 8 characters every time." toolchain="mcuxpresso" category="driver_examples/usart" path="boards/jn5189dk6/driver_examples/usart/interrupt_transfer">
+          <external path="boards/jn5189dk6/driver_examples/usart/interrupt_transfer" type="xml">
+            <files mask="usart_interrupt_transfer.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_usart_polling" name="usart_polling" brief="The uart_polling example shows how to use uart driver in polling way:In this example, one uart instance connect to PC through uart, the board will send back all characters that PCsend to the board." toolchain="mcuxpresso" category="driver_examples/usart" path="boards/jn5189dk6/driver_examples/usart/polling">
+          <external path="boards/jn5189dk6/driver_examples/usart/polling" type="xml">
+            <files mask="usart_polling.xml"/>
+          </external>
+        </example>
+        <example id="jn5189dk6_wwdt_example" name="wwdt_example" brief="The WDOG Example project is to demonstrate usage of the KSDK wdog driver.In this example,quick test is first implemented to test the wdog.And then after 5 times of refreshing the watchdog, a timeout reset is generated." toolchain="mcuxpresso" category="driver_examples/wwdt" path="boards/jn5189dk6/driver_examples/wwdt">
+          <external path="boards/jn5189dk6/driver_examples/wwdt" type="xml">
+            <files mask="wwdt_example.xml"/>
+          </external>
+        </example>
+      </examples>
+    </board>
+  </boards>
+  <devices>
+    <device id="JN5189" name="JN5189" href="http://www.nxp.com/lpc" version="1.0.0" full_name="JN5189">
+      <description>The JN5189 are ARM Cortex-M4 based microcontrollers for embedded applications.</description>
+      <image path="docs/images" type="image">
+        <files mask="device.jpg"/>
+      </image>
+      <metadataSet>
+        <metadata key="compatible_device.segger" value="JN5189"/>
+        <metadata key="html">
+          <specific>
+            <content>The LPC5411x are ARM Cortex-M4 based microcontrollers for embedded applications. These devices include an ARM Cortex-M0+ coprocessor, up to 192 KB of on-chip SRAM, up to 256 KB on-chip flash, full-speed USB device interface with Crystal-less operation, a DMIC subsystem with PDM microphone interface and I2S, five general-purpose timers, one SCTimer/PWM, one RTC/alarm timer, one 24-bit Multi-Rate Timer (MRT), a Windowed Watchdog Timer (WWDT), eight flexible serial communication peripherals (each of which can be a USART, SPI, or I2C interface), and one 12-bit 5.0 Msamples/sec ADC, and a temperature sensor.&lt;br/&gt;The ARM Cortex-M4 is a 32-bit core that offers system enhancements such as low power consumption, enhanced debug features, and a high level of support block integration. The ARM Cortex-M4 CPU incorporates a 3-stage pipeline, uses a Harvard architecture with separate local instruction and data buses as well as a third bus for peripherals, and includes an internal prefetch unit that supports speculative branching. The ARM Cortex-M4 supports single-cycle digital signal processing and SIMD instructions. A hardware floating-point unit is integrated in the core.&lt;br/&gt;The ARM Cortex-M0+ coprocessor is an energy-efficient and easy-to-use 32-bit core which is code and tool-compatible with the Cortex-M4 core. The Cortex-M0+ coprocessor offers up to 100 MHz performance with a simple instruction set and reduced code size.&lt;br/&gt;</content>
+          </specific>
+        </metadata>
+        <metadata key="vendor" value="NXP"/>
+        <metadata key="vendor.device.type" value="LPC"/>
+        <metadata key="vendor.device.family" value="JN518x"/>
+      </metadataSet>
+      <core id="core0_JN5189" name="core0" fpu="false" type="cm4"/>
+      <memory>
+        <memoryBlock id="PROGRAM_FLASH_JN5189" name="PROGRAM_FLASH" addr="00000000" size="000a0000" type="Flash" access="RO"/>
+        <memoryBlock id="SRAM_JN5189" name="SRAM" addr="04000000" size="00015fe0" type="RAM" access="RW"/>
+        <memoryBlock id="SRAM1_JN5189" name="SRAM1" addr="04020000" size="00010000" type="RAM" access="RW"/>
+      </memory>
+      <total_memory flash_size_kb="640" ram_size_kb="152"/>
+      <package id="JN5189HN" name="JN5189HN"/>
+      <package id="JN5189THN" name="JN5189THN"/>
+      <evaluation_boards>
+        <evaluation_board name="jn5189dk6"/>
+      </evaluation_boards>
+      <toolchainSettings>
+        <toolchainSetting id_refs="com.nxp.mcuxpresso">
+          <buildSteps>
+            <preBuildStep></preBuildStep>
+            <postBuildStep>arm-none-eabi-size "${BuildArtifactFileName}"; echo "${OsType}" | grep -q win* &amp;&amp; py -3 "../scripts/dk6_image_tool.py" -s 294912 ${ENV_IMAGE_TOOL_OPTS} ${BuildArtifactFileName} || python3 "../scripts/dk6_image_tool.py" -s 294912 ${ENV_IMAGE_TOOL_OPTS} ${BuildArtifactFileName}; arm-none-eabi-objcopy -v -O binary "${BuildArtifactFileName}" "${BuildArtifactFileBaseName}.bin"</postBuildStep>
+          </buildSteps>
+        </toolchainSetting>
+      </toolchainSettings>
+      <debug_configurations>
+        <debug_configuration id_refs="com.crt.advproject.config.exe.debug com.crt.advproject.config.exe.release">
+          <params>
+            <params id="internal.attach.slave.release.JN5189" name="internal.attach.slave" value="true"/>
+            <params id="internal.multi.swd.release.JN5189" name="internal.multi.swd" value="true"/>
+            <params id="internal.wiretype.release.JN5189" name="internal.wiretype" value="SWD"/>
+            <params id="internal.has_swo.release.JN5189" name="internal.has_swo" value="true"/>
+          </params>
+          <drivers>
+            <driver id_refs="PROGRAM_FLASH_JN5189">
+              <driverBinary path="devices/JN5189/mcuxpresso" type="binary">
+                <files mask="JN5189_640K.cfx"/>
+              </driverBinary>
+            </driver>
+          </drivers>
+        </debug_configuration>
+      </debug_configurations>
+      <linkerSettings nature="c_nature">
+        <linker property="start_symbol" value="ResetISR"/>
+        <linker property="text_align" value="4"/>
+        <linker property="data_align" value="4"/>
+        <linker property="bss_align" value="4"/>
+        <linker property="mtb_supported" value="false"/>
+      </linkerSettings>
+      <linkerSettings nature="cpp_nature">
+        <linker property="start_symbol" value="ResetISR"/>
+        <linker property="text_align" value="4"/>
+        <linker property="data_align" value="4"/>
+        <linker property="bss_align" value="4"/>
+        <linker property="mtb_supported" value="false"/>
+      </linkerSettings>
+    </device>
+  </devices>
+  <components>
+    <component id="project_template.jn5189dk6.JN5189" name="jn5189dk6" version="1.0.0" devices="JN5189" dependency="component.lists.JN5189 component.serial_manager.JN5189 component.serial_manager_uart.JN5189 component.usart_adapter.JN5189 device.JN5189_CMSIS.JN5189 device.JN5189_image_tool.JN5189 device.JN5189_startup.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_usart.JN5189 platform.drivers.jn_iocon.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.lpc_adc.JN5189 platform.drivers.lpc_gpio.JN5189 platform.drivers.power_no_lib.JN5189 platform.drivers.reset.JN5189 utility.debug_console.JN5189" device_cores="core0_JN5189" category="Board Support/SDK Project Template" user_visible="true" type="project_template">
+      <source path="boards/jn5189dk6/project_template" target_path="board" type="src">
+        <files mask="clock_config.c"/>
+        <files mask="peripherals.c"/>
+        <files mask="pin_mux.c"/>
+        <files mask="board.c"/>
+        <files mask="board_utility.c"/>
+      </source>
+      <source path="boards/jn5189dk6/project_template" target_path="board" type="c_include">
+        <files mask="clock_config.h"/>
+        <files mask="peripherals.h"/>
+        <files mask="pin_mux.h"/>
+        <files mask="board.h"/>
+        <files mask="board_utility.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS.JN5189" name="CMSIS" version="5.1.1" devices="JN5189" dependency="platform.CMSIS_Driver platform.CMSIS_Driver_Include.CAN_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.Ethernet_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.Ethernet_MAC_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.Ethernet_PHY_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.Flash_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.I2C_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.MCI_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.NAND_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.SAI_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.SPI_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.USART_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.USB_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.USB_Device_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.USB_Host_CMSISInclude.JN5189 platform.Include_common.JN5189" user_visible="true" type="CMSIS">
+      <source path="CMSIS/Include" target_path="src" type="c_include">
+        <files mask="arm_common_tables.h"/>
+        <files mask="arm_const_structs.h"/>
+        <files mask="arm_math.h"/>
+        <files mask="cmsis_armcc.h"/>
+        <files mask="cmsis_armclang.h"/>
+        <files mask="cmsis_compiler.h"/>
+        <files mask="cmsis_gcc.h"/>
+        <files mask="cmsis_iccarm.h"/>
+        <files mask="cmsis_version.h"/>
+        <files mask="core_armv8mbl.h"/>
+        <files mask="core_armv8mml.h"/>
+        <files mask="core_cm0.h"/>
+        <files mask="core_cm0plus.h"/>
+        <files mask="core_cm23.h"/>
+        <files mask="core_cm3.h"/>
+        <files mask="core_cm33.h"/>
+        <files mask="core_cm4.h"/>
+        <files mask="core_cm7.h"/>
+        <files mask="core_dsp.h"/>
+        <files mask="core_sc000.h"/>
+        <files mask="core_sc300.h"/>
+        <files mask="mpu_armv7.h"/>
+        <files mask="mpu_armv8.h"/>
+        <files mask="tz_context.h"/>
+      </source>
+      <source path="CMSIS" target_path="src" type="doc">
+        <files mask="LICENSE.txt"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver" name="CMSIS_Driver" version="5.1.1" user_visible="true" type="CMSIS">
+      <source path="CMSIS/Driver/DriverTemplates" target_path="src" type="src">
+        <files mask="Driver_CAN.c"/>
+        <files mask="Driver_ETH_MAC.c"/>
+        <files mask="Driver_ETH_PHY.c"/>
+        <files mask="Driver_Flash.c"/>
+        <files mask="Driver_I2C.c"/>
+        <files mask="Driver_MCI.c"/>
+        <files mask="Driver_SAI.c"/>
+        <files mask="Driver_SPI.c"/>
+        <files mask="Driver_Storage.c"/>
+        <files mask="Driver_USART.c"/>
+        <files mask="Driver_USBD.c"/>
+        <files mask="Driver_USBH.c"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.CAN_CMSISInclude.JN5189" name="CAN" version="1.2.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_CAN.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" name="Common" version="5.1.1" devices="JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_Common.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.Ethernet_CMSISInclude.JN5189" name="Ethernet" version="2.1.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_ETH.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.Ethernet_MAC_CMSISInclude.JN5189" name="Ethernet_MAC" version="2.1.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.Ethernet_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_ETH_MAC.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.Ethernet_PHY_CMSISInclude.JN5189" name="Ethernet_PHY" version="2.1.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.Ethernet_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_ETH_PHY.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.Flash_CMSISInclude.JN5189" name="Flash" version="2.1.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_Flash.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.I2C_CMSISInclude.JN5189" name="I2C" version="2.3.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_I2C.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.MCI_CMSISInclude.JN5189" name="MCI" version="2.3.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_MCI.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.NAND_CMSISInclude.JN5189" name="NAND" version="2.3.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_NAND.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.SAI_CMSISInclude.JN5189" name="SAI" version="1.1.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_SAI.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.SPI_CMSISInclude.JN5189" name="SPI" version="2.2.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_SPI.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.USART_CMSISInclude.JN5189" name="USART" version="2.3.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_USART.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.USB_CMSISInclude.JN5189" name="USB" version="2.2.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_USB.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.USB_Device_CMSISInclude.JN5189" name="USB_Device" version="2.2.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.USB_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_USBD.h"/>
+      </source>
+    </component>
+    <component id="platform.CMSIS_Driver_Include.USB_Host_CMSISInclude.JN5189" name="USB_Host" version="2.2.0" devices="JN5189" dependency="platform.CMSIS_Driver_Include.Common_CMSISInclude.JN5189 platform.CMSIS_Driver_Include.USB_CMSISInclude.JN5189" user_visible="false" type="CMSIS_driver">
+      <source path="CMSIS/Driver/Include" target_path="CMSIS_driver" type="c_include">
+        <files mask="Driver_USBH.h"/>
+      </source>
+    </component>
+    <component id="platform.Include_common.JN5189" name="CMSIS_Include_common" version="5.1.1" devices="JN5189" user_visible="true" type="CMSIS_Include">
+      <source path="CMSIS/Include" target_path="CMSIS" type="c_include">
+        <files mask="arm_common_tables.h"/>
+        <files mask="arm_const_structs.h"/>
+        <files mask="arm_math.h"/>
+        <files mask="cmsis_armcc.h"/>
+        <files mask="cmsis_armclang.h"/>
+        <files mask="cmsis_compiler.h"/>
+        <files mask="cmsis_gcc.h"/>
+        <files mask="cmsis_iccarm.h"/>
+        <files mask="cmsis_version.h"/>
+        <files mask="core_armv8mbl.h"/>
+        <files mask="core_armv8mml.h"/>
+        <files mask="mpu_armv7.h"/>
+        <files mask="mpu_armv8.h"/>
+      </source>
+    </component>
+    <component id="platform.Include_core_cm4.JN5189" name="CMSIS_Include_core_cm4" version="5.1.1" devices="JN5189" dependency="platform.Include_common.JN5189" device_cores="core0_JN5189" user_visible="true" type="CMSIS_Include">
+      <source path="CMSIS/Include" target_path="CMSIS" type="c_include">
+        <files mask="core_cm4.h"/>
+      </source>
+    </component>
+    <component id="project_template.JN5189.JN5189" name="JN5189" version="1.0.0" devices="JN5189" dependency="component.lists.JN5189 component.serial_manager.JN5189 component.serial_manager_uart.JN5189 component.usart_adapter.JN5189 device.JN5189_CMSIS.JN5189 device.JN5189_image_tool.JN5189 device.JN5189_startup.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_usart.JN5189 platform.drivers.jn_iocon.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.lpc_adc.JN5189 platform.drivers.lpc_gpio.JN5189 platform.drivers.power_no_lib.JN5189 platform.drivers.reset.JN5189 utility.debug_console.JN5189" device_cores="core0_JN5189" category="Board Support/SDK Project Template" user_visible="true" type="project_template">
+      <source path="devices/JN5189/project_template" target_path="board" type="src">
+        <files mask="board.c"/>
+        <files mask="clock_config.c"/>
+        <files mask="peripherals.c"/>
+        <files mask="pin_mux.c"/>
+      </source>
+      <source path="devices/JN5189/project_template" target_path="board" type="c_include">
+        <files mask="board.h"/>
+        <files mask="clock_config.h"/>
+        <files mask="peripherals.h"/>
+        <files mask="pin_mux.h"/>
+      </source>
+    </component>
+    <component id="tools.JN5189" name="cmake_toolchain" version="1.0.0" devices="JN5189" user_visible="true" type="other">
+      <source path="tools/cmake_toolchain_files" target_path="src" type="script">
+        <files mask="armgcc.cmake"/>
+        <files mask="armgcc_force_cpp.cmake"/>
+        <files mask="xcc.cmake"/>
+      </source>
+    </component>
+    <component id="component.lists.JN5189" name="lists" version="1.0.0" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" category="Device/SDK Drivers" user_visible="true" type="other">
+      <source path="components/lists" target_path="component/lists" type="src">
+        <files mask="generic_list.c"/>
+      </source>
+      <source path="components/lists" target_path="component/lists" type="c_include">
+        <files mask="generic_list.h"/>
+      </source>
+    </component>
+    <component id="component.serial_manager.JN5189" name="serial_manager" version="1.0.0" full_name="Serial Manager" devices="JN5189" dependency="component.lists.JN5189 device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="utilities">
+      <source path="components/serial_manager" target_path="component/serial_manager" type="src">
+        <files mask="serial_manager.c"/>
+      </source>
+      <source path="components/serial_manager" target_path="component/serial_manager" type="c_include">
+        <files mask="serial_manager.h"/>
+        <files mask="serial_port_internal.h"/>
+      </source>
+    </component>
+    <component id="component.serial_manager_swo.JN5189" name="serial_manager_swo" version="1.0.0" devices="JN5189" dependency="component.lists.JN5189 component.serial_manager.JN5189 device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" category="Device/SDK Utilities" user_visible="true" type="other">
+      <source path="components/serial_manager" target_path="component/serial_manager" type="src">
+        <files mask="serial_port_swo.c"/>
+      </source>
+      <source path="components/serial_manager" target_path="component/serial_manager" type="c_include">
+        <files mask="serial_port_swo.h"/>
+      </source>
+    </component>
+    <component id="component.serial_manager_uart.JN5189" name="serial_manager_uart" version="1.0.0" full_name="Serial Manager uart" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_usart.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="utilities">
+      <source path="components/serial_manager" target_path="component/serial_manager" type="src">
+        <files mask="serial_port_uart.c"/>
+      </source>
+      <source path="components/serial_manager" target_path="component/serial_manager" type="c_include">
+        <files mask="serial_port_uart.h"/>
+      </source>
+    </component>
+    <component id="component.usart_adapter.JN5189" name="usart_adapter" version="1.0.0" full_name="usart_adapter" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_usart.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="utilities">
+      <source path="components/uart" target_path="component/uart" type="c_include">
+        <files mask="uart.h"/>
+      </source>
+      <source path="components/uart" target_path="component/uart" type="src">
+        <files mask="usart_adapter.c"/>
+      </source>
+    </component>
+    <component id="device.JN5189_CMSIS.JN5189" name="JN5189_CMSIS" version="1.0.0" devices="JN5189" dependency="platform.Include_common.JN5189 platform.Include_core_cm4.JN5189" device_cores="core0_JN5189" user_visible="true" type="CMSIS_Include">
+      <source path="devices/JN5189" target_path="device" type="c_include">
+        <files mask="JN5189.h"/>
+        <files mask="JN5189_features.h"/>
+        <files mask="fsl_device_registers.h"/>
+        <files mask="system_JN5189.h"/>
+      </source>
+      <source path="devices/JN5189" target_path="device" type="src">
+        <files mask="system_JN5189.c"/>
+      </source>
+    </component>
+    <component id="device.JN5189_debugger.JN5189" name="JN5189_debugger" version="1.0.0" devices="JN5189" user_visible="true" type="debugger"/>
+    <component id="device.JN5189_extrafiles.JN5189" name="JN5189_extrafiles" version="1.0.0" devices="JN5189" user_visible="true" type="other">
+      <source path="devices/JN5189/drivers" target_path="src" type="src">
+        <files mask="psector_api.c"/>
+        <files mask="fsl_ntag.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="src" type="c_include">
+        <files mask="fsl_ntag.h"/>
+      </source>
+    </component>
+    <component id="platform.device.JN5189_flash.JN5189" name="JN5189_flash" version="1.0.0" devices="JN5189" user_visible="true" type="debugger">
+      <source toolchain="mcuxpresso" path="devices/JN5189/mcuxpresso" target_path="src" type="binary">
+        <files mask="JN5189_640K.cfx"/>
+      </source>
+    </component>
+    <component id="device.JN5189_flashprogrammer.JN5189" name="JN5189_flashprogrammer" version="1.0.0" devices="JN5189" user_visible="true" type="other">
+      <source path="tools/JN-SW-4407-DK6-Flash-Programmer" target_path="src" type="doc">
+        <files mask="DK6-RN-0065-Production-Flash-Programmer.pdf"/>
+      </source>
+      <source path="tools/JN-SW-4407-DK6-Flash-Programmer" target_path="src" type="other">
+        <files mask="JN-SW-4407 DK6 Production Flash Programmer v2282.exe"/>
+      </source>
+    </component>
+    <component id="device.JN5189_framework_ssbl.JN5189" name="JN5189_framework_ssbl" version="1.0.0" devices="JN5189" user_visible="true" type="other">
+      <source path="boards/jn5189dk6/wireless_examples/framework/ssbl/binary" target_path="src" type="binary">
+        <files mask="ssbl.bin"/>
+      </source>
+    </component>
+    <component id="device.JN5189_gccfiles.JN5189" name="JN5189_gccfiles" version="1.0.0" devices="JN5189" user_visible="true" type="other">
+      <source path="devices/JN5189/gcc" target_path="src" type="linker">
+        <files mask="App1Build.ld"/>
+        <files mask="AppBuild16kEndDevice.ld"/>
+        <files mask="AppBuild16kEndDevice_JN5188.ld"/>
+        <files mask="AppBuild16kEndDevice_JN5189.ld"/>
+        <files mask="AppBuildMac.ld"/>
+        <files mask="AppBuildMinRetention.ld"/>
+        <files mask="AppBuildMinRetention_JN5188.ld"/>
+        <files mask="AppBuildMinRetention_JN5189.ld"/>
+        <files mask="AppBuildNone.ld"/>
+        <files mask="AppBuildNoneRam.ld"/>
+        <files mask="AppBuildNone_APP0.ld"/>
+        <files mask="AppBuildNone_JN5188.ld"/>
+        <files mask="AppBuildNone_JN5189.ld"/>
+        <files mask="AppBuildOtaRegions.ld"/>
+        <files mask="AppBuild_ZBSOTA_App0.ld"/>
+        <files mask="AppBuild_ZBSOTA_App1.ld"/>
+        <files mask="JN5188_flash.ld"/>
+        <files mask="JN5188_ram.ld"/>
+        <files mask="JN5189_flash.ld"/>
+        <files mask="JN5189_ram.ld"/>
+        <files mask="JN5189_rom.ld"/>
+        <files mask="JN5189_rom_es1.ld"/>
+      </source>
+      <source path="devices/JN5189/gcc" target_path="src" type="script">
+        <files mask="config.mk"/>
+        <files mask="config_cm4.mk"/>
+      </source>
+      <source path="devices/JN5189/gcc" target_path="src" type="asm_include">
+        <files mask="startup_JN5189.S"/>
+      </source>
+      <source path="devices/JN5189/gcc" target_path="src" type="src">
+        <files mask="startup_JN5189.c"/>
+        <files mask="startup_JN5189_appcore.c"/>
+        <files mask="startup_jn5189_app1.c"/>
+        <files mask="user.ldt"/>
+      </source>
+    </component>
+    <component id="device.JN5189_image_tool.JN5189" name="JN5189_image_tool" version="1.0.0" devices="JN5189" user_visible="true" type="other">
+      <source toolchain="mcuxpresso" path="tools/imagetool" target_path="scripts" type="script">
+        <files mask="dk6_image_tool.py"/>
+      </source>
+    </component>
+    <component id="platform.devices.JN5189_linker.JN5189" name="JN5189_linker" version="1.0.0" devices="JN5189" user_visible="true" type="linker"/>
+    <component id="device.JN5189_startup.JN5189" name="JN5189_startup" version="1.0.0" devices="JN5189" category="Device/Startup" user_visible="true" type="startup">
+      <source toolchain="mcuxpresso" path="devices/JN5189/mcuxpresso" target_path="startup" type="src_c">
+        <files mask="startup_jn5189.c"/>
+      </source>
+      <source toolchain="mcuxpresso" path="devices/JN5189/mcuxpresso" target_path="startup" type="src_cpp">
+        <files mask="startup_jn5189.cpp"/>
+      </source>
+    </component>
+    <component id="device.JN5189_startup_wireless.JN5189" name="Wireless start up code" version="1.0.0" full_name="Wireless example start up" devices="JN5189" user_visible="false" type="middleware">
+      <source toolchain="mcuxpresso" path="devices/JN5189/gcc" target_path="startup" type="src">
+        <files mask="startup_JN5189.c"/>
+      </source>
+    </component>
+    <component id="docs.JN5189.JN5189" name="JN5189" version="1.0.0" devices="JN5189" user_visible="true" type="documentation">
+      <source path="docs" target_path="src" type="doc">
+        <files mask="DK6-UG-3127-Production-Flash-Programmer.pdf"/>
+        <files mask="Getting Started with MCUXpresso SDK for JN5189.pdf"/>
+        <files mask="MCUXpresso SDK API Reference Manual_JN5189.pdf"/>
+        <files mask="MCUXpresso SDK Change Logs_JN5189.pdf"/>
+        <files mask="MCUXpresso SDK Release Notes Supporting JN5189.pdf"/>
+      </source>
+    </component>
+    <component id="docs.images.JN5189" name="images" version="1.0.0" devices="JN5189" user_visible="true" type="documentation">
+      <source path="docs/images" target_path="src" type="image">
+        <files mask="JN5189DK6.gif"/>
+        <files mask="device.jpg"/>
+      </source>
+    </component>
+    <component id="platform.drivers.aes.JN5189" name="aes" brief="AES Driver" version="2.0.1" full_name="AES Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_aes.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_aes.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.cic_irb.JN5189" name="cic_irb" brief="CIC_IRB Driver" version="2.0.0" full_name="CIC_IRB Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_cic_irb.c"/>
+        <files mask="fsl_cic_irb_rc5.c"/>
+        <files mask="fsl_cic_irb_rc6.c"/>
+        <files mask="fsl_cic_irb_rcmm.c"/>
+        <files mask="fsl_cic_irb_sirc.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_cic_irb.h"/>
+        <files mask="fsl_cic_irb_private.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.clock.JN5189" name="clock" brief="Clock Driver" version="2.0.0" full_name="Clock Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_clock.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_clock.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.common.JN5189" name="common" brief="COMMON Driver" version="2.1.3" full_name="COMMON Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_common.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_common.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.ctimer.JN5189" name="ctimer" brief="CTimer Driver" version="2.1.0" full_name="CTimer Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_ctimer.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_ctimer.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.dmic.JN5189" name="dmic" brief="DMIC Driver" version="2.1.1" full_name="DMIC Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_dmic.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_dmic.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.dmic_dma.JN5189" name="dmic_dma" brief="DMIC DMA Driver" version="2.1.1" full_name="DMIC DMA Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.dmic.JN5189 platform.drivers.lpc_dma.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_dmic_dma.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_dmic_dma.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.dmic_hwvad.JN5189" name="dmic_hwvad" brief="DMIC HWVAD Driver" version="2.1.1" full_name="DMIC HWVAD Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.dmic.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_dmic.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_dmic.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm.JN5189" name="flexcomm" brief="FLEXCOMM Driver" version="2.0.2" full_name="FLEXCOMM Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_flexcomm.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_flexcomm.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_i2c.JN5189" name="i2c" brief="I2C Driver" version="2.0.6" full_name="FLEXCOMM I2C Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_i2c.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_i2c.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_i2c_dma.JN5189" name="i2c_dma" brief="I2C Driver" version="2.0.5" full_name="FLEXCOMM I2C DMA Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_i2c.JN5189 platform.drivers.lpc_dma.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_i2c_dma.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_i2c_dma.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_i2c_freertos.JN5189" name="i2c_freertos" brief="I2C Driver" version="2.0.5" full_name="FLEXCOMM I2C FREERTOS Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_i2c.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers/freertos" type="src">
+        <files mask="fsl_i2c_freertos.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers/freertos" type="c_include">
+        <files mask="fsl_i2c_freertos.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_spi.JN5189" name="spi" brief="SPI Driver" version="2.0.5" full_name="FLEXCOMM SPI Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_spi.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_spi.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_spi_dma.JN5189" name="spi_dma" brief="SPI Driver" version="2.0.5" full_name="FLEXCOMM SPI DMA Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_spi.JN5189 platform.drivers.lpc_dma.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_spi_dma.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_spi_dma.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_spi_freertos.JN5189" name="spi_freertos" brief="SPI Driver" version="2.0.5" full_name="FLEXCOMM SPI FREERTOS Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_spi.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers/freertos" type="src">
+        <files mask="fsl_spi_freertos.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers/freertos" type="c_include">
+        <files mask="fsl_spi_freertos.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_usart.JN5189" name="usart" brief="USART Driver" version="2.1.0" full_name="FLEXCOMM USART Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_usart.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_usart.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_usart_dma.JN5189" name="usart_dma" brief="USART Driver" version="2.1.0" full_name="FLEXCOMM USART DMA Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_usart.JN5189 platform.drivers.lpc_dma.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_usart_dma.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_usart_dma.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.flexcomm_usart_freertos.JN5189" name="usart_freertos" brief="USART Driver" version="2.1.0" full_name="FLEXCOMM USART FREERTOS Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_usart.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers/freertos" type="src">
+        <files mask="fsl_usart_freertos.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers/freertos" type="c_include">
+        <files mask="fsl_usart_freertos.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.fmeas.JN5189" name="fmeas" brief="FMEAS Driver" version="2.1.1" full_name="FMEAS Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_fmeas.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_fmeas.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.gint.JN5189" name="gint" brief="GINT Driver" version="2.0.1" full_name="GINT Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_gint.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_gint.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.inputmux.JN5189" name="inputmux" brief="INPUTMUX Driver" version="2.0.1" full_name="INPUTMUX Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.inputmux_connections.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_inputmux.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_inputmux.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.inputmux_connections.JN5189" name="inputmux_connections" brief="Inputmux_connections Driver" version="2.0.1" full_name="Inputmux_connections Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_inputmux_connections.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.jn_cmp.JN5189" name="jn_cmp" brief="JN_CMP Driver" version="2.0.0" full_name="JN_CMP Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_cmp.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_cmp.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.jn_flash.JN5189" name="jn_flash" brief="JN_FLASH Driver" version="2.0.0" full_name="JN_FLASH Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_flash.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_flash.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.jn_iocon.JN5189" name="jn_iocon" brief="JN_IOCON Driver" version="2.0.0" full_name="JN_IOCON Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_iocon.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.jn_pwm.JN5189" name="jn_pwm" brief="JN_PWM Driver" version="2.0.0" full_name="JN_PWM Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_pwm.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_pwm.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.jn_rng.JN5189" name="jn_rng" brief="JN_RNG Driver" version="2.0.0" full_name="JN_RNG Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_rng.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_rng.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.jn_romapi.JN5189" name="jn_romapi" brief="JN_ROMAPI Driver" version="2.0.0" full_name="JN_ROMAPI Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="endian.h"/>
+        <files mask="flash_header.h"/>
+        <files mask="psector_api.h"/>
+        <files mask="rom_aes.h"/>
+        <files mask="rom_api.h"/>
+        <files mask="rom_common.h"/>
+        <files mask="rom_efuse.h"/>
+        <files mask="rom_isp.h"/>
+        <files mask="rom_lowpower.h"/>
+        <files mask="rom_mpu.h"/>
+        <files mask="rom_pmc.h"/>
+        <files mask="rom_psector.h"/>
+        <files mask="rom_secure.h"/>
+        <files mask="rom_vectors.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.jn_rtc.JN5189" name="jn_rtc" brief="RTC Driver" version="2.0.0" full_name="RTC Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_rtc.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_rtc.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.lpc_adc.JN5189" name="adc" brief="ADC Driver" version="2.3.2" full_name="ADC Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_adc.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_adc.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.lpc_dma.JN5189" name="dma" brief="DMA Driver" version="2.4.0" full_name="DMA Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_dma.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_dma.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.lpc_gpio.JN5189" name="gpio" brief="GPIO Driver" version="2.1.4" full_name="GPIO Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_gpio.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_gpio.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.pint.JN5189" name="pint" brief="PINT Driver" version="2.1.3" full_name="PINT Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_pint.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_pint.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.power_no_lib.JN5189" name="power_no_lib" brief="Power Driver" version="2.0.0" full_name="Power Driver" devices="JN5189" dependency="component.lists.JN5189 component.serial_manager.JN5189 component.serial_manager_uart.JN5189 component.usart_adapter.JN5189 device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.flexcomm.JN5189 platform.drivers.flexcomm_usart.JN5189 platform.drivers.jn_iocon.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189 utility.debug_console.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_power.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_power.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.reset.JN5189" name="reset" brief="Reset Driver" version="2.0.1" full_name="Reset Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_reset.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_reset.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.sha.JN5189" name="sha" brief="SHA Driver" version="2.1.0" full_name="SHA Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_sha.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_sha.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.spifi.JN5189" name="spifi" brief="SPIFI Driver" version="2.0.2" full_name="SPIFI Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_spifi.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_spifi.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.spifi_dma.JN5189" name="spifi_dma" brief="SPIFI Driver" version="2.0.2" full_name="SPIFI DMA Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.lpc_dma.JN5189 platform.drivers.reset.JN5189 platform.drivers.spifi.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_spifi_dma.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_spifi_dma.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.wtimer.JN5189" name="wtimer" brief="WTIMER Driver" version="2.0.0" full_name="WTIMER Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_wtimer.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_wtimer.h"/>
+      </source>
+    </component>
+    <component id="platform.drivers.wwdt.JN5189" name="wwdt" brief="WWDT Driver" version="2.1.6" full_name="WWDT Driver" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="driver">
+      <source path="devices/JN5189/drivers" target_path="drivers" type="src">
+        <files mask="fsl_wwdt.c"/>
+      </source>
+      <source path="devices/JN5189/drivers" target_path="drivers" type="c_include">
+        <files mask="fsl_wwdt.h"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.JN5189" name="Amazon-FreeRTOS" brief="Amazon FreeRTOS, Real Time Operating System" version="10.2.0" full_name="Amazon-FreeRTOS Kernel" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="OS">
+      <defines>
+        <define name="FSL_RTOS_FREE_RTOS" value=""/>
+        <define name="SDK_OS_FREE_RTOS" value=""/>
+      </defines>
+      <source exclude="true" path="rtos/amazon-freertos" target_path="amazon-freertos" type="other">
+        <files mask="CHANGELOG.md"/>
+        <files mask="README.md"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos" target_path="amazon-freertos" type="doc">
+        <files mask="ChangeLogKSDK.txt"/>
+        <files mask="directories.txt"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos" target_path="amazon-freertos/license" type="other">
+        <files mask="LICENSE"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS" target_path="amazon-freertos/freertos" type="src">
+        <files mask="event_groups.c"/>
+        <files mask="list.c"/>
+        <files mask="queue.c"/>
+        <files mask="stream_buffer.c"/>
+        <files mask="tasks.c"/>
+        <files mask="timers.c"/>
+      </source>
+      <source toolchain="mcuxpresso" path="rtos/amazon-freertos/lib/FreeRTOS/portable/GCC/ARM_CM3" target_path="amazon-freertos/freertos/portable" type="src" device_cores="core0_JN5189">
+        <files mask="port.c"/>
+      </source>
+      <source toolchain="mcuxpresso" path="rtos/amazon-freertos/lib/FreeRTOS/portable/GCC/ARM_CM3" target_path="amazon-freertos/freertos/portable" type="c_include" device_cores="core0_JN5189">
+        <files mask="portmacro.h"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS/portable" target_path="amazon-freertos/freertos/portable" type="doc">
+        <files mask="readme.txt"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib" target_path="amazon-freertos/license" type="doc">
+        <files mask="directories.txt"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/include" target_path="amazon-freertos/include" type="c_include">
+        <files mask="FreeRTOS.h"/>
+        <files mask="event_groups.h"/>
+        <files mask="freertos_tasks_c_additions.h"/>
+        <files mask="message_buffer.h"/>
+        <files mask="queue.h"/>
+        <files mask="semphr.h"/>
+        <files mask="stream_buffer.h"/>
+        <files mask="task.h"/>
+        <files mask="timers.h"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/include/private" target_path="amazon-freertos/include" type="c_include">
+        <files mask="deprecated_definitions.h"/>
+        <files mask="list.h"/>
+        <files mask="mpu_prototypes.h"/>
+        <files mask="mpu_wrappers.h"/>
+        <files mask="portable.h"/>
+        <files mask="projdefs.h"/>
+        <files mask="stack_macros.h"/>
+        <files mask="threading_alt.h"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.freertos_plus_posix.JN5189" name="Amazon-FreeRTOS plus POSIX" brief="Amazon FreeRTOS plus POSIX" version="10.2.0" full_name="Amazon-FreeRTOS plus POSIX" devices="JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="other">
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-POSIX/include" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="FreeRTOS_POSIX.h"/>
+        <files mask="FreeRTOS_POSIX_internal.h"/>
+        <files mask="FreeRTOS_POSIX_types.h"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-POSIX/include/portable" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="FreeRTOS_POSIX_portable_default.h"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-POSIX/include/portable/nxp/lpc54018iotmodule" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="FreeRTOS_POSIX_portable.h"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-POSIX/source" target_path="amazon-freertos/freertos-plus-posix" type="src">
+        <files mask="FreeRTOS_POSIX_clock.c"/>
+        <files mask="FreeRTOS_POSIX_mqueue.c"/>
+        <files mask="FreeRTOS_POSIX_pthread.c"/>
+        <files mask="FreeRTOS_POSIX_pthread_barrier.c"/>
+        <files mask="FreeRTOS_POSIX_pthread_cond.c"/>
+        <files mask="FreeRTOS_POSIX_pthread_mutex.c"/>
+        <files mask="FreeRTOS_POSIX_sched.c"/>
+        <files mask="FreeRTOS_POSIX_semaphore.c"/>
+        <files mask="FreeRTOS_POSIX_timer.c"/>
+        <files mask="FreeRTOS_POSIX_unistd.c"/>
+        <files mask="FreeRTOS_POSIX_utils.c"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/include/FreeRTOS_POSIX" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="errno.h"/>
+        <files mask="fcntl.h"/>
+        <files mask="mqueue.h"/>
+        <files mask="pthread.h"/>
+        <files mask="sched.h"/>
+        <files mask="semaphore.h"/>
+        <files mask="signal.h"/>
+        <files mask="time.h"/>
+        <files mask="unistd.h"/>
+        <files mask="utils.h"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/include/FreeRTOS_POSIX/sys" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="types.h"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.freertos_plus_tcp.JN5189" name="Amazon-FreeRTOS plus TCP" brief="Amazon FreeRTOS plus TCP" version="10.2.0" full_name="Amazon-FreeRTOS plus TCP" devices="JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="other">
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/include" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="FreeRTOSIPConfigDefaults.h"/>
+        <files mask="FreeRTOS_ARP.h"/>
+        <files mask="FreeRTOS_DHCP.h"/>
+        <files mask="FreeRTOS_DNS.h"/>
+        <files mask="FreeRTOS_IP.h"/>
+        <files mask="FreeRTOS_IP_Private.h"/>
+        <files mask="FreeRTOS_Sockets.h"/>
+        <files mask="FreeRTOS_Stream_Buffer.h"/>
+        <files mask="FreeRTOS_TCP_IP.h"/>
+        <files mask="FreeRTOS_TCP_WIN.h"/>
+        <files mask="FreeRTOS_UDP_IP.h"/>
+        <files mask="FreeRTOS_errno_TCP.h"/>
+        <files mask="IPTraceMacroDefaults.h"/>
+        <files mask="NetworkBufferManagement.h"/>
+        <files mask="NetworkInterface.h"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source" target_path="amazon-freertos/freertos-plus-posix" type="src">
+        <files mask="FreeRTOS_ARP.c"/>
+        <files mask="FreeRTOS_DHCP.c"/>
+        <files mask="FreeRTOS_DNS.c"/>
+        <files mask="FreeRTOS_IP.c"/>
+        <files mask="FreeRTOS_Sockets.c"/>
+        <files mask="FreeRTOS_Stream_Buffer.c"/>
+        <files mask="FreeRTOS_TCP_IP.c"/>
+        <files mask="FreeRTOS_TCP_WIN.c"/>
+        <files mask="FreeRTOS_UDP_IP.c"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source" target_path="amazon-freertos/freertos-plus-posix" type="doc">
+        <files mask="History.txt"/>
+        <files mask="readme.txt"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source" target_path="amazon-freertos/freertos-plus-posix" type="other">
+        <files mask="ReadMe.url"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/BufferManagement" target_path="amazon-freertos/freertos-plus-posix" type="src">
+        <files mask="BufferAllocation_1.c"/>
+        <files mask="BufferAllocation_2.c"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/Compiler/CompilerName" target_path="amazon-freertos/freertos-plus-posix" type="doc">
+        <files mask="ReadMe.txt"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/Compiler/CompilerName" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="pack_struct_end.h"/>
+        <files mask="pack_struct_start.h"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/Compiler/GCC" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="pack_struct_end.h"/>
+        <files mask="pack_struct_start.h"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/Compiler/IAR" target_path="amazon-freertos/freertos-plus-posix" type="c_include">
+        <files mask="pack_struct_end.h"/>
+        <files mask="pack_struct_start.h"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/LPC17xx" target_path="amazon-freertos/freertos-plus-posix" type="src">
+        <files mask="NetworkInterface.c"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/LPC18xx" target_path="amazon-freertos/freertos-plus-posix" type="src">
+        <files mask="NetworkInterface.c"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/LPC18xx" target_path="amazon-freertos/freertos-plus-posix" type="doc">
+        <files mask="ReadMe.txt"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/NetworkInterface" target_path="amazon-freertos/freertos-plus-posix" type="doc">
+        <files mask="README_DRIVER_DISCLAIMER.txt"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/board_family" target_path="amazon-freertos/freertos-plus-posix" type="src">
+        <files mask="NetworkInterface.c"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS-Plus-TCP/source/portable/NetworkInterface/board_family" target_path="amazon-freertos/freertos-plus-posix" type="doc">
+        <files mask="ReadMe.txt"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.heap_1.JN5189" name="heap_1" brief="FreeRTOS heap_1 allocator" version="10.2.0" full_name="FreeRTOS_heap_1" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="other">
+      <source path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="src">
+        <files mask="heap_1.c"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.heap_2.JN5189" name="heap_2" brief="FreeRTOS heap_2 allocator" version="10.2.0" full_name="FreeRTOS_heap_2" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="other">
+      <source path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="src">
+        <files mask="heap_2.c"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.heap_3.JN5189" name="heap_3" brief="FreeRTOS heap_3 allocator" version="10.2.0" full_name="FreeRTOS_heap_3" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189 platform.utilities.misc_utilities.JN5189" device_cores="core0_JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="other">
+      <source path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="src">
+        <files mask="heap_3.c"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.heap_4.JN5189" name="heap_4" brief="FreeRTOS heap_4 allocator" version="10.2.0" full_name="FreeRTOS_heap_4" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="other">
+      <source path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="src">
+        <files mask="heap_4.c"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.heap_5.JN5189" name="heap_5" brief="FreeRTOS heap_5 allocator" version="10.2.0" full_name="FreeRTOS_heap_5" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="other">
+      <source path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="src">
+        <files mask="heap_5.c"/>
+      </source>
+    </component>
+    <component id="middleware.amazon_freertos.freertos.heap_newlib.JN5189" name="heap_newlib" brief="FreeRTOS heap_newlib allocator" version="10.2.0" full_name="FreeRTOS_heap_newlib" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 middleware.template_application.amazon_freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="other">
+      <source path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="src">
+        <files mask="heap_useNewlib.c"/>
+      </source>
+    </component>
+    <component id="middleware.baremetal.JN5189" name="baremetal" version="1.0.0" full_name="Baremetal" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="OS">
+      <defines>
+        <define name="FSL_RTOS_BM" value=""/>
+        <define name="SDK_OS_BAREMETAL" value=""/>
+      </defines>
+    </component>
+    <component id="middleware.template_application.amazon_freertos.JN5189" name="Amazon-FreeRTOS" brief="FreeRTOS template application" version="10.2.0" full_name="FreeRTOS template" devices="JN5189" dependency="device.JN5189_CMSIS.JN5189 middleware.amazon_freertos.freertos.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.jn_romapi.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" category="Operating System/FreeRTOS Operating System" user_visible="true" type="project_template">
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="other">
+        <files mask="ReadMe.url"/>
+      </source>
+      <source exclude="true" path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="src">
+        <files mask="heap_1.c"/>
+        <files mask="heap_2.c"/>
+        <files mask="heap_3.c"/>
+        <files mask="heap_5.c"/>
+      </source>
+      <source path="rtos/amazon-freertos/lib/FreeRTOS/portable/MemMang" target_path="amazon-freertos/freertos/portable" type="src">
+        <files mask="heap_4.c"/>
+      </source>
+      <source path="rtos/amazon-freertos/template_application/ARM_CM3" target_path="source" type="c_include" device_cores="core0_JN5189">
+        <files mask="FreeRTOSConfig.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.flash.external.JN5189" name="wireless EEPROM" version="1.0.0" full_name="wireless EEPROM" devices="JN5189" dependency="middleware.wireless.framework.smgr.spi_adapter.JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Flash/External/Interface" target_path="framework/Flash/External/interface" type="c_include">
+        <files mask="Eeprom.h"/>
+      </source>
+      <source path="middleware/wireless/framework/Flash/External/Source" target_path="framework/Flash/External/source" type="src">
+        <files mask="Eeprom_InternalFlash.c"/>
+        <files mask="Eeprom_MX25R8035F.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.flash.EEPROM_InternalFlash.JN5189" name="wireless EEPROM InternalFlash" version="1.0.0" full_name="wireless EEPROM InternalFlash" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Flash/External/Interface" target_path="framework/Flash/External/interface" type="c_include">
+        <files mask="Eeprom.h"/>
+      </source>
+      <source path="middleware/wireless/framework/Flash/External/Source" target_path="framework/Flash/External/source" type="src">
+        <files mask="Eeprom_InternalFlash.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.flash.internal.JN5189" name="wireless Flash" version="1.0.0" full_name="wireless Flash" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Flash/Internal" target_path="framework/Flash" type="src">
+        <files mask="Flash_Adapter.c"/>
+      </source>
+      <source path="middleware/wireless/framework/Flash/Internal" target_path="framework/Flash" type="c_include">
+        <files mask="Flash_Adapter.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.gpio_adapter.JN5189" name="wireless GPIO" version="1.0.0" full_name="wireless GPIO" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/GPIO" target_path="framework/GPIO/source" type="src">
+        <files mask="GPIO_Adapter.c"/>
+      </source>
+      <source path="middleware/wireless/framework/GPIO" target_path="framework/GPIO/interface" type="c_include">
+        <files mask="GPIO_Adapter.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.IAR_linker_file_KW38.JN5189" name="wireless framework linker_file IAR for KW38" version="1.0.0" full_name="wireless linker_file IAR for KW38" devices="JN5189" user_visible="false" type="middleware"/>
+    <component id="middleware.wireless.framework.keyboard.JN5189" name="wireless Keyboard" version="1.0.0" full_name="wireless Keyboard" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Keyboard/Interface" target_path="framework/Keyboard/interface" type="c_include">
+        <files mask="Keyboard.h"/>
+      </source>
+      <source path="middleware/wireless/framework/Keyboard/Source" target_path="framework/Keyboard/source" type="src">
+        <files mask="Keyboard.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.led.JN5189" name="wireless LED" version="1.0.0" full_name="wireless LED" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/LED/Interface" target_path="framework/LED/interface" type="c_include">
+        <files mask="LED.h"/>
+      </source>
+      <source path="middleware/wireless/framework/LED/Source" target_path="framework/LED/source" type="src">
+        <files mask="LED.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.reset.JN5189" name="wireless Reset" version="1.0.0" full_name="wireless Reset" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Reset" target_path="framework/Reset/source" type="src">
+        <files mask="Reset.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.smgr.spi_adapter.JN5189" name="wireless SPI_Adapter" version="1.0.0" full_name="wireless SPI_Adapter" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/SerialManager/Source/SPI_Adapter" target_path="framework/SerialManager/source/SPI_Adapter" type="src">
+        <files mask="SPI_Serial_Adapter.c"/>
+      </source>
+      <source path="middleware/wireless/framework/SerialManager/Source/SPI_Adapter" target_path="framework/SerialManager/source/SPI_Adapter" type="c_include">
+        <files mask="SPI_Serial_Adapter.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.smgr.uart_adapter.JN5189" name="wireless UART_Adapter" version="1.0.0" full_name="wireless UART_Adapter" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/SerialManager/Source" target_path="framework/SerialManager/source" type="src">
+        <files mask="UART_Serial_Adapter.c"/>
+      </source>
+      <source path="middleware/wireless/framework/SerialManager/Source" target_path="framework/SerialManager/source" type="c_include">
+        <files mask="UART_Serial_Adapter.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.xcvr_DK6.JN5189" name="Wireless XCVR DK6 driver" version="1.0.0" full_name="Wireless XCVR DK6 driver" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/XCVR/DK6" target_path="framework/XCVR/DK6" type="src">
+        <files mask="fsl_xcvr.c"/>
+      </source>
+      <source path="middleware/wireless/framework/XCVR/DK6" target_path="framework/XCVR/DK6" type="c_include">
+        <files mask="fsl_xcvr.h"/>
+        <files mask="radio.h"/>
+      </source>
+      <source toolchain="mcuxpresso" path="middleware/wireless/framework/XCVR/lib" target_path="libs" type="lib">
+        <files mask="libRadio.a"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.common.JN5189" name="wireless framework Common" version="1.0.0" full_name="wireless framework Common" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Common" target_path="framework/Common" type="c_include">
+        <files mask="EmbeddedTypes.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.common_jn.JN5189" name="wireless framework Common JN" version="1.0.0" full_name="wireless framework Common JN" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Common" target_path="framework/Common" type="src">
+        <files mask="MicroInt_arm_sdk2.c"/>
+      </source>
+      <source path="middleware/wireless/framework/Common" target_path="framework/Common" type="c_include">
+        <files mask="MicroSpecific.h"/>
+        <files mask="MicroSpecific_JN518x.h"/>
+        <files mask="MicroSpecific_arm_sdk2.h"/>
+        <files mask="jendefs.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.framework_Common_zigbee_with_sdk2.JN5189" name="wireless framework Common  Zigbee with SDK2" version="1.0.0" full_name="wireless framework Common Zigbee with SDK2" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Common" target_path="framework/Common" type="c_include">
+        <files mask="EmbeddedTypes.h"/>
+        <files mask="Heap.h"/>
+        <files mask="MicroInt.h"/>
+        <files mask="MicroSpecific.h"/>
+        <files mask="MicroSpecific_JN518x.h"/>
+        <files mask="MicroSpecific_arm_sdk2.h"/>
+        <files mask="dbg.h"/>
+        <files mask="jendefs.h"/>
+      </source>
+      <source path="middleware/wireless/framework/Common" target_path="framework/Common" type="src">
+        <files mask="Heap.c"/>
+        <files mask="MicroInt_arm_sdk2.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.DebugExceptionHandlers_jn518x.JN5189" name="wireless framework DebugExceptionHandlers_jn518x" version="1.0.0" full_name="wireless framework DebugExceptionHandlers_jn518x" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/DebugExceptionHandlers_jn518x/inc" target_path="framework/DebugExceptionHandlers_jn518x/inc" type="c_include">
+        <files mask="ARMcortexMxRegisters_JN51xx.h"/>
+        <files mask="DebugExceptionHandlers_jn518x.h"/>
+      </source>
+      <source path="middleware/wireless/framework/DebugExceptionHandlers_jn518x/src" target_path="framework/DebugExceptionHandlers_jn518x/src" type="src">
+        <files mask="Exceptions_NVIC.c"/>
+        <files mask="MicroExceptions_arm.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.DebugFifo.JN5189" name="wireless framework DebugFifo" version="1.0.0" full_name="wireless framework DebugFifo" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/DebugFifo/Include" target_path="framework/DebugFifo/Include" type="c_include">
+        <files mask="Debug.h"/>
+      </source>
+      <source path="middleware/wireless/framework/DebugFifo/Source" target_path="framework/DebugFifo/Source" type="src">
+        <files mask="Debug.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.lpm_ble_qn_jn518x.JN5189" name="wireless framework BLE LowPower Qn" version="1.0.0" full_name="wireless framework BLE LowPower Qn" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/LowPower/Interface/jn5189dk6" target_path="framework/LowPower/interface" type="c_include">
+        <files mask="PWR_Configuration.h"/>
+        <files mask="PWR_Interface.h"/>
+      </source>
+      <source path="middleware/wireless/framework/LowPower/Source/jn5189dk6" target_path="framework/LowPower/source" type="src">
+        <files mask="PWR.c"/>
+        <files mask="PWRLib.c"/>
+      </source>
+      <source path="middleware/wireless/framework/LowPower/Interface/jn5189dk6" target_path="framework/LowPower/source" type="c_include">
+        <files mask="PWRLib.h"/>
+      </source>
+      <source toolchain="mcuxpresso" path="middleware/wireless/framework/LowPower/Source/jn5189dk6" target_path="framework/LowPower/source" type="asm_include">
+        <files mask="PWR_setjmp.S"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.mem_manager.JN5189" name="wireless framework MemManager" version="1.0.0" full_name="wireless framework MemManager" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/MemManager/Interface" target_path="framework/MemManager/interface" type="c_include">
+        <files mask="MemManager.h"/>
+      </source>
+      <source path="middleware/wireless/framework/MemManager/Source" target_path="framework/MemManager/source" type="src">
+        <files mask="MemManager.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.messaging.JN5189" name="wireless framework Messaging" version="1.0.0" full_name="wireless framework Messaging" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Messaging/Interface" target_path="framework/Messaging/interface" type="c_include">
+        <files mask="Messaging.h"/>
+      </source>
+      <source path="middleware/wireless/framework/Messaging/Source" target_path="framework/Messaging/source" type="src">
+        <files mask="Messaging.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.osa.JN5189" name="wireless framework OSAbstraction" version="1.0.0" full_name="wireless framework OSAbstraction" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/OSAbstraction/Interface" target_path="framework/OSAbstraction/interface" type="c_include">
+        <files mask="fsl_os_abstraction.h"/>
+        <files mask="fsl_os_abstraction_config.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.osa_bm.JN5189" name="wireless framework OSAbstraction BM" version="1.0.0" full_name="wireless framework OSAbstraction BM" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/OSAbstraction/Interface" target_path="framework/OSAbstraction/interface" type="c_include">
+        <files mask="fsl_os_abstraction.h"/>
+        <files mask="fsl_os_abstraction_bm.h"/>
+        <files mask="fsl_os_abstraction_config.h"/>
+      </source>
+      <source path="middleware/wireless/framework/OSAbstraction/Source" target_path="framework/OSAbstraction/source" type="src">
+        <files mask="fsl_os_abstraction_bm.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.ota.JN5189" name="wireless framework OtaSupport" version="1.0.0" full_name="wireless framework OtaSupport" devices="JN5189" dependency="middleware.wireless.framework.flash.external.JN5189 middleware.wireless.framework.smgr.spi_adapter.JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/OtaSupport/Interface" target_path="framework/OtaSupport/interface" type="c_include">
+        <files mask="OtaSupport.h"/>
+        <files mask="OtaUtils.h"/>
+      </source>
+      <source path="middleware/wireless/framework/OtaSupport/Source" target_path="framework/OtaSupport/source" type="src">
+        <files mask="OtaSupport.c"/>
+        <files mask="OtaUtils.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.framework_OtaSupport_InternalFlash.JN5189" name="wireless framework OtaSupport  InternalFlash#IDE will show this as component name" version="1.0.0" full_name="wireless framework OtaSupport InternalFlash" devices="JN5189" dependency="middleware.wireless.framework.flash.EEPROM_InternalFlash.JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/OtaSupport/Interface" target_path="framework/OtaSupport/interface" type="c_include">
+        <files mask="OtaSupport.h"/>
+        <files mask="OtaUtils.h"/>
+      </source>
+      <source path="middleware/wireless/framework/OtaSupport/Source" target_path="framework/OtaSupport/source" type="src">
+        <files mask="OtaSupport.c"/>
+        <files mask="OtaUtils.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.pdm.JN5189" name="wireless framework PDM" version="1.0.0" full_name="wireless framework PDM" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/PDM" target_path="framework/PDM/interface" type="c_include">
+        <files mask="PDM.h"/>
+      </source>
+      <source path="middleware/wireless/framework/PDM" target_path="framework/PDM/source" type="src">
+        <files mask="pdm_port.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.framework_PDM_hf.JN5189" name="wireless framework PDM header file#IDE will show this as component name" version="1.0.0" full_name="wireless framework PDM header file" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/PDM/Include" target_path="framework/PDM/Include" type="c_include">
+        <files mask="PDM.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework_PDM_lib_jn.JN5189" name="wireless framework PDM lib jn bm#IDE will show this as component name" version="1.0.0" full_name="wireless framework PDM lib jn bm" devices="JN5189" user_visible="false" type="middleware">
+      <source toolchain="mcuxpresso" path="middleware/wireless/framework/PDM/Library" target_path="libs" type="lib">
+        <files mask="libPDM.a"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.PDUM.JN5189" name="wireless framework PDUM" version="1.0.0" full_name="wireless framework PDUM" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/PDUM/Include" target_path="framework/PDUM" type="c_include">
+        <files mask="pdum_apl.h"/>
+        <files mask="pdum_common.h"/>
+        <files mask="pdum_nwk.h"/>
+      </source>
+      <source toolchain="mcuxpresso" path="middleware/wireless/framework/PDUM/Library" target_path="libs" type="lib">
+        <files mask="libPDUM.a"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.PWRM.JN5189" name="wireless framework PWRM" version="1.0.0" full_name="wireless framework PWRM" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/PWRM/Include" target_path="framework/PWRM" type="c_include">
+        <files mask="pwrm.h"/>
+      </source>
+      <source toolchain="mcuxpresso" path="middleware/wireless/framework/PWRM/Library" target_path="libs" type="lib">
+        <files mask="libPWRM.a"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.panic.JN5189" name="wireless framework Panic" version="1.0.0" full_name="wireless framework Panic" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Panic/Interface" target_path="framework/Panic/interface" type="c_include">
+        <files mask="Panic.h"/>
+      </source>
+      <source path="middleware/wireless/framework/Panic/Source" target_path="framework/Panic/source" type="src">
+        <files mask="Panic.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.rng.JN5189" name="wireless framework RNG" version="1.0.0" full_name="wireless framework RNG" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/RNG/Interface" target_path="framework/RNG/interface" type="c_include">
+        <files mask="RNG_Interface.h"/>
+      </source>
+      <source path="middleware/wireless/framework/RNG/Source" target_path="framework/RNG/source" type="src">
+        <files mask="RNG.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.framework_RNG_PUB.JN5189" name="wireless framework RNG Public" version="1.0.0" full_name="wireless framework RNG Public" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/RNG/Interface" target_path="framework/RNG/interface" type="c_include">
+        <files mask="RNG_Interface.h"/>
+        <files mask="rnd_pub.h"/>
+      </source>
+      <source path="middleware/wireless/framework/RNG/Source" target_path="framework/RNG/source" type="src">
+        <files mask="RNG.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.smgr.JN5189" name="wireless framework SerialManager" version="1.0.0" full_name="wireless framework SerialManager" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/SerialManager/Interface" target_path="framework/SerialManager/interface" type="c_include">
+        <files mask="SerialManager.h"/>
+      </source>
+      <source path="middleware/wireless/framework/SerialManager/Source" target_path="framework/SerialManager/source" type="src">
+        <files mask="SerialManager.c"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.tmr.JN5189" name="wireless framework TimersManager" version="1.0.0" full_name="wireless framework TimersManager" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/TimersManager/Interface" target_path="framework/TimersManager/interface" type="c_include">
+        <files mask="TimersManager.h"/>
+      </source>
+      <source path="middleware/wireless/framework/TimersManager/Source" target_path="framework/TimersManager/source" type="src">
+        <files mask="TMR_Adapter.c"/>
+        <files mask="TimersManager.c"/>
+      </source>
+      <source path="middleware/wireless/framework/TimersManager/Source" target_path="framework/TimersManager/source" type="c_include">
+        <files mask="TMR_Adapter.h"/>
+        <files mask="TimersManagerInternal.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.framework_TimersManager_HF.JN5189" name="wireless framework TimersManager header file" version="1.0.0" full_name="wireless framework TimersManager header file" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/TimersManager/Interface" target_path="framework/TimersManager/interface" type="c_include">
+        <files mask="TimersManager.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.function_lib.JN5189" name="wireless framework Function Lib" version="1.0.0" full_name="wireless framework Function Lib" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/FunctionLib" target_path="framework/FunctionLib/source" type="src">
+        <files mask="FunctionLib.c"/>
+      </source>
+      <source path="middleware/wireless/framework/FunctionLib" target_path="framework/FunctionLib/interface" type="c_include">
+        <files mask="FunctionLib.h"/>
+      </source>
+    </component>
+    <component id="middleware.framework.generic_lists.JN5189" name="wireless framework lists" version="1.0.0" full_name="wireless framework lists" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/Lists" target_path="framework/Lists/source" type="src">
+        <files mask="GenericList.c"/>
+      </source>
+      <source path="middleware/wireless/framework/Lists" target_path="framework/Lists/interface" type="c_include">
+        <files mask="GenericList.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.module_info.JN5189" name="wireless framework Module Info" version="1.0.0" full_name="wireless framework Module Info" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/ModuleInfo" target_path="framework/ModuleInfo/source" type="src">
+        <files mask="ModuleInfo.c"/>
+      </source>
+      <source path="middleware/wireless/framework/ModuleInfo" target_path="framework/ModuleInfo/interface" type="c_include">
+        <files mask="ModuleInfo.h"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.sec_lib.JN5189" name="wireless framework Sec_lib" version="1.0.0" full_name="wireless framework Sec_lib" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/SecLib" target_path="framework/SecLib/source" type="src">
+        <files mask="SecLib.c"/>
+      </source>
+      <source path="middleware/wireless/framework/SecLib" target_path="framework/SecLib/interface" type="c_include">
+        <files mask="SecLib.h"/>
+      </source>
+      <source toolchain="mcuxpresso" path="middleware/wireless/framework/SecLib" target_path="libs" type="lib">
+        <files mask="lib_crypto_m4.a"/>
+      </source>
+    </component>
+    <component id="middleware.wireless.framework.framework_sec_zigbee.JN5189" name="wireless framework Sec_lib  for zigbee#IDE will show this as component name" version="1.0.0" full_name="wireless framework Sec_lib for zigbee" devices="JN5189" user_visible="false" type="middleware">
+      <source path="middleware/wireless/framework/SecLib" target_path="framework/SecLib/source" type="src">
+        <files mask="SecLib.c"/>
+      </source>
+      <source path="middleware/wireless/framework/SecLib" target_path="framework/SecLib/interface" type="c_include">
+        <files mask="SecLib.h"/>
+        <files mask="aessw_ccm.h"/>
+      </source>
+    </component>
+    <component id="platform.utilities.misc_utilities.JN5189" name="misc_utilities" brief="Utilities which is needed for particular toolchain like the SBRK function required to address limitation between HEAP and STACK in GCC toolchain library." version="1.0.0" devices="JN5189" user_visible="true" type="utilities"/>
+    <component id="platform.utilities.assert.JN5189" name="assert" version="1.0.0" devices="JN5189" dependency="component.lists.JN5189 component.serial_manager.JN5189 device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189 utility.debug_console.JN5189" device_cores="core0_JN5189" user_visible="true" type="utilities">
+      <source path="devices/JN5189/utilities" target_path="utilities" type="src">
+        <files mask="fsl_assert.c"/>
+      </source>
+    </component>
+    <component id="utility.debug_console.JN5189" name="debug_console" version="1.0.0" devices="JN5189" dependency="component.lists.JN5189 component.serial_manager.JN5189 device.JN5189_CMSIS.JN5189 platform.Include_common.JN5189 platform.Include_core_cm4.JN5189 platform.drivers.clock.JN5189 platform.drivers.common.JN5189 platform.drivers.reset.JN5189" device_cores="core0_JN5189" user_visible="true" type="utilities">
+      <source path="devices/JN5189/utilities/debug_console" target_path="utilities" type="src">
+        <files mask="fsl_debug_console.c"/>
+      </source>
+      <source path="devices/JN5189/utilities/debug_console" target_path="utilities" type="c_include">
+        <files mask="fsl_debug_console.h"/>
+        <files mask="fsl_debug_console_conf.h"/>
+      </source>
+      <source path="devices/JN5189/utilities/str" target_path="utilities" type="src">
+        <files mask="fsl_str.c"/>
+      </source>
+      <source path="devices/JN5189/utilities/str" target_path="utilities" type="c_include">
+        <files mask="fsl_str.h"/>
+      </source>
+    </component>
+  </components>
+</ksdk:manifest>

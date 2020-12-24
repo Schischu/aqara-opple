@@ -54,9 +54,11 @@ The SW is based on the JN-AN-1245 Zigbee 3.0 Controller and Switch example code 
 - Fully compatible with Hue bridge
 
 ### Next steps
-- Compare to CoinCell example from SDK
-- Better handling of Deep Sleep
+- Better Pairing. Automatically go to Steering Mode after Flashing
+- Allow Factory Reset. Allows repairing without the need to reflash
+- Better handling of Deep Sleep. Currently 10sec after keypress. Best would be periodic wakeup to report battery status.
 - Battery Status reporting
+- Compare to CoinCell example from SDK
 - Provide FW for all variant. 2,4,6 buttons. With and without Hue bridge 4 buttons limitation workaround
 - OTA
 

@@ -1,0 +1,843 @@
+GpEhSwitch_OM15082.map
+MEMORIES -----------------------------------------------------------------------
+655360 MEM: Flash640 (640kb) 
+ 90112 MEM: RAM0 (88kb) 
+ 65536 MEM: RAM1 (64kb) 
+BANKS --------------------------------------------------------------------------
+294912 BANK: Flash640 | ACTIVE_288KB 
+294912 BANK: Flash640 | INACTIVE_288KB 
+ 32256 BANK: Flash640 | PDM_31.5KB 
+ 33280 BANK: Flash640 | RESERVED_32.5KB 
+ 16384 BANK: RAM0 | BANK0_16KB 
+ 16384 BANK: RAM0 | BANK1_16KB 
+ 16384 BANK: RAM0 | BANK2_16KB 
+ 16384 BANK: RAM0 | BANK3_16KB 
+  8192 BANK: RAM0 | BANK4_8KB 
+  8192 BANK: RAM0 | BANK5_8KB 
+  4096 BANK: RAM0 | BANK6_4KB 
+  4096 BANK: RAM0 | BANK7_4KB 
+SECTIONS -----------------------------------------------------------------------
+   336 SECTION: Flash640 | ACTIVE_288KB | .headerA 
+    24 SECTION: Flash640 | ACTIVE_288KB | .headerB 
+    24 SECTION: Flash640 | ACTIVE_288KB | .filler 
+ 37704 SECTION: Flash640 | ACTIVE_288KB | .text 
+     8 SECTION: Flash640 | ACTIVE_288KB | .ARM.exidx 
+  1024 SECTION: RAM0 | BANK0_16KB | !bootloader 
+  1024 SECTION: RAM0 | BANK0_16KB | .boot_resume_stack 
+   756 SECTION: RAM0 | BANK7_4KB | .heap 
+   316 SECTION: RAM0 | BANK7_4KB | .bss_MAC 
+   144 SECTION: RAM0 | BANK7_4KB | .data 
+  1120 SECTION: RAM0 | BANK7_4KB | .bss 
+    32 SECTION: RAM0 | BANK7_4KB | !warmstart 
+FILES --------------------------------------------------------------------------
+   428 FILE: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o 
+   236 FILE: Flash640 | ACTIVE_288KB | .text | app_main.o 
+   436 FILE: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o 
+  1340 FILE: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o 
+  1172 FILE: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o 
+   268 FILE: Flash640 | ACTIVE_288KB | .text | app_nvm.o 
+   712 FILE: Flash640 | ACTIVE_288KB | .text | EH_Button.o 
+   356 FILE: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o 
+    48 FILE: Flash640 | ACTIVE_288KB | .text | fsl_gpio.o 
+   244 FILE: Flash640 | ACTIVE_288KB | .text | fsl_gint.o 
+   208 FILE: Flash640 | ACTIVE_288KB | .text | hardware_init.o 
+    28 FILE: Flash640 | ACTIVE_288KB | .text | pin_mux.o 
+     8 FILE: Flash640 | ACTIVE_288KB | .text | board_utility.o 
+   388 FILE: Flash640 | ACTIVE_288KB | .text | ZTimer.o 
+   384 FILE: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o 
+    40 FILE: Flash640 | ACTIVE_288KB | .text | board.o 
+   228 FILE: Flash640 | ACTIVE_288KB | .text | system_K32W061.o 
+   136 FILE: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o 
+    76 FILE: Flash640 | ACTIVE_288KB | .text | fsl_wwdt.o 
+  2076 FILE: Flash640 | ACTIVE_288KB | .text | fsl_clock.o 
+   192 FILE: Flash640 | ACTIVE_288KB | .text | fsl_reset.o 
+   568 FILE: Flash640 | ACTIVE_288KB | .text | fsl_usart.o 
+   576 FILE: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o 
+   182 FILE: Flash640 | ACTIVE_288KB | .text | fsl_flash.o 
+   238 FILE: Flash640 | ACTIVE_288KB | .text | fsl_aes.o 
+   408 FILE: Flash640 | ACTIVE_288KB | .text | fsl_power.o 
+   236 FILE: Flash640 | ACTIVE_288KB | .text | fsl_wtimer.o 
+    40 FILE: Flash640 | ACTIVE_288KB | .text | Exceptions_NVIC.o 
+  2524 FILE: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o 
+    82 FILE: Flash640 | ACTIVE_288KB | .text | Debug.o 
+    50 FILE: Flash640 | ACTIVE_288KB | .text | FunctionLib.o 
+   616 FILE: Flash640 | ACTIVE_288KB | .text | SecLib.o 
+   124 FILE: Flash640 | ACTIVE_288KB | .text | fsl_ctimer.o 
+   228 FILE: Flash640 | ACTIVE_288KB | .text | fsl_dma.o 
+    32 FILE: Flash640 | ACTIVE_288KB | .text | MicroInt_arm_sdk2.o 
+   124 FILE: Flash640 | ACTIVE_288KB | .text | PWR.o 
+    16 FILE: Flash640 | ACTIVE_288KB | .text | PWR_setjmp.o 
+    16 FILE: Flash640 | ACTIVE_288KB | .text | PWRLib.o 
+  1404 FILE: Flash640 | ACTIVE_288KB | .text | fsl_str.o 
+   368 FILE: Flash640 | ACTIVE_288KB | .text | serial_manager.o 
+   168 FILE: Flash640 | ACTIVE_288KB | .text | serial_port_uart.o 
+   280 FILE: Flash640 | ACTIVE_288KB | .text | usart_adapter.o 
+    28 FILE: Flash640 | ACTIVE_288KB | .text | fsl_assert.o 
+    36 FILE: Flash640 | ACTIVE_288KB | .text | pwrm.o 
+   868 FILE: Flash640 | ACTIVE_288KB | .text | MMAC.o 
+    40 FILE: Flash640 | ACTIVE_288KB | .text | MMAC_RadioInit_JN518x.o 
+  9912 FILE: Flash640 | ACTIVE_288KB | .text | radio.o 
+   888 FILE: Flash640 | ACTIVE_288KB | .text | _arm_addsubdf3.o 
+    80 FILE: Flash640 | ACTIVE_288KB | .text | _arm_fixdfsi.o 
+   160 FILE: Flash640 | ACTIVE_288KB | .text | _aeabi_ldivmod.o 
+    48 FILE: Flash640 | ACTIVE_288KB | .text | _aeabi_uldivmod.o 
+   704 FILE: Flash640 | ACTIVE_288KB | .text | _udivmoddi4.o 
+     4 FILE: Flash640 | ACTIVE_288KB | .text | _dvmd_tls.o 
+   308 FILE: Flash640 | ACTIVE_288KB | .text | lib_a-memcpy.o 
+   168 FILE: Flash640 | ACTIVE_288KB | .text | lib_a-memset.o 
+   224 FILE: Flash640 | ACTIVE_288KB | .text | lib_a-strlen.o 
+    16 FILE: Flash640 | ACTIVE_288KB | .text | linker 
+    98 FILE: Flash640 | ACTIVE_288KB | .text | app_main.o 
+    97 FILE: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o 
+   809 FILE: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o 
+   660 FILE: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o 
+   277 FILE: Flash640 | ACTIVE_288KB | .text | EH_Button.o 
+   203 FILE: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o 
+   128 FILE: Flash640 | ACTIVE_288KB | .text | fsl_gint.o 
+    12 FILE: Flash640 | ACTIVE_288KB | .text | board_utility.o 
+    11 FILE: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o 
+   116 FILE: Flash640 | ACTIVE_288KB | .text | fsl_wwdt.o 
+   122 FILE: Flash640 | ACTIVE_288KB | .text | fsl_clock.o 
+   139 FILE: Flash640 | ACTIVE_288KB | .text | fsl_reset.o 
+   326 FILE: Flash640 | ACTIVE_288KB | .text | fsl_usart.o 
+   514 FILE: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o 
+    12 FILE: Flash640 | ACTIVE_288KB | .text | fsl_power.o 
+    80 FILE: Flash640 | ACTIVE_288KB | .text | fsl_wtimer.o 
+  1504 FILE: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o 
+     8 FILE: Flash640 | ACTIVE_288KB | .text | fsl_ctimer.o 
+   122 FILE: Flash640 | ACTIVE_288KB | .text | fsl_dma.o 
+   236 FILE: Flash640 | ACTIVE_288KB | .text | serial_manager.o 
+   129 FILE: Flash640 | ACTIVE_288KB | .text | serial_port_uart.o 
+   225 FILE: Flash640 | ACTIVE_288KB | .text | usart_adapter.o 
+    62 FILE: Flash640 | ACTIVE_288KB | .text | fsl_assert.o 
+  1046 FILE: Flash640 | ACTIVE_288KB | .text | radio.o 
+     4 FILE: RAM0 | BANK7_4KB | .data | EH_IEEE_802154_Switch.o 
+     4 FILE: RAM0 | BANK7_4KB | .data | app_nvm.o 
+     8 FILE: RAM0 | BANK7_4KB | .data | EH_Button.o 
+    32 FILE: RAM0 | BANK7_4KB | .data | fsl_os_abstraction_bm.o 
+     4 FILE: RAM0 | BANK7_4KB | .data | system_K32W061.o 
+     4 FILE: RAM0 | BANK7_4KB | .data | fsl_power.o 
+    88 FILE: RAM0 | BANK7_4KB | .data | radio.o 
+    67 FILE: RAM0 | BANK7_4KB | .bss | app_main.o 
+     4 FILE: RAM0 | BANK7_4KB | .bss | EH_IEEE_802154_Switch.o 
+    37 FILE: RAM0 | BANK7_4KB | .bss | EH_IEEE_Features.o 
+   512 FILE: RAM0 | BANK7_4KB | .bss | app_nvm.o 
+     8 FILE: RAM0 | BANK7_4KB | .bss | EH_Button.o 
+    32 FILE: RAM0 | BANK7_4KB | .bss | fsl_debug_console.o 
+     4 FILE: RAM0 | BANK7_4KB | .bss | fsl_gint.o 
+    12 FILE: RAM0 | BANK7_4KB | .bss | ZTimer.o 
+   160 FILE: RAM0 | BANK7_4KB | .bss | fsl_os_abstraction_bm.o 
+    56 FILE: RAM0 | BANK7_4KB | .bss | fsl_flexcomm.o 
+     1 FILE: RAM0 | BANK7_4KB | .bss | fsl_power.o 
+    19 FILE: RAM0 | BANK7_4KB | .bss | SecLib.o 
+    12 FILE: RAM0 | BANK7_4KB | .bss | fsl_ctimer.o 
+    76 FILE: RAM0 | BANK7_4KB | .bss | fsl_dma.o 
+    12 FILE: RAM0 | BANK7_4KB | .bss | PWR.o 
+    40 FILE: RAM0 | BANK7_4KB | .bss | PWRLib.o 
+    14 FILE: RAM0 | BANK7_4KB | .bss | MMAC.o 
+    54 FILE: RAM0 | BANK7_4KB | .bss | radio.o 
+SYMBOLS ------------------------------------------------------------------------
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .after_vectors.reset 
+   396 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .after_vectors 
+    12 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_main.o | .text.APP_cbTimerShortPress 
+     4 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_main.o | .text.APP_cbTimerReceive 
+   140 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_main.o | .text.bHandleEventSend 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_main.o | .text.APP_vInitResources 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .text.vInterruptFired 
+   104 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .text.vSendMACFrame 
+    88 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .text.vEnableRxAndReceive 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .text.vAppMain 
+    88 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .text.APP_vSetUpHardware 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .text.main_task 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .text.hardware_init 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.vSendDecommissioingCmd 
+   104 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.vClearPersistentData 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.vLoadPersistentData 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.vHandleOperationalState 
+   244 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.bEncryptDecyptKey 
+   312 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.vHandleRxMacFrame 
+   156 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.vSendChannelRequestCmd 
+   160 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.vSendCommissioningCmd 
+    68 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.vSendGPDSuccessCmd 
+    76 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.bHandleCommissioningStateMachine 
+    52 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .text.HandleGPDStateMachine 
+   160 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .text.GPD_ConstructMACAndNetworkHeader 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .text.GPD_ConstructMaintenaceFrame 
+   524 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .text.bGPD_SecureFrame 
+   264 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .text.bGPD_ParseMACFrame 
+    92 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .text.GPD_SendSpecificCommand 
+    76 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .text.GPD_SendOperationalCommand 
+   116 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_nvm.o | .text.bAPP_ReadBlock 
+    96 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_nvm.o | .text.bAPP_NVMWrite 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_nvm.o | .text.bAPP_NVMWriteBlock 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_Button.o | .text.gint_callback 
+   244 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_Button.o | .text.vHandleButtonPress 
+   244 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_Button.o | .text.APP_cbTimerButtonScan 
+   144 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_Button.o | .text.bButtonInitialize 
+    76 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o | .text.DbgConsole_SendDataReliable 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o | .text.DbgConsole_PrintCallback 
+   156 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o | .text.DbgConsole_Init 
+    64 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o | .text.DbgConsole_Printf 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gpio.o | .text.GPIO_PinInit 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .text.GINT_GetInstance 
+    36 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .text.GINT_Init 
+    44 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .text.GINT_SetCtrl 
+    12 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .text.GINT_ConfigPins 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .text.GINT_EnableCallback 
+    44 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .text.GINT_DisableCallback 
+    36 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .text.GINT0_DriverIRQHandler 
+   132 SYMBOL: Flash640 | ACTIVE_288KB | .text | hardware_init.o | .text.BOARD_InitClocks 
+    76 SYMBOL: Flash640 | ACTIVE_288KB | .text | hardware_init.o | .text.BOARD_InitHardware 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | pin_mux.o | .text.BOARD_InitPins 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | board_utility.o | .text.BOARD_GetClock32MCapacitanceCharacteristics 
+    36 SYMBOL: Flash640 | ACTIVE_288KB | .text | ZTimer.o | .text.ZTIMER_eInit 
+   144 SYMBOL: Flash640 | ACTIVE_288KB | .text | ZTimer.o | .text.ZTIMER_vTask 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | ZTimer.o | .text.ZTIMER_eOpen 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | ZTimer.o | .text.ZTIMER_eStart 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | ZTimer.o | .text.ZTIMER_eStop 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.OSA_EnableIRQGlobal 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.OSA_DisableIRQGlobal 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.task_init 
+   128 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.OSA_TaskCreate 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.OSA_TimeInit 
+    12 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.OSA_TimeGetMsec 
+     4 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.OSA_InterruptEnable 
+     4 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.OSA_InterruptDisable 
+    44 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.OSA_Start 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.startup.main 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .text.SysTick_Handler 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | board.o | .text.BOARD_InitDebugConsole 
+   160 SYMBOL: Flash640 | ACTIVE_288KB | .text | system_K32W061.o | .text.SystemCoreClockUpdate 
+    68 SYMBOL: Flash640 | ACTIVE_288KB | .text | system_K32W061.o | .text.SystemInit 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.DMIC0_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.CIC_IRB_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.HWVAD0_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.PINT0_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.PINT1_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.PINT2_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.PINT3_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.GINT0_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.CTIMER0_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.CTIMER1_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.FLEXCOMM0_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.FLEXCOMM1_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.FLEXCOMM2_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.FLEXCOMM3_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.FLEXCOMM4_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.FLEXCOMM5_IRQHandler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | startup_K32W061.o | .text.FLEXCOMM6_IRQHandler 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wwdt.o | .text.WWDT_GetInstance 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wwdt.o | .text.WWDT_Deinit 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wwdt.o | .text.WWDT_Refresh 
+    36 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_u8OscCapConvert 
+   264 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_AttachClk 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetXtal32kFreq 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetFro32kFreq 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetOsc32kFreq 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetFro12MFreq 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetFro32MFreq 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetOsc32MFreq 
+    44 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetWdtOscFreq 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetFro48MFreq 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetPWMClockFreq 
+    64 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetMainClockRate 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetCoreSysClkFreq 
+    38 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetFRGInputClock 
+    50 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetFRGClock 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetFro64MFreq 
+   100 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetClkOutFreq 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetSpifiOscFreq 
+    44 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetApbCLkFreq 
+   264 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_GetFreq 
+   164 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_DisableClock 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_EnableAPBBridge 
+    96 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_uDelay 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_SetXtal32M_LDO 
+   240 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_Xtal32M_Trim 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_XtalBasicTrim 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_Xtal32M_WaitUntilStable 
+   224 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .text.CLOCK_EnableClock 
+    84 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_reset.o | .text.RESET_SetPeripheralReset 
+    88 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_reset.o | .text.RESET_ClearPeripheralReset 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_reset.o | .text.RESET_PeripheralReset 
+    64 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .text.USART_GetDefaultConfig 
+   164 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .text.USART_SetBaudRate 
+   268 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .text.USART_Init 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .text.USART_WriteBlocking 
+    52 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM_GetInstance 
+   108 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM_Init 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM0_DriverIRQHandler 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM1_DriverIRQHandler 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM2_DriverIRQHandler 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM3_DriverIRQHandler 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM4_DriverIRQHandler 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM5_DriverIRQHandler 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .text.FLEXCOMM6_DriverIRQHandler 
+    18 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flash.o | .text.FLASH_Wait 
+    68 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flash.o | .text.FLASH_Erase 
+    14 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flash.o | .text.FLASH_ErasePages 
+    26 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flash.o | .text.FLASH_BlankCheck 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flash.o | .text.FLASH_Program 
+     4 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_aes.o | .text.swap_bytes 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_aes.o | .text.aes_one_block 
+    22 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_aes.o | .text.aes_set_forward 
+    92 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_aes.o | .text.AES_SetKey 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_aes.o | .text.AES_EncryptEcb 
+   296 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_power.o | .text.POWER_ApplyActiveVoltage 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_power.o | .text.POWER_SetTrimDefaultActiveVoltage 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_power.o | .text.POWER_Init 
+   120 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wtimer.o | .text.WTIMER_StartTimer 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wtimer.o | .text.WTIMER_ClearStatusFlags 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wtimer.o | .text.WTIMER_StopTimer 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | Exceptions_NVIC.o | .text.vDebugExceptionHandlersInitialise 
+   152 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.ExceptionUnwindStack 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.HardFault_Handler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.BusFault_Handler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.UsageFault_Handler 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.MemManage_Handler 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.vPrintRegisterBit 
+   200 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.vPrintSystemHandlerAndControlStateRegisterBitFields 
+   344 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.vPrintConfigurableFaultStatusRegisterBitFields 
+   396 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.vDebugBusFaultHandler 
+   360 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.vDebugUsageFaultHandler 
+   396 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.vDebugMemoryFaultHandler 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.vPrintHardFaultStatusRegisterBitFields 
+   552 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .text.vDebugHardFaultHandler 
+     2 SYMBOL: Flash640 | ACTIVE_288KB | .text | Debug.o | .text.vDebugInit 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | Debug.o | .text.vDebugHex 
+     4 SYMBOL: Flash640 | ACTIVE_288KB | .text | Debug.o | .text.vDebugNonInt 
+     4 SYMBOL: Flash640 | ACTIVE_288KB | .text | Debug.o | .text.vDebugHexNonInt 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | FunctionLib.o | .text.FLib_MemCpy 
+    30 SYMBOL: Flash640 | ACTIVE_288KB | .text | FunctionLib.o | .text.FLib_MemCmp 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | SecLib.o | .text.AES_128_ECB_Encrypt 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | SecLib.o | .text.bACI_WriteKey 
+   556 SYMBOL: Flash640 | ACTIVE_288KB | .text | SecLib.o | .text.vACI_OptimisedCcmStar 
+    96 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_ctimer.o | .text.CTIMER_GenericIRQHandler 
+    14 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_ctimer.o | .text.CTIMER0_DriverIRQHandler 
+    14 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_ctimer.o | .text.CTIMER1_DriverIRQHandler 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_dma.o | .text.DMA_GetInstance 
+   168 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_dma.o | .text.DMA_IRQHandle 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_dma.o | .text.DMA0_DriverIRQHandler 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroInt_arm_sdk2.o | .text.vMicroIntEnableOnly 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroInt_arm_sdk2.o | .text.vMicroIntRestoreState 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | PWR.o | .text.PWR_AllowDeviceToSleep 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | PWR.o | .text.PWR_DisallowDeviceToSleep 
+    64 SYMBOL: Flash640 | ACTIVE_288KB | .text | PWR.o | .text.PWR_vWakeInterruptCallback 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | PWR_setjmp.o | .text.longjmp 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | PWRLib.o | .text.WarmMain 
+  1404 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_str.o | .text.StrFormatPrintf 
+    88 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .text.SerialManager_Init 
+    84 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .text.SerialManager_OpenWriteHandle 
+    92 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .text.SerialManager_OpenReadHandle 
+   104 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .text.SerialManager_WriteBlocking 
+    96 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_port_uart.o | .text.Serial_UartInit 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_port_uart.o | .text.Serial_UartWrite 
+   196 SYMBOL: Flash640 | ACTIVE_288KB | .text | usart_adapter.o | .text.HAL_UartInit 
+    84 SYMBOL: Flash640 | ACTIVE_288KB | .text | usart_adapter.o | .text.HAL_UartSendBlocking 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_assert.o | .text.__assert_func 
+    10 SYMBOL: Flash640 | ACTIVE_288KB | .text | pwrm.o | .text.PWRM_eStartActivity 
+    10 SYMBOL: Flash640 | ACTIVE_288KB | .text | pwrm.o | .text.PWRM_eFinishActivity 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | pwrm.o | .text.WAKE_UP_TIMER1_IRQHandler 
+   104 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_Enable 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_EnableInterrupts 
+    68 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.u32MMAC_GetPhyState 
+   100 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_CheckRxStarted 
+    76 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_AbortRadio 
+    68 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_RxCtlUpdate 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_RadioOff 
+    76 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_RadioToOffAndWait 
+    44 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_StartMacTransmit 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_SetChannelAndPower 
+    44 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_StartMacReceive 
+    52 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_WriteCcaThreshold 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_SetHighPowerOptions 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_IntHandlerBbc 
+    52 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC.o | .text.vMMAC_IntHandlerPhy 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | MMAC_RadioInit_JN518x.o | .text.vMMAC_ConfigureRadio 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_IsNotC2MF 
+    68 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_TX_ZigBee_pll_dac_banked_set 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_fill_std_ZB_regs 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_fill_std_BLE1M_regs 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_fill_std_BLE2M_regs 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_fill_zbble_ZB_regs 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_fill_zbble_BLE_regs 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_fill_regs 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_power_down_to_off_polled 
+   120 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_pre_start_to_pll_polled 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_rx_assert_polled 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_rx_deassert_polled 
+    92 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_RSSI_cal 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Init 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_TMU_Init 
+   320 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Use_Cal_Values 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Use_Retained_Cal_Values 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_rfbandgap_cal 
+   144 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Carrier_Frequency_Select_by_index 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Cw_Mode_Init 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Trx_Packet_SW_Ctrl_Init 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Disable_Auto_Kmod_Chan_and_Synth_Cal_Operation 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Cal_Startup_init 
+   276 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Cal_Startup_algo 
+   124 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Cal_Startup 
+   100 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Cal_Operation_And_Lock_init 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Cal_Operation_And_Lock_algo 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Cal_Operation_And_Lock 
+   248 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Kmod_Band_init 
+   196 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Kmod_Band_algo 
+   492 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Kmod_Band 
+   148 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Trx_Packet_HW_Ctrl_Init 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_Synthesizer_Full_Cal 
+   704 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_PA_rewrite_lut 
+   492 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_DCO_cal_init 
+  1432 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_DCO_cal 
+    76 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_IQ_cal 
+   272 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_PowerOnCheckXtal 
+   140 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_PowerOn 
+   140 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_PowerOnSpecific 
+   116 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_InitXtal 
+    72 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.radio_get_retention_info 
+   708 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_Standard_Init 
+    52 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vGetCalInfo 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_RFT1778_bad_crc 
+    68 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_UpdateRadioStandard 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_InitialiseRadioStandard 
+    64 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_SetChannelAndPower 
+   124 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_Temp_GetInfos 
+   136 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_Temp_SetInfos 
+   120 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_Temp_Update 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_start_rx_ISR 
+    44 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_remove_patch_ISR 
+    52 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.RFP_TMU_IRQHandler 
+   224 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_Enable_DCO_DAC 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.bIsCalNeeded 
+    52 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vUpdateFlashCalData 
+   504 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vInitFlashCalData 
+   272 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vCheckFlashCalData 
+   632 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .text.vRadio_RadioInit 
+   888 SYMBOL: Flash640 | ACTIVE_288KB | .text | _arm_addsubdf3.o | .text 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | _arm_fixdfsi.o | .text 
+   160 SYMBOL: Flash640 | ACTIVE_288KB | .text | _aeabi_ldivmod.o | .text 
+    48 SYMBOL: Flash640 | ACTIVE_288KB | .text | _aeabi_uldivmod.o | .text 
+   704 SYMBOL: Flash640 | ACTIVE_288KB | .text | _udivmoddi4.o | .text 
+     4 SYMBOL: Flash640 | ACTIVE_288KB | .text | _dvmd_tls.o | .text 
+   308 SYMBOL: Flash640 | ACTIVE_288KB | .text | lib_a-memcpy.o | .text 
+   168 SYMBOL: Flash640 | ACTIVE_288KB | .text | lib_a-memset.o | .text.memset 
+   224 SYMBOL: Flash640 | ACTIVE_288KB | .text | lib_a-strlen.o | .text 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | linker | .text.__stub 
+    93 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_main.o | .rodata.bHandleEventSend.str1.1 
+     5 SYMBOL: Flash640 | ACTIVE_288KB | .text | app_main.o | .rodata.CSWTCH.5 
+    32 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .rodata.vSendMACFrame.str1.1 
+    65 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_802154_Switch.o | .rodata.vEnableRxAndReceive.str1.1 
+    50 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.vSendDecommissioingCmd.str1.1 
+    43 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.vClearPersistentData.str1.1 
+    46 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.vLoadPersistentData.str1.1 
+    33 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.vHandleOperationalState.str1.1 
+    66 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.bEncryptDecyptKey.str1.1 
+   383 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.vHandleRxMacFrame.str1.1 
+    51 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.vSendChannelRequestCmd.str1.1 
+    50 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.vSendCommissioningCmd.str1.1 
+    46 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.vSendGPDSuccessCmd.str1.1 
+    26 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.HandleGPDStateMachine.str1.1 
+    15 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Features.o | .rodata.au8ChannelList 
+   176 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .rodata.bGPD_SecureFrame.str1.1 
+   377 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .rodata.bGPD_ParseMACFrame.str1.1 
+    53 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .rodata.GPD_SendSpecificCommand.str1.1 
+    54 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_IEEE_Commands.o | .rodata.GPD_SendOperationalCommand.str1.1 
+    41 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_Button.o | .rodata.gint_callback.str1.1 
+   195 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_Button.o | .rodata.vHandleButtonPress.str1.1 
+    36 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_Button.o | .rodata.APP_cbTimerButtonScan.str1.1 
+     5 SYMBOL: Flash640 | ACTIVE_288KB | .text | EH_Button.o | .rodata.s_u8ButtonDIOLine 
+   119 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o | .rodata.DbgConsole_SendData.str1.1 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o | .rodata.DbgConsole_Init.str1.1 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o | .rodata.__func__.6677 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_debug_console.o | .rodata.__func__.6711 
+   108 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .rodata.GINT_GetInstance.str1.1 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_gint.o | .rodata.__func__.6582 
+    12 SYMBOL: Flash640 | ACTIVE_288KB | .text | board_utility.o | .rodata.BOARD_Clock32MCapacitanceCharacteristics 
+    10 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .rodata.str1.1 
+     1 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_os_abstraction_bm.o | .rodata.gUseRtos_c 
+    99 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wwdt.o | .rodata.WWDT_GetInstance.str1.1 
+    17 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wwdt.o | .rodata.__func__.6581 
+   102 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .rodata.CLOCK_XtalBasicTrim.str1.1 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_clock.o | .rodata.__func__.6855 
+    87 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_reset.o | .rodata.RESET_SetPeripheralReset.str1.1 
+    25 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_reset.o | .rodata.__func__.6619 
+    27 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_reset.o | .rodata.__func__.6632 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.USART_GetInstance.str1.1 
+    15 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.USART_GetDefaultConfig.str1.1 
+    63 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.USART_SetBaudRate.str1.1 
+    60 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.USART_Init.str1.1 
+    36 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.USART_WriteBlocking.str1.1 
+    11 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.__func__.6801 
+    23 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.__func__.6812 
+    18 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.__func__.6825 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_usart.o | .rodata.__func__.6835 
+    77 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.FLEXCOMM_GetInstance.str1.1 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.FLEXCOMM0_DriverIRQHandler.str1.1 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.FLEXCOMM1_DriverIRQHandler.str1.1 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.FLEXCOMM2_DriverIRQHandler.str1.1 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.FLEXCOMM3_DriverIRQHandler.str1.1 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.FLEXCOMM4_DriverIRQHandler.str1.1 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.FLEXCOMM5_DriverIRQHandler.str1.1 
+    24 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.FLEXCOMM6_DriverIRQHandler.str1.1 
+    21 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.__func__.6566 
+    27 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.__func__.6586 
+    27 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.__func__.6590 
+    27 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.__func__.6594 
+    27 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.__func__.6598 
+    27 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.__func__.6602 
+    27 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.__func__.6606 
+    30 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.__func__.6610 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.s_flexcommBaseAddrs 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_flexcomm.o | .rodata.s_flexcommClocks 
+    12 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_power.o | .rodata.lowpower_ldovoltage_reset 
+    80 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_wtimer.o | .rodata.timer_param 
+   194 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.ExceptionUnwindStack.str1.1 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.vPrintRegisterBit.str1.1 
+   312 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.vPrintSystemHandlerAndControlStateRegisterBitFields.str1.1 
+   259 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.vPrintConfigurableFaultStatusRegisterBitFields.str1.1 
+   401 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.vDebugBusFaultHandler.str1.1 
+    36 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.vDebugUsageFaultHandler.str1.1 
+    70 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.vDebugMemoryFaultHandler.str1.1 
+    61 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.vPrintHardFaultStatusRegisterBitFields.str1.1 
+   163 SYMBOL: Flash640 | ACTIVE_288KB | .text | MicroExceptions_arm.o | .rodata.vDebugHardFaultHandler.str1.1 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_ctimer.o | .rodata.s_ctimerBases 
+   106 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_dma.o | .rodata.DMA_GetInstance.str1.1 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_dma.o | .rodata.__func__.6813 
+    94 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.SerialManager_Init.str1.1 
+    12 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.SerialManager_OpenWriteHandle.str1.1 
+     7 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.SerialManager_CloseWriteHandle.str1.1 
+    11 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.SerialManager_OpenReadHandle.str1.1 
+    14 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.SerialManager_WriteBlocking.str1.1 
+    20 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.__func__.6652 
+    19 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.__func__.6667 
+    30 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.__func__.6687 
+    29 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_manager.o | .rodata.__func__.6702 
+    96 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_port_uart.o | .rodata.Serial_UartInit.str1.1 
+    14 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_port_uart.o | .rodata.Serial_UartWrite.str1.1 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_port_uart.o | .rodata.__func__.6672 
+    17 SYMBOL: Flash640 | ACTIVE_288KB | .text | serial_port_uart.o | .rodata.__func__.6684 
+   178 SYMBOL: Flash640 | ACTIVE_288KB | .text | usart_adapter.o | .rodata.HAL_UartInit.str1.1 
+     5 SYMBOL: Flash640 | ACTIVE_288KB | .text | usart_adapter.o | .rodata.HAL_UartReceiveBlocking.str1.1 
+    13 SYMBOL: Flash640 | ACTIVE_288KB | .text | usart_adapter.o | .rodata.__func__.6822 
+    21 SYMBOL: Flash640 | ACTIVE_288KB | .text | usart_adapter.o | .rodata.__func__.6842 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | usart_adapter.o | .rodata.s_UsartAdapterBase 
+    62 SYMBOL: Flash640 | ACTIVE_288KB | .text | fsl_assert.o | .rodata.__assert_func.str1.1 
+     8 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.radio_DCO_cal.str1.1 
+    28 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata 
+    64 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_Synth_Cal_Op_Lock_init_regs 
+    68 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_Synth_Cal_Startup_init_regs 
+    76 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_TMU_init_regs 
+   112 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_init_regs 
+    12 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_init_regs_ES2 
+    12 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_init_regs_ES2MF 
+    56 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_std_specific_banked_regs 
+    40 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_unbanked_common_regs 
+    16 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_unbanked_std_specific_regs 
+   156 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_unbanked_zbble_specific_regs 
+    74 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.assign_zbble_specific_banked_regs 
+   140 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.freq_prog 
+    92 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.lut_defaults 
+    92 SYMBOL: Flash640 | ACTIVE_288KB | .text | radio.o | .rodata.lut_hiTx_defaults 
+     1 SYMBOL: RAM0 | BANK7_4KB | .data | EH_IEEE_802154_Switch.o | .data.bEnableSleep 
+     3 SYMBOL: RAM0 | BANK7_4KB | .data | EH_IEEE_802154_Switch.o | .data.led_config 
+     4 SYMBOL: RAM0 | BANK7_4KB | .data | app_nvm.o | .data.u32CurrentPage 
+     8 SYMBOL: RAM0 | BANK7_4KB | .data | EH_Button.o | .data.s_u8ButtonDebounce 
+    32 SYMBOL: RAM0 | BANK7_4KB | .data | fsl_os_abstraction_bm.o | .data.os_thread_def_main_task 
+     4 SYMBOL: RAM0 | BANK7_4KB | .data | system_K32W061.o | .data.SystemCoreClock 
+     1 SYMBOL: RAM0 | BANK7_4KB | .data | fsl_power.o | .data.active_trim_val 
+     3 SYMBOL: RAM0 | BANK7_4KB | .data | fsl_power.o | .data.pwd_trim_val 
+    84 SYMBOL: RAM0 | BANK7_4KB | .data | radio.o | .data.RadioConfiguration 
+     1 SYMBOL: RAM0 | BANK7_4KB | .data | radio.o | .data.eCurrentTxMode 
+     1 SYMBOL: RAM0 | BANK7_4KB | .data | radio.o | .data.i8Radio_TxMaxPower 
+     2 SYMBOL: RAM0 | BANK7_4KB | .data | radio.o | .data.i8Radio_TxMaxPowerCh26 
+    16 SYMBOL: RAM0 | BANK7_4KB | .bss | app_main.o | .bss.APP_msgAppEvents 
+    48 SYMBOL: RAM0 | BANK7_4KB | .bss | app_main.o | .bss.asTimers 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | app_main.o | .bss.u8TimerButtonScan 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | app_main.o | .bss.u8TimerReceive 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | app_main.o | .bss.u8TimerShortPress 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | EH_IEEE_802154_Switch.o | .bss.bColdStarted.8796 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | EH_IEEE_802154_Switch.o | .bss.bRxComplete 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | EH_IEEE_802154_Switch.o | .bss.bTxComplete 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | EH_IEEE_802154_Switch.o | .bss.initialized.8790 
+     5 SYMBOL: RAM0 | BANK7_4KB | .bss | EH_IEEE_Features.o | .bss.sGPDData 
+    32 SYMBOL: RAM0 | BANK7_4KB | .bss | EH_IEEE_Features.o | .bss.sGPDPersistentData 
+   512 SYMBOL: RAM0 | BANK7_4KB | .bss | app_nvm.o | .bss.au8GPDataBuffer 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | EH_Button.o | .bss.bIsCommMode.8596 
+     7 SYMBOL: RAM0 | BANK7_4KB | .bss | EH_Button.o | .bss.s_u8ButtonState 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_debug_console.o | .bss.g_serialHandle 
+    28 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_debug_console.o | .bss.s_debugConsoleState 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_gint.o | .bss.s_gintCallback 
+    12 SYMBOL: RAM0 | BANK7_4KB | .bss | ZTimer.o | .bss.ZTIMER_sCommon 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_os_abstraction_bm.o | .bss.gInterruptDisableCount 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_os_abstraction_bm.o | .bss.gTickCounter 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_os_abstraction_bm.o | .bss.g_curTask 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_os_abstraction_bm.o | .bss.g_freeTaskControlBlock 
+   140 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_os_abstraction_bm.o | .bss.g_taskControlBlockPool 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_os_abstraction_bm.o | .bss.p_taskListHead 
+    28 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_flexcomm.o | .bss.s_flexcommHandle 
+    28 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_flexcomm.o | .bss.s_flexcommIrqHandler 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_power.o | .bss.warm_start.7457 
+     3 SYMBOL: RAM0 | BANK7_4KB | .bss | SecLib.o | .bss.g_bLegacyHwBugEmulation 
+    16 SYMBOL: RAM0 | BANK7_4KB | .bss | SecLib.o | .bss.sKey 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_ctimer.o | .bss.ctimerCallbackType 
+     8 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_ctimer.o | .bss.s_ctimerCallback 
+    76 SYMBOL: RAM0 | BANK7_4KB | .bss | fsl_dma.o | .bss.s_DMAHandle 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | PWR.o | .bss.mLPMFlag 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | PWR.o | .bss.psNextWake 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | PWR.o | .bss.s_bWakeTimerActive 
+    40 SYMBOL: RAM0 | BANK7_4KB | .bss | PWRLib.o | .bss.pwr_CPUContext 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | MMAC.o | .bss.bConfiguration 
+     3 SYMBOL: RAM0 | BANK7_4KB | .bss | MMAC.o | .bss.bWorkaroundTimerRunning 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | MMAC.o | .bss.prBbcIntHandler 
+     4 SYMBOL: RAM0 | BANK7_4KB | .bss | MMAC.o | .bss.prPhyIntHandler 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | MMAC.o | .bss.u8MMAC_HpmCcaThreshold 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | MMAC.o | .bss.u8SctlMask 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | radio.o | .bss.eTxMode 
+     1 SYMBOL: RAM0 | BANK7_4KB | .bss | radio.o | .bss.eTxModeCh26 
+    52 SYMBOL: RAM0 | BANK7_4KB | .bss | radio.o | COMMON 
+FOLDERS --------------------------------------------------------------------
+   296 FOLDER: Flash640 | .text | APP/Common/Source/board 
+  6105 FOLDER: Flash640 | .text | APP/GpEhSwitch/Source 
+    16 FOLDER: Flash640 | .text | LIB/ 
+    36 FOLDER: Flash640 | .text | LIB/SDKPackages/K32W061DK6/middleware/wireless/framework/PWRM/Library/libPWRM.a 
+ 10958 FOLDER: Flash640 | .text | LIB/SDKPackages/K32W061DK6/middleware/wireless/framework/XCVR/lib/libRadio.a 
+   908 FOLDER: Flash640 | .text | LIB/SDKPackages/K32W061DK6/middleware/wireless/ieee-802.15.4/lib/libMiniMac.a 
+   700 FOLDER: Flash640 | .text | LIB/gcc/arm-none-eabi/9.2.1/arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a 
+  1884 FOLDER: Flash640 | .text | LIB/gcc/arm-none-eabi/9.2.1/thumb/v7e-m/nofp/libgcc.a 
+   901 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/components/serial_manager 
+   505 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/components/uart 
+   228 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/devices/K32W061 
+  6763 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/devices/K32W061/drivers 
+    90 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/devices/K32W061/utilities 
+   559 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/devices/K32W061/utilities/debug_console 
+  1404 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/devices/K32W061/utilities/str 
+    32 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/Common 
+  4068 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/DebugExceptionHandlers_jn518x/src 
+    82 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/DebugFifo/Source 
+    50 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/FunctionLib 
+   156 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/LowPower/Source/k32w061dk6 
+   395 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/OSAbstraction/Source 
+   616 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/SecLib 
+   388 FOLDER: Flash640 | .text | SDK/SDKPackages/K32W061DK6/middleware/wireless/zigbee/ZigbeeCommon/Source 
+   564 FOLDER: Flash640 | .text | SDK/gcc 
+    16 FOLDER: RAM0 | .data | APP/GpEhSwitch/Source 
+    88 FOLDER: RAM0 | .data | LIB/SDKPackages/K32W061DK6/middleware/wireless/framework/XCVR/lib/libRadio.a 
+     4 FOLDER: RAM0 | .data | SDK/SDKPackages/K32W061DK6/devices/K32W061 
+     4 FOLDER: RAM0 | .data | SDK/SDKPackages/K32W061DK6/devices/K32W061/drivers 
+    32 FOLDER: RAM0 | .data | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/OSAbstraction/Source 
+   628 FOLDER: RAM0 | .bss | APP/GpEhSwitch/Source 
+    54 FOLDER: RAM0 | .bss | LIB/SDKPackages/K32W061DK6/middleware/wireless/framework/XCVR/lib/libRadio.a 
+    14 FOLDER: RAM0 | .bss | LIB/SDKPackages/K32W061DK6/middleware/wireless/ieee-802.15.4/lib/libMiniMac.a 
+   149 FOLDER: RAM0 | .bss | SDK/SDKPackages/K32W061DK6/devices/K32W061/drivers 
+    32 FOLDER: RAM0 | .bss | SDK/SDKPackages/K32W061DK6/devices/K32W061/utilities/debug_console 
+    52 FOLDER: RAM0 | .bss | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/LowPower/Source/k32w061dk6 
+   160 FOLDER: RAM0 | .bss | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/OSAbstraction/Source 
+    19 FOLDER: RAM0 | .bss | SDK/SDKPackages/K32W061DK6/middleware/wireless/framework/SecLib 
+    12 FOLDER: RAM0 | .bss | SDK/SDKPackages/K32W061DK6/middleware/wireless/zigbee/ZigbeeCommon/Source 
+TREE -----------------------------------------------------------------------
+  6401 TREE: Flash640 | .text | APP /  
+   296 TREE: Flash640 | .text | APP / Common /  
+   296 TREE: Flash640 | .text | APP / Common / Source /  
+   296 TREE: Flash640 | .text | APP / Common / Source / board /  
+    40 TREE: Flash640 | .text | APP / Common / Source / board / board.o 
+    20 TREE: Flash640 | .text | APP / Common / Source / board / board_utility.o 
+   208 TREE: Flash640 | .text | APP / Common / Source / board / hardware_init.o 
+    28 TREE: Flash640 | .text | APP / Common / Source / board / pin_mux.o 
+  6105 TREE: Flash640 | .text | APP / GpEhSwitch /  
+  6105 TREE: Flash640 | .text | APP / GpEhSwitch / Source /  
+   989 TREE: Flash640 | .text | APP / GpEhSwitch / Source / EH_Button.o 
+   533 TREE: Flash640 | .text | APP / GpEhSwitch / Source / EH_IEEE_802154_Switch.o 
+  1832 TREE: Flash640 | .text | APP / GpEhSwitch / Source / EH_IEEE_Commands.o 
+  2149 TREE: Flash640 | .text | APP / GpEhSwitch / Source / EH_IEEE_Features.o 
+   334 TREE: Flash640 | .text | APP / GpEhSwitch / Source / app_main.o 
+   268 TREE: Flash640 | .text | APP / GpEhSwitch / Source / app_nvm.o 
+ 14502 TREE: Flash640 | .text | LIB /  
+    16 TREE: Flash640 | .text | LIB /  /  
+    16 TREE: Flash640 | .text | LIB /  / linker 
+ 11902 TREE: Flash640 | .text | LIB / SDKPackages /  
+ 11902 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 /  
+ 11902 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware /  
+ 11902 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless /  
+ 10994 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework /  
+    36 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / PWRM /  
+    36 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / PWRM / Library /  
+    36 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / PWRM / Library / libPWRM.a /  
+    36 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / PWRM / Library / libPWRM.a / pwrm.o 
+ 10958 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR /  
+ 10958 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib /  
+ 10958 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib / libRadio.a /  
+ 10958 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib / libRadio.a / radio.o 
+   908 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 /  
+   908 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 / lib /  
+   908 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 / lib / libMiniMac.a /  
+   868 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 / lib / libMiniMac.a / MMAC.o 
+    40 TREE: Flash640 | .text | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 / lib / libMiniMac.a / MMAC_RadioInit_JN518x.o 
+  2584 TREE: Flash640 | .text | LIB / gcc /  
+  2584 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi /  
+  2584 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 /  
+   700 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi /  
+   700 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi / lib /  
+   700 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi / lib / thumb /  
+   700 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi / lib / thumb / v7e-m /  
+   700 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi / lib / thumb / v7e-m / nofp /  
+   700 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi / lib / thumb / v7e-m / nofp / libc.a /  
+   308 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi / lib / thumb / v7e-m / nofp / libc.a / lib_a-memcpy.o 
+   168 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi / lib / thumb / v7e-m / nofp / libc.a / lib_a-memset.o 
+   224 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / arm-none-eabi / lib / thumb / v7e-m / nofp / libc.a / lib_a-strlen.o 
+  1884 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb /  
+  1884 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m /  
+  1884 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m / nofp /  
+  1884 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m / nofp / libgcc.a /  
+   160 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m / nofp / libgcc.a / _aeabi_ldivmod.o 
+    48 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m / nofp / libgcc.a / _aeabi_uldivmod.o 
+   888 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m / nofp / libgcc.a / _arm_addsubdf3.o 
+    80 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m / nofp / libgcc.a / _arm_fixdfsi.o 
+     4 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m / nofp / libgcc.a / _dvmd_tls.o 
+   704 TREE: Flash640 | .text | LIB / gcc / arm-none-eabi / 9.2.1 / thumb / v7e-m / nofp / libgcc.a / _udivmoddi4.o 
+ 16801 TREE: Flash640 | .text | SDK /  
+ 16237 TREE: Flash640 | .text | SDK / SDKPackages /  
+ 16237 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 /  
+  1406 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / components /  
+   901 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / components / serial_manager /  
+   604 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / components / serial_manager / serial_manager.o 
+   297 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / components / serial_manager / serial_port_uart.o 
+   505 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / components / uart /  
+   505 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / components / uart / usart_adapter.o 
+  9044 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices /  
+  9044 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 /  
+  6763 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers /  
+   238 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_aes.o 
+  2198 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_clock.o 
+   132 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_ctimer.o 
+   350 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_dma.o 
+   182 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_flash.o 
+  1090 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_flexcomm.o 
+   372 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_gint.o 
+    48 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_gpio.o 
+   420 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_power.o 
+   331 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_reset.o 
+   894 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_usart.o 
+   316 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_wtimer.o 
+   192 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_wwdt.o 
+   228 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / system_K32W061.o 
+  2053 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities /  
+   559 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities / debug_console /  
+   559 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities / debug_console / fsl_debug_console.o 
+    90 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities / fsl_assert.o 
+  1404 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities / str /  
+  1404 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities / str / fsl_str.o 
+  5787 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware /  
+  5787 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless /  
+  5399 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework /  
+    32 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / Common /  
+    32 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / Common / MicroInt_arm_sdk2.o 
+  4068 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / DebugExceptionHandlers_jn518x /  
+  4068 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / DebugExceptionHandlers_jn518x / src /  
+    40 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / DebugExceptionHandlers_jn518x / src / Exceptions_NVIC.o 
+  4028 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / DebugExceptionHandlers_jn518x / src / MicroExceptions_arm.o 
+    82 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / DebugFifo /  
+    82 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / DebugFifo / Source /  
+    82 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / DebugFifo / Source / Debug.o 
+    50 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / FunctionLib /  
+    50 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / FunctionLib / FunctionLib.o 
+   156 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower /  
+   156 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source /  
+   156 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source / k32w061dk6 /  
+   124 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source / k32w061dk6 / PWR.o 
+    16 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source / k32w061dk6 / PWRLib.o 
+    16 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source / k32w061dk6 / PWR_setjmp.o 
+   395 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction /  
+   395 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction / Source /  
+   395 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction / Source / fsl_os_abstraction_bm.o 
+   616 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / SecLib /  
+   616 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / SecLib / SecLib.o 
+   388 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / zigbee /  
+   388 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / zigbee / ZigbeeCommon /  
+   388 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / zigbee / ZigbeeCommon / Source /  
+   388 TREE: Flash640 | .text | SDK / SDKPackages / K32W061DK6 / middleware / wireless / zigbee / ZigbeeCommon / Source / ZTimer.o 
+   564 TREE: Flash640 | .text | SDK / gcc /  
+   564 TREE: Flash640 | .text | SDK / gcc / startup_K32W061.o 
+    16 TREE: RAM0 | .data | APP /  
+    16 TREE: RAM0 | .data | APP / GpEhSwitch /  
+    16 TREE: RAM0 | .data | APP / GpEhSwitch / Source /  
+     8 TREE: RAM0 | .data | APP / GpEhSwitch / Source / EH_Button.o 
+     4 TREE: RAM0 | .data | APP / GpEhSwitch / Source / EH_IEEE_802154_Switch.o 
+     4 TREE: RAM0 | .data | APP / GpEhSwitch / Source / app_nvm.o 
+    88 TREE: RAM0 | .data | LIB /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages / K32W061DK6 /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages / K32W061DK6 / middleware /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages / K32W061DK6 / middleware / wireless /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib / libRadio.a /  
+    88 TREE: RAM0 | .data | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib / libRadio.a / radio.o 
+    40 TREE: RAM0 | .data | SDK /  
+    40 TREE: RAM0 | .data | SDK / SDKPackages /  
+    40 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 /  
+     8 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / devices /  
+     8 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / devices / K32W061 /  
+     4 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers /  
+     4 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_power.o 
+     4 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / system_K32W061.o 
+    32 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / middleware /  
+    32 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / middleware / wireless /  
+    32 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework /  
+    32 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction /  
+    32 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction / Source /  
+    32 TREE: RAM0 | .data | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction / Source / fsl_os_abstraction_bm.o 
+   628 TREE: RAM0 | .bss | APP /  
+   628 TREE: RAM0 | .bss | APP / GpEhSwitch /  
+   628 TREE: RAM0 | .bss | APP / GpEhSwitch / Source /  
+    67 TREE: RAM0 | .bss | APP / GpEhSwitch / Source / app_main.o 
+     4 TREE: RAM0 | .bss | APP / GpEhSwitch / Source / EH_IEEE_802154_Switch.o 
+    37 TREE: RAM0 | .bss | APP / GpEhSwitch / Source / EH_IEEE_Features.o 
+   512 TREE: RAM0 | .bss | APP / GpEhSwitch / Source / app_nvm.o 
+     8 TREE: RAM0 | .bss | APP / GpEhSwitch / Source / EH_Button.o 
+   424 TREE: RAM0 | .bss | SDK /  
+   424 TREE: RAM0 | .bss | SDK / SDKPackages /  
+   424 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 /  
+   181 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices /  
+   181 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 /  
+    32 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities /  
+    32 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities / debug_console /  
+    32 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / utilities / debug_console / fsl_debug_console.o 
+   149 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers /  
+     4 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_gint.o 
+   243 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware /  
+   243 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless /  
+    12 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / zigbee /  
+    12 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / zigbee / ZigbeeCommon /  
+    12 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / zigbee / ZigbeeCommon / Source /  
+    12 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / zigbee / ZigbeeCommon / Source / ZTimer.o 
+   231 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework /  
+   160 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction /  
+   160 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction / Source /  
+   160 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / OSAbstraction / Source / fsl_os_abstraction_bm.o 
+    56 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_flexcomm.o 
+     1 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_power.o 
+    19 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / SecLib /  
+    19 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / SecLib / SecLib.o 
+    12 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_ctimer.o 
+    76 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / devices / K32W061 / drivers / fsl_dma.o 
+    52 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower /  
+    52 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source /  
+    52 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source / k32w061dk6 /  
+    12 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source / k32w061dk6 / PWR.o 
+    40 TREE: RAM0 | .bss | SDK / SDKPackages / K32W061DK6 / middleware / wireless / framework / LowPower / Source / k32w061dk6 / PWRLib.o 
+    68 TREE: RAM0 | .bss | LIB /  
+    68 TREE: RAM0 | .bss | LIB / SDKPackages /  
+    68 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 /  
+    68 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware /  
+    68 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless /  
+    14 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 /  
+    14 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 / lib /  
+    14 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 / lib / libMiniMac.a /  
+    14 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / ieee-802.15.4 / lib / libMiniMac.a / MMAC.o 
+    54 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework /  
+    54 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR /  
+    54 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib /  
+    54 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib / libRadio.a /  
+    54 TREE: RAM0 | .bss | LIB / SDKPackages / K32W061DK6 / middleware / wireless / framework / XCVR / lib / libRadio.a / radio.o 

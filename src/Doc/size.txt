@@ -1,0 +1,23 @@
+08/13/20 14:44:34
+   text	   data	    bss	    dec	    hex	filename
+ 179384	   1656	  19072	 200112	  30db0	../../../Binaries/ColorSceneController_OM15082/ColorSceneController_OM15082.axf
+ retain   spare      kb           banks filename
+  16456    8120      24        ----4567 ../../../Binaries/ColorSceneController_OM15082/ColorSceneController_OM15082.map
+08/13/20 14:46:07
+   text	   data	    bss	    dec	    hex	filename
+ 209980	   1828	  21428	 233236	  38f14	../../../Binaries/ColorSceneController_NtagIcode_Ota_RamOpt_OM15082/ColorSceneController_NtagIcode_Ota_RamOpt_OM15082.axf
+ retain   spare      kb           banks filename
+   3816     280       4        -------7 ../../../Binaries/ColorSceneController_NtagIcode_Ota_RamOpt_OM15082/ColorSceneController_NtagIcode_Ota_RamOpt_OM15082.map
+08/13/20 14:47:27
+   text	   data	    bss	    dec	    hex	filename
+ 158428	   1556	  17824	 177808	  2b690	../../../Binaries/DimmerSwitch_OM15082/DimmerSwitch_OM15082.axf
+ retain   spare      kb           banks filename
+  15176    1208      16        -----567 ../../../Binaries/DimmerSwitch_OM15082/DimmerSwitch_OM15082.map
+08/13/20 14:49:01
+   text	   data	    bss	    dec	    hex	filename
+ 183876	   1740	  20188	 205804	  323ec	../../../Binaries/DimmerSwitch_NtagIcode_Ota_RamOpt_OM15082/DimmerSwitch_NtagIcode_Ota_RamOpt_OM15082.axf
+ retain   spare      kb           banks filename
+   3496     600       4        -------7 ../../../Binaries/DimmerSwitch_NtagIcode_Ota_RamOpt_OM15082/DimmerSwitch_NtagIcode_Ota_RamOpt_OM15082.map
+08/13/20 14:49:30
+   text	   data	    bss	    dec	    hex	filename
+  38048	    208	   3724	  41980	   a3fc	../../../Binaries/GpEhSwitch_OM15082/GpEhSwitch_OM15082.axf

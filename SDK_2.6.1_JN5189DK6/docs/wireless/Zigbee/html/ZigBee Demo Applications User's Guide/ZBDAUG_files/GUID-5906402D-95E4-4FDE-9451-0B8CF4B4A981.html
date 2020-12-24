@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Loading the applications"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-D26D676C-0AB9-4F53-AB69-4C556C625D80.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Loading the applications</title>
+</head>
+<body id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981">
+
+
+<h1 class="title topictitle1">Loading the applications</h1>
+
+<div class="body">
+<p class="p"><span class="ph" id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981__ID_D20843A8-BBD7-41E4-B26D-B398FBA26DDD">The table lists the binaries generate by the examples.</span></p>
+
+                <div class="p">
+                        
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981__TABLE_D2D_32P_TKB" class="table" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. Application binaries and hardware components</span></caption>
+                                        
+                                        
+                                        <thead class="thead" align="left">
+                                                <tr class="row">
+                                                  <th class="entry" valign="top" width="50%" id="d1203e33">Hardware Platform</th>
+
+                                                  <th class="entry" valign="top" width="50%" id="d1203e36">Binary Files</th>
+
+                                                </tr>
+
+                                        </thead>
+
+                                        <tbody class="tbody">
+                                                <tr class="row">
+                                                  <td class="entry" valign="top" width="50%" headers="d1203e33 ">OM15076-3</td>
+
+                                                  <td class="entry" valign="top" width="50%" headers="d1203e36 ">
+                                                  <p class="p">coordinator.bin</p>
+
+                                                  <p class="p">routerClient.bin </p>
+
+                                                  <p class="p">enddevice_rxonClient.bin</p>
+
+                                                  <p class="p">enddevice_rxoffClient.bin</p>
+
+                                                  </td>
+
+                                                </tr>
+
+                                                <tr class="row">
+                                                  <td class="entry" valign="top" width="50%" headers="d1203e33 ">JN5189-USB Dongle / K32W0161-USB
+                                                  Dongle</td>
+
+                                                  <td class="entry" valign="top" width="50%" headers="d1203e36 ">coordinator.bin</td>
+
+                                                </tr>
+
+                                         
+                                        </tbody>
+
+                                </table>
+</div>
+
+                </div>
+
+<p class="p">A binary file can be loaded into the Flash memory of the ZigBee device using the
+                                <em class="ph i">DK6 Production Flash Programmer [JN-SW-4407]</em>. This software
+                        tool is described in the <em class="ph i">DK6 Production Flash Programmer User Guide
+                                [JN-UG-3127]</em>.</p>
+
+<p class="p"><span class="ph" id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981__ID_9B096A1A-0206-4B0B-95AC-80B324BA2C5B">To load an application binary file
+                                into a ZigBee module on a DK006 Carrier Board, follow the
+                                instructions below:</span></p>
+
+<ol class="ol">
+<li class="li" id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981__ITEM_9CB3E6F1-DEE7-48C3-86E0-4A802723175D"> Connect a USB port of your PC to the USB Mini B
+                                port marked “FTDI USB” on the DK006 Carrier Board (next to the
+                                34-pin header) using a ‘USB A to Mini B’ cable. You may be prompted
+                                to install the driver for the USB virtual COM port. </li>
+
+<li class="li" id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981__ITEM_5F6D6519-E428-4E9D-A0A1-1F7A063FEB7F">
+Determine which serial communications port on your PC has been allocated to the USB connection.
+</li>
+
+<li class="li" id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981__ITEM_AF65D6BD-5736-4DCB-A21B-17E0E9C1D8FF"> Put the ZigBee device into programming mode by
+                                holding down the ISP button while pressing and releasing the RESET
+                                button. </li>
+
+<li class="li" id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981__ITEM_0650B4FE-4D57-45C3-B984-A55FBB2256AA"> To program the image, you can run the command
+        below:
+        <pre class="pre codeblock">dk6Programmer.exe -e FLASH -s &lt;COM PORT&gt; -p &lt;FULL PATH TO THE BIN&gt;</pre>
+This
+        programs the image in flash at the offset 0 and erases all of flash. This starts the device
+        in a factory new state.</li>
+
+
+<li class="li" id="GUID-5906402D-95E4-4FDE-9451-0B8CF4B4A981__ITEM_95E3A372-A56A-49C9-85BA-07B2875285CA">
+Once the download has successfully completed, reset the board or module to run the application.
+</li>
+
+</ol>
+<div class="p">Similarly, to load an application binary into a JN5189-USB/K32W061-USB dongle, follow the
+                        instructions below: <ol class="ol">
+                                <li class="li">Insert the USB dongle into the USB port of your PC. </li>
+
+                                <li class="li">Determine which serial communications port on your PC has been
+                                        allocated to the USB dongle. </li>
+
+                                <li class="li">To program the image, run the command below:
+                                        <pre class="pre codeblock">dk6Programmer.exe -e FLASH -s &lt;COM PORT&gt; -p &lt;FULL PATH TO THE BIN&gt;</pre>
+This
+                                        programs the image in flash at the offset 0 and erases all
+                                        of flash. This starts the device in a factory new state. The
+                                        US dongle is automatically placed into programming mode by
+                                        the DK6 Programmer and reset at the end of programming where
+                                        the application started.</li>
+
+                        </ol>
+</div>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-D26D676C-0AB9-4F53-AB69-4C556C625D80.html">Running the demonstration examples</a></div>
+</div>
+</div>
+
+</body>
+</html>

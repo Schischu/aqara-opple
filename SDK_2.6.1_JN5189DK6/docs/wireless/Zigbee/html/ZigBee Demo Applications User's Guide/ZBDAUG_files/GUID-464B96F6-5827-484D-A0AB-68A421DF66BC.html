@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Binding nodes"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-B4CAFEAC-DC0A-42F1-9545-D752EB9650DE.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-464B96F6-5827-484D-A0AB-68A421DF66BC"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Binding nodes</title>
+</head>
+<body id="GUID-464B96F6-5827-484D-A0AB-68A421DF66BC">
+
+
+<h1 class="title topictitle1">Binding nodes</h1>
+
+<div class="body">
+<p class="p">‘Finding and Binding’ is the process whereby ZigBee controlling devices find ZigBee
+                  controlled devices by matching operational clusters and create entries in the
+                  Binding table. The Coordinator supports Finding and Binding as an ‘Initiator’ that
+                  tries to find targets to bind to. For demonstration, the Coordinator supports the
+                  On/Off Cluster as a client, so the Finding and Binding process looks for devices
+                  that support the On/Off cluster as a server in order to create bindings.</p>
+
+<div class="p">To start Finding and Binding as an Initiator, first trigger Finding and Binding on a
+                  second ‘Target’ device (such as the Router in this ZigBee example) by pressing the
+                  User Interface button on the 'Target' device. <div class="note note"><span class="notetitle">Note:</span> The target device
+                        must have first joined the ZigBee network. </div>
+</div>
+
+<p class="p">Next, enter “find” on the serial interface (of the Coordinator).</p>
+
+            <p class="p">When Finding and Binding for a target has completed and a binding has
+                  been created, the Coordinator sends an Identify Off command to the target device,
+                  in order to signal completion of the process for the Target. Depending on the type
+                  of bindings being created (either unicast or groupcast), an Add Group command may
+                  be sent to the target device.</p>
+
+<p class="p">Reporting is a mandatory feature in ZigBee 3.x. A device wishing to receive periodic
+      and on-change reports from an operational server should create a remote binding for itself on
+      the target device. This Coordinator sends a Binding Request to a target with an On/Off cluster
+      server. It then receives periodic and on-change reports from that device, reporting the state
+      of the OnOff attribute (0x0000) of the On/Off cluster. The frequency of the reports depends on
+      the default report configuration of the individual target device. The device receiving the
+      reports can request the change by sending a Report Configuration command.</p>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-B4CAFEAC-DC0A-42F1-9545-D752EB9650DE.html">Coordinator functionality</a></div>
+</div>
+</div>
+
+</body>
+</html>

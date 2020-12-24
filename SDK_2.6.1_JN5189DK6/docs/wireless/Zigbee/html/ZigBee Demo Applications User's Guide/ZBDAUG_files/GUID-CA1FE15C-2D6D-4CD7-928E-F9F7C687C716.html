@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Joining an existing network using network steering"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-BA7A93A0-19D5-422E-B1FB-0BECA4B453AF.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-CA1FE15C-2D6D-4CD7-928E-F9F7C687C716"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Joining an existing network using network steering</title>
+</head>
+<body id="GUID-CA1FE15C-2D6D-4CD7-928E-F9F7C687C716">
+
+
+<h1 class="title topictitle1">Joining an existing network using network steering</h1>
+
+<div class="body">
+    <div class="p">A factory-new Router can only join an existing ZigBee once the network has been
+      opened to accept new joiners (Network Steering for a device on a network). This is achieved as
+      follows: <ol class="ol">
+        <li class="li">Trigger Network Steering on one of the devices already on the network
+          (Coordinator or another Router in the same ZigBee network).</li>
+
+        <li class="li">Then reset (using the RESET button) or power-on the joining Router
+          device.</li>
+
+      </ol>
+</div>
+
+    <p class="p">This causes the Router to start a network discovery and the associate process.
+      Association is followed by an exchange of security materials and an update of the Trust Centre
+      Link Key (if joining a Centralized Trust Centre Network).</p>
+
+    <p class="p">If the join is unsuccessful, it can be retried by power-cycling.</p>
+
+   
+      <p class="p"> <strong class="ph b">Allowing Other Devices to Join the Network</strong></p>
+
+    
+    <p class="p">Once the Router is part of a network, the network must be opened to allow other
+      devices to join (Network Steering while on a network). </p>
+
+    <p class="p">To do this, press the USER INTERFACE button on the Carrier Board (the same
+      button is also used to start Finding and Binding, described in <a class="xref" href="GUID-921F07CA-F108-4146-8416-2A51D21695E8.html">Binding Devices</a>). </p>
+
+    <p class="p">The Router then broadcasts a Management Permit Join Request to the network to
+      open the ‘permit join’ window for 180 seconds. The Network Steering process (for devices not
+      on a network) can now be triggered on the devices that are to join the network.</p>
+
+  </div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-BA7A93A0-19D5-422E-B1FB-0BECA4B453AF.html">Forming or joining a network</a></div>
+</div>
+</div>
+
+</body>
+</html>

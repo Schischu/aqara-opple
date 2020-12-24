@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Binding devices"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-D26D676C-0AB9-4F53-AB69-4C556C625D80.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-DD09309A-E2C9-4FC1-897C-7604BAA8B296"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Binding devices</title>
+</head>
+<body id="GUID-DD09309A-E2C9-4FC1-897C-7604BAA8B296">
+
+
+<h1 class="title topictitle1">Binding devices</h1>
+
+<div class="body">
+<p class="p">The Router and End Device supports the On/Off cluster as a server and implements the Finding and Binding process as a Target. To trigger Finding and Binding as a target, do the following:</p>
+
+<ol class="ol"><li class="li">Press the USER INTERFACE button on the Carrier Boards of all the target devices (the same button
+        is used to start Network Steering, described in <a class="xref" href="GUID-CA1FE15C-2D6D-4CD7-928E-F9F7C687C716.html#GUID-CA1FE15C-2D6D-4CD7-928E-F9F7C687C716__ID_9786A4FC-053E-44F5-A18F-224C0C9C9A34">Allowing Other Devices to Join the Network</a>).</li>
+
+<li class="li">Start Finding and Binding on the Initiator device.</li>
+</ol>
+
+<p class="p">This causes the End Device or router to self-identify for 180 seconds, while the
+      Initiator tries to find the identifying devices, query their capabilities and create bindings
+      on those with matching operational clusters. As part of this process, the Route or End Device
+      may receive an Add Group Command and/or a Binding Request Command.</p>
+
+<p class="p">Reporting is a mandatory feature in ZigBee 3.x. The Router and End Device supports
+      the On/Off cluster as a server and the OnOff attribute of this cluster is a reportable
+      attribute as defined in the ZigBee Base Device Behavior Specification. The Router and End
+      Device holds a default configuration for reporting the state of the OnOff attribute. Once a
+      device wishing to receive these periodic and on-change reports has created a remote binding,
+      the Router starts to send reports to this bound device. The frequency of the reports depends
+      on the default report configuration of the individual target device, 60 seconds in this case.
+      The device receiving the reports can request the change by sending a Report Configuration
+      command.</p>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-D26D676C-0AB9-4F53-AB69-4C556C625D80.html">Running the demonstration examples</a></div>
+</div>
+</div>
+
+</body>
+</html>

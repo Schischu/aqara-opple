@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Coordinator functionality"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-D26D676C-0AB9-4F53-AB69-4C556C625D80.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-CFC63DB4-5816-4054-A073-340FD2867169.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-ACE054B3-51A1-47F2-B45F-9C0BBC564012.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-464B96F6-5827-484D-A0AB-68A421DF66BC.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-C61E753B-480D-4E12-B431-16B1D63190A0.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-50A93FF6-80A0-433A-902B-9387DB9EA778.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-B266D4C8-709E-453C-9DA2-47D5D182A9F3.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-86F72119-6559-49DF-BCAE-E2F9D47ACA27.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-B4CAFEAC-DC0A-42F1-9545-D752EB9650DE"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Coordinator functionality</title>
+</head>
+<body id="GUID-B4CAFEAC-DC0A-42F1-9545-D752EB9650DE">
+
+
+<h1 class="title topictitle1">Coordinator functionality</h1>
+
+<div class="body">
+<p class="p">The functionality of the Coordinator application is described below.</p>
+
+<p class="p">The Coordinator is responsible for initially forming the network and then, via the
+      Trust Centre functionality, managing which other devices can join the network and distributing
+      security materials to those that are allowed to join. The Coordinator supports the mandatory
+      clusters and features of the Base Device as defined in the ZigBee Base Device Behavior
+      Specification.</p>
+
+<p class="p">For demonstrating the ‘Finding and Binding’ functionality, the Coordinator also
+      supports the On/Off Cluster as a client.</p>
+
+<p class="p">The coordinator can also act as an OTA server. This enables the coordinator to
+      advertise any ZigBee OTA upgrade image. The maximum image size which can be hosted is 288
+      Kbytes. It is assumed that the example ZigBee coordinator memory footprint remains less than
+      288 Kbytes.</p>
+
+<p class="p">The Coordinator is controlled using serial commands issued from a terminal program
+                  running on a PC connected to the Zigbee device through the USB connection. The
+                  Coordinator application is configured to communicate at 115200 baud, 8bit data, 1
+                  stop bit, no parity or flow control. The serial interface in not case-sensitive.
+                  For a summary of the serial interface, refer to <a class="xref" href="GUID-86F72119-6559-49DF-BCAE-E2F9D47ACA27.html">Summary of Serial Interface
+                        Commands</a>.</p>
+
+</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="GUID-CFC63DB4-5816-4054-A073-340FD2867169.html">Forming a network</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-ACE054B3-51A1-47F2-B45F-9C0BBC564012.html">Allowing other nodes to join (network steering)</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-464B96F6-5827-484D-A0AB-68A421DF66BC.html">Binding nodes</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-C61E753B-480D-4E12-B431-16B1D63190A0.html">Operating the device</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-50A93FF6-80A0-433A-902B-9387DB9EA778.html">Rejoining the network</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-B266D4C8-709E-453C-9DA2-47D5D182A9F3.html">Performing a factory reset</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-86F72119-6559-49DF-BCAE-E2F9D47ACA27.html">Summary of serial interface commands</a></strong><br/>
+</li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-D26D676C-0AB9-4F53-AB69-4C556C625D80.html">Running the demonstration examples</a></div>
+</div>
+</div>
+
+</body>
+</html>

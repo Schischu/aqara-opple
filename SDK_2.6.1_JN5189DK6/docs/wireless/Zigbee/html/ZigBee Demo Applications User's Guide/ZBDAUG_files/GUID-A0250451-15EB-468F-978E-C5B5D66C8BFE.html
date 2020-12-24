@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Image credentials"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-2AF8980E-95E6-418D-996B-7166952540B6.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-A0250451-15EB-468F-978E-C5B5D66C8BFE"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Image credentials</title>
+</head>
+<body id="GUID-A0250451-15EB-468F-978E-C5B5D66C8BFE">
+
+
+<h1 class="title topictitle1">Image credentials</h1>
+
+<div class="body">
+<p class="p">There are four main elements of the OTA header that are used to identify the image,
+      so that the OTA client is able to decide whether it should download the image. These are
+      Manufacturer Code, Image Type, File Version, and OTA Header String:</p>
+
+<ul class="ul">
+<li class="li" id="GUID-A0250451-15EB-468F-978E-C5B5D66C8BFE__ITEM_7F4C1C55-FFD8-4499-96BF-B78DE08E4BE5">
+        <strong class="ph b">Manufacturer Code:</strong> This is a 16-bit number that is a ZigBee-assigned identifier for
+        each member company. In this application, this number has been set to 0x1037, which is the
+        identifier for NXP. In the final product, this should be changed to the identifier of the
+        manufacturer. The OTA client compares the Manufacturer Code in the advertised image with its
+        own and the image downloads only if they match. </li>
+
+<li class="li" id="GUID-A0250451-15EB-468F-978E-C5B5D66C8BFE__ITEM_5BBCF9DF-E794-48F9-93B4-23E9D7B72EB5">
+        <strong class="ph b">Image Type:</strong> This is a manufacturer-specific 16-bit number in the range 0x0000 to
+        0xFFBF. Its use is for the manufacturer to distinguish between devices. In this application,
+        the Image Type is normally set to the ZigBee Device Type however this application uses
+        0x0001 for the Router device and 0x0002 for the End Device (0x8001 and 0x8002 are used for
+        encrypted images). The OTA client compares the advertised Image Type with its own and only
+        downloads the image if they match. The product designer is entirely free to implement an
+        identification scheme of their own. </li>
+
+<li class="li" id="GUID-A0250451-15EB-468F-978E-C5B5D66C8BFE__ITEM_B11F6D6D-4828-4909-B024-2AA213EA5167">
+        <strong class="ph b">File Version:</strong> This is a 32-bit number representing the version of the image. The OTA
+        client compares the advertised version with its current version before deciding whether to
+        download the image. </li>
+
+<li class="li" id="GUID-A0250451-15EB-468F-978E-C5B5D66C8BFE__ITEM_2F08581B-453C-4BD1-8A60-8132603CFF69">
+        <strong class="ph b">OTA Header String:</strong> This is a 32 byte character string and its use is manufacturer-
+        specific. In this application, the OTA client compares the string in the advertised image
+        with its own string before accepting an image for download. If the strings matches, then the
+        image is accepted. In this way, the string can be used to provide extra detail for
+        identifying images, such as hardware subtypes. </li>
+
+</ul>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-2AF8980E-95E6-418D-996B-7166952540B6.html">ZigBee Over-The-Air (OTA) upgrade</a></div>
+</div>
+</div>
+
+</body>
+</html>

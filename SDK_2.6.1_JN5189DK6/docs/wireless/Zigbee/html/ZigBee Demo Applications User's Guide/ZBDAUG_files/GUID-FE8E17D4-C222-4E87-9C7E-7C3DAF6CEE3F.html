@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Performing a factory reset"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-7F7C12EB-3530-4DEA-ADD8-BA527854EC19.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-FE8E17D4-C222-4E87-9C7E-7C3DAF6CEE3F"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Performing a factory reset</title>
+</head>
+<body id="GUID-FE8E17D4-C222-4E87-9C7E-7C3DAF6CEE3F">
+
+
+<h1 class="title topictitle1">Performing a factory reset</h1>
+
+<div class="body">
+<p class="p">The Router can be returned to its factory-new state (erasing all persistent data except the outgoing network frame counter) as follows:</p>
+
+<ul class="ul">
+<li class="li" id="GUID-FE8E17D4-C222-4E87-9C7E-7C3DAF6CEE3F__ITEM_9249B29D-7221-4074-8F04-EA2163B5FD47">
+Hold down the USER INTERFACE button and press the RESET button on the Carrier Board.
+</li>
+
+</ul>
+
+<p class="p">The Router then broadcasts a Leave Indication on the old network, then delete all
+      persistent data (except the outgoing network frame counter) and perform a software reset.</p>
+
+<p class="p">There are two supported over-the-air commands for removing a device from the network - these are:</p>
+
+<ul class="ul">
+<li class="li" id="GUID-FE8E17D4-C222-4E87-9C7E-7C3DAF6CEE3F__ITEM_1F9F55A2-2CCF-4CC8-83E3-C0B89F5ADF04">
+Network Leave Request without rejoin
+</li>
+
+<li class="li" id="GUID-FE8E17D4-C222-4E87-9C7E-7C3DAF6CEE3F__ITEM_5237C5A6-6D7E-48B6-8288-6AA59119E82C">
+ZDO Management Network Leave Request without rejoin
+</li>
+
+</ul>
+
+<p class="p">The Reset command of the Basic cluster causes the ZCL to be reset to its factory-new
+      defaults, resetting all attributes and configured reports. This does not remove the device
+      from the network and all network parameters, groups and bindings will remain in place.</p>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-7F7C12EB-3530-4DEA-ADD8-BA527854EC19.html">Router functionality</a></div>
+</div>
+</div>
+
+</body>
+</html>

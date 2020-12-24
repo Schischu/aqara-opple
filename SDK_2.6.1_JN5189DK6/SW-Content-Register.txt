@@ -39,6 +39,15 @@ cmsiscore                  Author: ARM
                            Description: Industry-standard header files       
                            distributes by ARM for cortex-M cores             
 
+FWK                        version: 5.7.0                                    
+                           Location: middleware/wireless/framework           
+                           Description: Connectivity Framework middleware for
+                           Connectivity stacks                               
+                           License: Open Source - BSD-3-Clause               
+                           Author: NXP                                       
+                           name: Connectivity Framework                      
+                           Format: source code and header Files              
+
 SecLib                     version: 5.7.0                                    
                            Location:                                         
                            middleware/wireless/framework/SecLib/lib_crypto_*.
@@ -49,3 +58,65 @@ SecLib                     version: 5.7.0
                            Author: NXP                                       
                            name: Connectivity SecLib                         
                            Format: Binary libraries                          
+
+ieee_802_15_4              version: 5.3.3                                    
+                           Location: middleware/wireless/ieee-802.15.4       
+                           Description: NXP Wireless IEEE 802.15.4           
+                           License: Proprietary, See EULA                    
+                           LA_OPT_NXP_Software_License.htm                   
+                           Author: NXP                                       
+                           name: Wireless 802.15.4                           
+                           Format: Binary libraries & header files           
+
+ZigBee 3.0                 Author: NXP                                       
+                           Name: JN518x ZigBee 3.0 Stack                     
+                           Version: 1.0.0                                    
+                           Location: middleware/wireless/zigbee              
+                           Description: ZigBee 3.0 protocol stack for JN518x 
+                           License: Proprietary, See EULA                    
+                           LA_OPT_NXP_Software_License.htm                   
+                           Format: object and source code                    
+
+ZigBee 3.0 ECB decrypt     Author: Niyaz PK                                  
+                           Name: ECB decryption                              
+                           Version: 1.0.0                                    
+                           Location:                                         
+                           middleware/wireless/zigbee/BDB/Source/Touchlink   
+                           Description: ECB decryption implementation        
+                           License: Public domain                            
+                           URL:                                              
+                           http://comp.ist.utl.pt/ec-csc/Code/Ciphers/AES_Enc
+                           rypt.cpp                                          
+                           Format: source code                               
+
+ZigBee 3.0 Eclipse Plugins Author: NXP                                       
+                           Name: ZigBee 3.0 Eclipse Plugins                  
+                           Version: 1.0.0                                    
+                           Location: middleware/wireless/zigbee/tools        
+                           Description: ZigBee 3.0 plugins for Eclipse for   
+                           configuration of stack parameters                 
+                           License: Eclipse Public License 1.0               
+                           URL: http://www.eclipse.org/emf                   
+                           Format: object code                               
+
+ZigBee 3.0 PDUMConfig tool Author: NXP                                       
+                           Name: ZigBee 3.0 PDU Manager Configuration Tool   
+                           Version: 1.0.0                                    
+                           Location: middleware/wireless/zigbee/tools        
+                           Description: Converts configuration data file into
+                           C source and header files. Built with MS .NET     
+                           framework and py2exe components                   
+                           License: MIT License                              
+                           URL: http://www.py2exe.org                        
+                           Format: object code                               
+
+ZigBee 3.0 ZPSConfig tool  Author: NXP                                       
+                           Name: ZigBee 3.0 ZPS Configuration Tool           
+                           Version: 1.0.0                                    
+                           Location: middleware/wireless/zigbee/tools        
+                           Description: Converts configuration data file into
+                           C source and header files. Built with MS .NET     
+                           framework and py2exe components                   
+                           License: MIT License                              
+                           URL: http://www.py2exe.org                        
+                           Format: object code                               

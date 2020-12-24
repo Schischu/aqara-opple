@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="OTA upgrade operation"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-2AF8980E-95E6-418D-996B-7166952540B6.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-28968A64-692E-4FEC-84C5-472E54C8E774"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>OTA upgrade operation</title>
+</head>
+<body id="GUID-28968A64-692E-4FEC-84C5-472E54C8E774">
+
+
+<h1 class="title topictitle1">OTA upgrade operation</h1>
+
+<div class="body">
+<p class="p">To add an image to the coordinator the OTA images must be programmed as follows:</p>
+
+<p class="p"><strong class="ph b"><em class="ph i">Dk6Programmer.exe -s &lt;COM port&gt; -p FLASH@294912="</em></strong>&lt; .OTA<strong class="ph b"><em class="ph i">
+          image to program&gt;"</em></strong></p>
+
+<p class="p">When adding an image to a non-factory new coordinator, care must be taken not to use the -e option to erase flash.</p>
+
+<p class="p">Any devices with OTA clients in the network periodically send Match Descriptor
+      Requests in order to find an OTA server. Once a server responds, it then sends an IEEE Address
+      Request in order to confirm its address details. The clients the periodically send OTA Image
+      Requests to determine whether the server is hosting an image for that client device. In
+      response to the Image Request, the server returns details of the image that it currently hosts
+      - Manufacturer Code, Image Tag, and Version Number. The client checks these credentials and
+      decides whether it requires this image. If it does not, it will query the server again at the
+      next query interval. If the client does require the image, it starts to issue Block Requests
+      to the server to get the new image. Once all blocks of the new image have been requested and
+      received, the new image is verified, the old one invalidated, and the device reboots and runs
+      the new image. The client resumes periodically querying the server for new images.</p>
+
+<p class="p">The End Device which is RX Off is allowed to enter sleep, It stays awake for 5
+      seconds and then sleeps for 1 second when not doing find and binding.</p>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-2AF8980E-95E6-418D-996B-7166952540B6.html">ZigBee Over-The-Air (OTA) upgrade</a></div>
+</div>
+</div>
+
+</body>
+</html>

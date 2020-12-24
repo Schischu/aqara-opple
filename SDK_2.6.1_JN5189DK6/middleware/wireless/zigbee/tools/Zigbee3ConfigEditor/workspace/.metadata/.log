@@ -1,0 +1,597 @@
+!SESSION 2017-02-17 00:14:34.196 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.osgi 2 0 2017-02-17 00:14:35.046
+!MESSAGE The plugin "com.zpsconfig.zigbee3.rcp.zpscfgeditor" with the version "1.0.0" and location "initial@reference:file:plugins/com.zpsconfig.zigbee3.rcp.zpscfgeditor_1.0.0.jar" is an old style Eclipse 2.0 plugin with no OSGi bundle manifest.  Support for Eclipse 2.0 style plugins will be removed in a future release. Refer to the migration guide for details.
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:14:36.846
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:14:36.846
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:14:36.846
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:14:36.846
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 00:18:15.189 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:18:17.039
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:18:17.039
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:18:17.039
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:18:17.039
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 00:18:58.156 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:19:00.026
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:19:00.026
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:19:00.026
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:19:00.026
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 00:31:10.202 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:31:12.012
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:31:12.012
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:31:12.012
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:31:12.012
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 00:38:39.712 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:38:41.542
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:38:41.542
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:38:41.542
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:38:41.542
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 00:38:54.507 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:38:56.297
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:38:56.297
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:38:56.297
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:38:56.297
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 00:44:35.107 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:44:36.947
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:44:36.947
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:44:36.947
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:44:36.947
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 00:53:28.094 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:53:30.001
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:53:30.001
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 00:53:30.001
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 00:53:30.001
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 09:35:15.523 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:35:24.339
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:35:24.341
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:35:24.342
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:35:24.343
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 09:35:32.620 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:35:34.971
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:35:34.972
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:35:34.973
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:35:34.973
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 09:35:40.675 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:35:43.507
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:35:43.508
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:35:43.509
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:35:43.510
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 09:35:49.727 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:35:52.026
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:35:52.027
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:35:52.028
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:35:52.028
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 09:37:05.291 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:37:07.159
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:37:07.160
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:37:07.161
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:37:07.161
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 09:37:20.741 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:37:22.511
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:37:22.511
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 09:37:22.512
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 09:37:22.512
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-17 11:40:22.300 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 11:40:24.562
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 11:40:24.562
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-17 11:40:24.562
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-17 11:40:24.562
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-18 00:36:59.201 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-18 00:37:01.916
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-18 00:37:01.916
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-18 00:37:01.916
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-18 00:37:01.916
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-18 00:39:45.381 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-18 00:39:47.112
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-18 00:39:47.112
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-18 00:39:47.112
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-18 00:39:47.112
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-18 00:41:20.403 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-18 00:41:22.166
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-18 00:41:22.166
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-18 00:41:22.166
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-18 00:41:22.166
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-20 13:11:15.661 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-20 13:11:18.922
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-20 13:11:18.923
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-20 13:11:18.924
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-20 13:11:18.924
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-20 13:11:32.551 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-20 13:11:34.255
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-20 13:11:34.256
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-20 13:11:34.257
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-20 13:11:34.257
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-20 13:13:04.616 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-20 13:13:06.336
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-20 13:13:06.337
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-20 13:13:06.337
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-20 13:13:06.338
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-02-21 21:57:29.339 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-02-21 21:57:32.352
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-21 21:57:32.353
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-02-21 21:57:32.353
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-02-21 21:57:32.354
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-03-17 09:59:29.764 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-03-17 09:59:32.867
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-03-17 09:59:32.868
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-03-17 09:59:32.869
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-03-17 09:59:32.869
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-03-17 10:02:29.317 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-03-17 10:02:32.007
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-03-17 10:02:32.008
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-03-17 10:02:32.008
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-03-17 10:02:32.009
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2017-03-28 17:34:11.646 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2017-03-28 17:34:15.419
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-03-28 17:34:15.420
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2017-03-28 17:34:15.421
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2017-03-28 17:34:15.422
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2018-01-25 11:08:22.276 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2018-01-25 11:08:25.719
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2018-01-25 11:08:25.721
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2018-01-25 11:08:25.722
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2018-01-25 11:08:25.722
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2018-04-23 11:56:34.520 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_141
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2018-04-23 11:56:37.883
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2018-04-23 11:56:37.885
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2018-04-23 11:56:37.886
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2018-04-23 11:56:37.886
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2018-04-23 11:57:32.645 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_141
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2018-04-23 11:57:34.298
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2018-04-23 11:57:34.299
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2018-04-23 11:57:34.299
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2018-04-23 11:57:34.300
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2019-01-29 14:57:59.436 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_141
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2019-01-29 14:58:01.292
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-01-29 14:58:01.292
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2019-01-29 14:58:01.292
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-01-29 14:58:01.292
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2019-01-29 15:23:54.947 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_141
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2019-01-29 15:23:56.788
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-01-29 15:23:56.788
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2019-01-29 15:23:56.788
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-01-29 15:23:56.788
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2019-01-29 15:27:06.045 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_141
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2019-01-29 15:27:07.902
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-01-29 15:27:07.902
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2019-01-29 15:27:07.917
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-01-29 15:27:07.917
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2019-09-11 10:42:47.607 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2019-09-11 10:42:51.021
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-09-11 10:42:51.023
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2019-09-11 10:42:51.024
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-09-11 10:42:51.024
+!MESSAGE Invalid extension (Missing class name): null
+!SESSION 2019-09-11 10:46:05.412 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_161
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_GB
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui 4 4 2019-09-11 10:46:08.760
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-09-11 10:46:08.761
+!MESSAGE Invalid extension (Missing class name): null
+
+!ENTRY org.eclipse.ui 4 4 2019-09-11 10:46:08.762
+!MESSAGE Unable to create intro descriptor.
+
+!ENTRY com.zpsconfig.zigbee3.rcp.zpscfgeditor 4 0 2019-09-11 10:46:08.763
+!MESSAGE Invalid extension (Missing class name): null

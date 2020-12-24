@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="ZigBee Over-The-Air (OTA) upgrade"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-4F2CA7FA-66B9-477B-BA45-CBA9EA741A7A.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-28968A64-692E-4FEC-84C5-472E54C8E774.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-A0250451-15EB-468F-978E-C5B5D66C8BFE.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-75BED7E2-73A3-4708-AD30-B80DF3E743D9.html"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-020F0A13-2BEF-47D7-ADEC-2B6BA9E2DDED.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-2AF8980E-95E6-418D-996B-7166952540B6"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>ZigBee Over-The-Air (OTA) upgrade</title>
+</head>
+<body id="GUID-2AF8980E-95E6-418D-996B-7166952540B6">
+
+
+<h1 class="title topictitle1">ZigBee Over-The-Air (OTA) upgrade</h1>
+
+<div class="body">
+<p class="p">Over-The-Air (OTA) Upgrade is the method by which a new firmware image is
+                        transferred to a device that is already installed and running as part of a
+                        ZigBee network. This functionality is provided by the OTA Upgrade cluster.
+                        In order to upgrade the devices on a network, two functional elements are
+                        required.</p>
+
+<ul class="ul">
+<li class="li" id="GUID-2AF8980E-95E6-418D-996B-7166952540B6__ITEM_FDB0A809-1827-41CE-91C3-158240089FD5">
+        <strong class="ph b">OTA Server:</strong> First the network must host an OTA server, which receives new OTA images
+        from manufacturers, advertise the OTA image details to the network, and then deliver the new
+        image to those devices that request it. </li>
+
+<li class="li" id="GUID-2AF8980E-95E6-418D-996B-7166952540B6__ITEM_AE311280-70CB-4206-B7D4-874C4A7CCF5F">
+        <strong class="ph b">OTA Clients:</strong> The second requirement is for OTA clients, which are on the network
+        devices that may be updated. These devices periodically interrogate the OTA server for
+        details of the firmware images that it has available. If a client finds a suitable upgrade
+        image on the server, it starts to request this image, storing each part as it is received.
+        Once the full image has been received, it validates and the device boots to run the new
+        image. </li>
+
+</ul>
+
+<p class="p">The clients pull down the new images, requesting each block in turn and filling in
+      the gaps. The server never pushes the images onto the network.</p>
+
+</div>
+
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="GUID-4F2CA7FA-66B9-477B-BA45-CBA9EA741A7A.html">Overview</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-28968A64-692E-4FEC-84C5-472E54C8E774.html">OTA upgrade operation</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-A0250451-15EB-468F-978E-C5B5D66C8BFE.html">Image credentials</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-75BED7E2-73A3-4708-AD30-B80DF3E743D9.html">Upgrade and downgrade</a></strong><br/>
+</li>
+<li class="link ulchildlink"><strong><a href="GUID-020F0A13-2BEF-47D7-ADEC-2B6BA9E2DDED.html">LED indication table</a></strong><br/>
+</li>
+</ul>
+</div>
+
+</body>
+</html>

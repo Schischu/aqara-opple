@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2005"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2005"/>
+<meta name="DC.Type" content="topic"/>
+<meta name="DC.Title" content="Performing a factory reset"/>
+<meta name="DC.Relation" scheme="URI" content="GUID-ADD3FDF8-9DF8-4831-B5E4-B15FEC5522F3.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="GUID-9189E7FF-1D3C-4137-BB16-7FC9995BA90F"/>
+<meta name="DC.Language" content="en-us"/>
+<link rel="stylesheet" type="text/css" href="commonltr.css"/>
+<title>Performing a factory reset</title>
+</head>
+<body id="GUID-9189E7FF-1D3C-4137-BB16-7FC9995BA90F">
+
+
+<h1 class="title topictitle1">Performing a factory reset</h1>
+
+<div class="body">
+<p class="p">The End Device can be returned to its factory-new state (erasing all persistent data except the outgoing network frame counter) as follows:</p>
+
+<ul class="ul">
+<li class="li" id="GUID-9189E7FF-1D3C-4137-BB16-7FC9995BA90F__ITEM_90E32B19-884E-4ED2-8825-65FDEF963392">
+Hold down the USER INTERFACE button and press the RESET button on the Carrier Board.
+</li>
+
+</ul>
+
+<p class="p">The End Device will then unicast a Leave Indication to its parent, which
+      rebroadcasts this message to the old network. The End Device deletes all persistent data
+      (other than the outgoing network frame counter) and perform a software reset.</p>
+
+<p class="p">There are two supported over-the-air commands for removing a device from the network - these are:</p>
+
+<ul class="ul">
+<li class="li" id="GUID-9189E7FF-1D3C-4137-BB16-7FC9995BA90F__ITEM_D80B8E4A-C0E8-4EA2-A4E8-B8A92D904655">
+Network Leave Request without rejoin
+</li>
+
+<li class="li" id="GUID-9189E7FF-1D3C-4137-BB16-7FC9995BA90F__ITEM_7C5976DE-5991-4967-ADD0-E4FE4C998E2B">
+ZDO Management Network Leave Request without rejoin
+</li>
+
+</ul>
+
+<p class="p">The Reset command of the Basic cluster causes the ZCL to be reset to its factory-new
+      defaults, resetting all attributes, and configured reports. This does not removes the device
+      from the network and all network parameters, groups, and bindings remain in place.</p>
+
+</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="GUID-ADD3FDF8-9DF8-4831-B5E4-B15FEC5522F3.html">End device functionality</a></div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <description name="NXP ZBPro Update Site" url="http://eclipse.jennic.com/update-site">
+      NXP ZBPro Eclipse Update Site
+   </description>
+   <feature url="features/com.jennic.sdk.zbpro.external.feature_2.1.2.jar" id="com.jennic.sdk.zbpro.external.feature" version="2.1.2">
+      <category name="NXP_ZBPro_SDK"/>
+   </feature>
+   <category-def name="NXP_ZBPro_SDK" label="NXP ZBPro SDK">
+      <description>
+         Adds support for development of ZBPro software projects using NXP wireless microcontroller devices.
+      </description>
+   </category-def>
+</site>

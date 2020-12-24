@@ -204,7 +204,7 @@ PUBLIC bool_t APP_bButtonInitialise(void)
 
     /* If we came out of deep sleep; perform appropriate action as well based
        on button press.*/
-    APP_cbTimerButtonScan(NULL);
+    APP_cbTimerButtonScan(0xFFFF);
 
     uint32 u32Buttons = APP_u32GetSwitchIOState();
     if (u32Buttons != APP_BUTTONS_DIO_MASK)
@@ -434,7 +434,16 @@ PUBLIC void APP_cbTimerButtonScan(void *pvParam)
     uint32 u32DIOState = 0;
     u32DIOState = APP_u32GetSwitchIOState();
 
-    DBG_vPrintf(FALSE, "Button DIO=%x\r\n", u32DIOState);
+    if (pvParam == 0xFFFF)
+    {
+    	DBG_vPrintf(TRUE, "Button after Sleep");
+        for (i = 0; i < APP_BUTTONS_NUM; i++)
+        {
+            s_u8ButtonDebounce[i] = 0xf0; /*After sleep reduce amount of time needed to mark as valid press*/
+        }
+    }
+
+    DBG_vPrintf(TRUE, "Button DIO=%08x - ", u32DIOState);
 
     static uint8 s_u8Counter100Ms = 0;
 
@@ -452,6 +461,12 @@ PUBLIC void APP_cbTimerButtonScan(void *pvParam)
         s_u8ButtonDebounce[i] |= u8Button;
         u8AllReleased &= s_u8ButtonDebounce[i];
 
+        DBG_vPrintf(TRUE, "%02x, ", s_u8ButtonDebounce[i]);
+    }
+    DBG_vPrintf(TRUE, "\r\n");
+
+	for (i = 0; i < APP_BUTTONS_NUM; i++)
+	{
         //We are checking here if this is the first press on the last 80ms
         if (0x00 == s_u8ButtonDebounce[i] && !s_u8ButtonState[i])
         {
